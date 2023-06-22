@@ -15,6 +15,11 @@ class Character: #klasa postaci
     def __init__(self,name):
         self.name = name
 
+class Character():
+    def __init__(self,x,y):
+        self.rect.x = x
+        self.rect.y = y
+
 
 
 
