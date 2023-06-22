@@ -12,3 +12,10 @@ void setup() {
   dressImg = loadImage("dress.png");
   shoesImg = loadImage("shoes.png");
 }
+
+#Patrycja Leśniak (linijki odpowiadające za kursor)    
+def draw(): #ta funkcja odpowiada za kursor
+    if mousePressed:
+        cursor(HAND)
+    else: 
+        cursor(ARROW)
