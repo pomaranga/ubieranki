@@ -14,7 +14,7 @@ class Wardrobe: #klasa dla szafy
 
 
 #Bartosz Rząd (menu start)
-img
+#img
 
 
 
@@ -40,7 +40,7 @@ def draw(): #ta funkcja odpowiada za kursor
     if dress_selected:
         dress_x = mouse_x - dress_img.get_width() // 2
         dress_y = mouse_y - dress_img.get_height() // 2
-    if shoes_selected:
+   if shoes_selected:
         shoes_x = mouse_x - shoes_img.get_width() // 2
         shoes_y = mouse_y - shoes_img.get_height() // 2
 
@@ -50,6 +50,12 @@ def setup():
     size(1200,800)
     url = 'https://kartinki.pibig.info/uploads/posts/2023-04/1682411811_kartinki-pibig-info-p-garderobnaya-kartinki-arti-instagram-2.jpg'
     webImg = loadImage(url, "jpg")
+    
 def draw():
+     if mousePressed:
+        cursor(HAND)
+    else: 
+        cursor(ARROW)
   background(0)
   image(webImg,0,0)
+  
