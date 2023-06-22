@@ -19,5 +19,3 @@ def draw(): #ta funkcja odpowiada za kursor
     if shoes_selected:
         shoes_x = mouse_x - shoes_img.get_width() // 2
         shoes_y = mouse_y - shoes_img.get_height() // 2
-
-#Uwu
