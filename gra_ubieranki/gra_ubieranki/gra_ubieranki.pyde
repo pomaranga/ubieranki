@@ -43,3 +43,13 @@ def draw(): #ta funkcja odpowiada za kursor
     if shoes_selected:
         shoes_x = mouse_x - shoes_img.get_width() // 2
         shoes_y = mouse_y - shoes_img.get_height() // 2
+
+
+def setup():
+    global webImg
+    size(1200,800)
+    url = 'https://kartinki.pibig.info/uploads/posts/2023-04/1682411811_kartinki-pibig-info-p-garderobnaya-kartinki-arti-instagram-2.jpg'
+    webImg = loadImage(url, "jpg")
+def draw():
+  background(0)
+  image(webImg,0,0)
