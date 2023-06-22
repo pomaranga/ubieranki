@@ -1,3 +1,26 @@
+#Anhelina Hlushanok
+class Item: #klasa dla rzeczy w szafie
+    def __init__(self, name, category):
+        self.name = name
+        self.category = category
+        
+class Wardrobe: #klasa dla szafy 
+    def __init__(self):
+        self.items = []
+        
+    def add_items(self, item): #funkcja zeby dodac rzeczy do szafy
+        self.items.append(item) 
+
+
+
+
+
+
+
+
+
+
+
 hat_selected = False
 dress_selected = False
 shoes_selected = False
