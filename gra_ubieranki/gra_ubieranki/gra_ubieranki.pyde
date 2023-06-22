@@ -54,5 +54,5 @@ def draw():
         cursor(ARROW)
         background(0)
         image(webImg,0,0)
-     image(start,300,400)
+     image(start,100,300)
   
