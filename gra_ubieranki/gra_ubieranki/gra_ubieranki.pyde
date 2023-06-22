@@ -11,6 +11,10 @@ class Wardrobe: #klasa dla szafy
     def add_items(self, item): #funkcja zeby dodac rzeczy do szafy
         self.items.append(item) 
 
+class Character: #klasa postaci
+    def __init__(self,name):
+        self.name = name
+
 
 
 #Bartosz Rząd (menu start)
