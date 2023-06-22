@@ -17,8 +17,6 @@ class Character: #klasa postaci
 
 
 
-#Bartosz Rząd (menu start)
-#img
 
 
 
@@ -43,10 +41,11 @@ if shoes_selected:
 
 
 def setup():
-    global webImg
+    global webImg, start
     size(1200,800)
     url = 'https://kartinki.pibig.info/uploads/posts/2023-04/1682411811_kartinki-pibig-info-p-garderobnaya-kartinki-arti-instagram-2.jpg'
     webImg = loadImage(url, "jpg")
+    start = loadImage("star_img.png")
     
 def draw():
      if mousePressed:
@@ -55,4 +54,5 @@ def draw():
         cursor(ARROW)
         background(0)
         image(webImg,0,0)
+     image(start,300,400)
   
