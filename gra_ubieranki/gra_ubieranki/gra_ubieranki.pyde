@@ -1,23 +1,3 @@
-PImage backgroundImg;
-PImage characterImg;
-PImage dressImg;
-PImage shoesImg;
-PImage hairImg;
-
-int characterX, characterY;
-int hairX, hairY;
-int dressX, dressY;
-int shoesX, shoesY;
-
-void setup() {
-  size(800, 600);
-  
-  // Wczytaj obrazy
-  backgroundImg = loadImage("background.jpg");
-  dressImg = loadImage("dress.PNG");
-  shoesImg = loadImage("shoes.PNG");
-  hairImg = loadImage("hair.PNG");
-  }
 
 #Patrycja Leśniak (linijki odpowiadające za kursor)    
 def draw(): #ta funkcja odpowiada za kursor
@@ -25,3 +5,14 @@ def draw(): #ta funkcja odpowiada za kursor
         cursor(HAND)
     else: 
         cursor(ARROW)
+
+# Przesunięcie wybranych elementów ubioru za pomocą myszy
+                if hat_selected:
+                    hair_x = mouse_x - hair_img.get_width() // 2
+                    hair_y = mouse_y - hair_img.get_height() // 2
+                if dress_selected:
+                    dress_x = mouse_x - dress_img.get_width() // 2
+                    dress_y = mouse_y - dress_img.get_height() // 2
+                if shoes_selected:
+                    shoes_x = mouse_x - shoes_img.get_width() // 2
+                    shoes_y = mouse_y - shoes_img.get_height() // 2
