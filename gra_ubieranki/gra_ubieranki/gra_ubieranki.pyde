@@ -43,20 +43,39 @@ if shoes_selected:
 def setup():
     global webImg, start, quit
     size(1200,800)
+    textSize(50) 
+    #img = loadImage('C:/Users/user_x/Desktop/ubierani/ubieranki/postasc.hair2.PNG')
     url = 'https://kartinki.pibig.info/uploads/posts/2023-04/1682411811_kartinki-pibig-info-p-garderobnaya-kartinki-arti-instagram-2.jpg'
     webImg = loadImage(url, "jpg")
     start = loadImage("star_img.png") #B.Rząd
     quit = loadImage("quit_img.png") #B.Rząd
     
 def draw():
-     if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
+    if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
         cursor(HAND)
-     else: 
+    else: 
         cursor(ARROW)
         background(0)
         image(webImg,0,0)
-     image(start,100,300) #B.Rząd
-     image(quit,650,300) #B.Rząd
+    image(start,100,300) #B.Rząd
+    image(quit,650,300) #B.Rząd
+    background(0)
+    image(webImg,0,0)
+    fill(30,30,30, 200)
+    rect(20, 100, 300, 600, 10)
+
+    fill(255,255,255)
+
+  
+    text("hat", width//2-500, height//2-200, 40)   
+    text("dress", width//2-500, height//2-150, 80)  
+  #text("shoes", width//2,-500, height//2, 100) 
+  #image(img, 0, 0) 
+  #def mouseClicked():
+    #if mouseY < 75: 
+        #image(img, 0, 0)
+
+
 
 
 
