@@ -41,11 +41,12 @@ if shoes_selected:
 
 
 def setup():
-    global webImg, start
+    global webImg, start, quit
     size(1200,800)
     url = 'https://kartinki.pibig.info/uploads/posts/2023-04/1682411811_kartinki-pibig-info-p-garderobnaya-kartinki-arti-instagram-2.jpg'
     webImg = loadImage(url, "jpg")
     start = loadImage("star_img.png") #B.Rząd
+    quit = loadImage("quit_img.png") #B.Rząd
     
 def draw():
      if mousePressed:
@@ -55,4 +56,4 @@ def draw():
         background(0)
         image(webImg,0,0)
      image(start,100,300) #B.Rząd
-  
+     image(quit,650,300) #B.Rząd
