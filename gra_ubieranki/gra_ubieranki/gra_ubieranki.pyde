@@ -49,7 +49,7 @@ def setup():
     quit = loadImage("quit_img.png") #B.Rząd
     
 def draw():
-     if mousePressed:
+     if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
         cursor(HAND)
      else: 
         cursor(ARROW)
