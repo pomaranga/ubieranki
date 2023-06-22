@@ -57,3 +57,9 @@ def draw():
         image(webImg,0,0)
      image(start,100,300) #B.Rząd
      image(quit,650,300) #B.Rząd
+
+
+
+
+
+#BohdanZadorozhnyi
