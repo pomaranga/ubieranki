@@ -13,7 +13,8 @@ class Wardrobe: #klasa dla szafy
 
 
 
-
+#Bartosz Rząd (menu start)
+img
 
 
 
