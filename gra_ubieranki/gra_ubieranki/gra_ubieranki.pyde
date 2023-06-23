@@ -20,7 +20,17 @@ class Character():
         self.rect.x = x
         self.rect.y = y
 
-
+def menu_start():
+    global start, quit, starthover, quithover
+    image(start,100,300) #B.Rząd
+    image(quit,650,300) #B.Rząd
+    if(mouseX > 100 and mouseX < 535 and mouseY > 310 and mouseY < 492):
+        image(starthover,100,300)
+    if(mouseX > 665 and mouseX < 1100 and mouseY > 310 and mouseY < 492):
+        image(quithover,650,300)
+    if(mousePressed and mouseX > 665 and mouseX < 1100 and mouseY > 310 and mouseY < 492):
+        clear()
+        exit()
 
 
 
@@ -46,7 +56,7 @@ if shoes_selected:
 
 
 def setup():
-    global webImg, start, quit
+    global webImg, start, quit, starthover, quithover
     size(1200,800)
     textSize(50) 
     #img = loadImage('C:/Users/user_x/Desktop/ubierani/ubieranki/postasc.hair2.PNG')
@@ -54,6 +64,9 @@ def setup():
     webImg = loadImage(url, "jpg")
     start = loadImage("star_img.png") #B.Rząd
     quit = loadImage("quit_img.png") #B.Rząd
+    starthover = loadImage("star_hover_img.png") #B.Rząd
+    quithover = loadImage("quit_hover_img.png") #B.Rząd
+    
     
 def draw():
     if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
@@ -62,8 +75,7 @@ def draw():
         cursor(ARROW)
         background(0)
         image(webImg,0,0)
-    image(start,100,300) #B.Rząd
-    image(quit,650,300) #B.Rząd
+    menu_start()
     background(0)
     image(webImg,0,0)
     fill(30,30,30, 200)
