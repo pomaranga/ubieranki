@@ -11,7 +11,7 @@ class Wardrobe: #klasa dla szafy
     def add_items(self, item): #funkcja zeby dodac rzeczy do szafy
         self.items.append(item) 
 
-class Character: #klasa postaci
+class Character(): #klasa postaci
     def __init__(self,name):
         self.name = name
 
@@ -39,9 +39,21 @@ def menu_start():
 
 
 
+
+
 hat_selected = False
 dress_selected = False
 shoes_selected = False 
+
+
+# Możliwość nazwania postaci (Joanna Baran)
+name_character = input("Wpisz nazwę postaci: ")
+if name_character:
+    print("Miło mi Cię poznać, jestem:", name_character)
+else:
+    print("Nie wpisano nazwy postaci.")
+
+
 
 # Przesunięcie wybranych elementów ubioru za pomocą myszy
 if hat_selected:
@@ -53,6 +65,7 @@ if dress_selected:
 if shoes_selected:
         shoes_x = mouse_x - shoes_img.get_width() // 2
         shoes_y = mouse_y - shoes_img.get_height() // 2
+
 
 
 def setup():
