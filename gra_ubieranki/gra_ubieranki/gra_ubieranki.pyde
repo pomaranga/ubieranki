@@ -69,7 +69,7 @@ if shoes_selected:
 
 
 def setup():
-    global webImg, start, quit, starthover, quithover
+    global webImg, start, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dressImg, hairImg, hair2Img, shoesImg
     size(1200,800)
     textSize(50) 
     #img = loadImage('C:/Users/user_x/Desktop/ubierani/ubieranki/postasc.hair2.PNG')
@@ -79,6 +79,13 @@ def setup():
     quit = loadImage("quit_img.png") #B.Rząd
     starthover = loadImage("star_hover_img.png") #B.Rząd
     quithover = loadImage("quit_hover_img.png") #B.Rząd
+    wyjscieImg = loadImage("postasc/exit.png")  #Wladiskowacz
+    resetImg = loadImage("postasc/reset.png")  #Wladiskowacz
+    characterImg = loadImage("postasc/character.png")  #Wladiskowacz
+    dressImg = loadImage("postasc/dress.png")  #Wladiskowacz
+    hairImg = loadImage("postasc/hair.png")  #Wladiskowacz
+    hair2Img = loadImage("postasc/hair2.png")  #Wladiskowacz
+    shoesImg = loadImage("postasc/shoes.png")  #Wladiskowacz
     
     
 def draw():
@@ -98,16 +105,38 @@ def draw():
 
   
     text("hat", width//2-500, height//2-200, 40)   
-    text("dress", width//2-500, height//2-150, 80)  
-  #text("shoes", width//2,-500, height//2, 100) 
-  #image(img, 0, 0) 
-  #def mouseClicked():
-    #if mouseY < 75: 
-        #image(img, 0, 0)
+    text("dress", width//2-500, height//2-150, 80)
+    text("Hair", width//2-500, height//2-100, 80)  #Wladiskowacz
+    text("Hair_2", width//2-500, height//2-50, 80)  #Wladiskowacz
+    text("Shoes", width//2-500, height//2-0, 80)  #Wladiskowacz
+    image(wyjscieImg, 10, 10, 120, 60)  #Wladiskowacz
+    image(resetImg, 135, 5, 130, 70)  #Wladiskowacz
+    image(characterImg, 600, 200, 150, 430)  #Wladiskowacz
+    image(dressImg, 600, 200, 150, 450)  #Wladiskowacz
+    image(hairImg, -200, 200, 150, 450)  #Wladiskowacz
+    image(hair2Img, 600, 200, 150, 450)  #Wladiskowacz
+    image(shoesImg, 600, 180, 150, 450)  #Wladiskowacz
 
+def mouseClicked():  #Wladiskowacz (prawdopodobnie po kliknięciu przycisku „sukienka” pojawia się na ekranie(dodac))
+    global reset
+    if mouseX > 137 and mouseX < 260 and mouseY > 5 and mouseY < 75:
+        reset()
+    if mouseX > 5 and mouseX < 130 and mouseY > 5 and mouseY < 75:
+        exit()
 
+def reset():  #Wladiskowacz (prawdopodobnie po kliknięciu znika z ekranu)
+    global x, y
+    x = -100
+    y = -100
+    
+    #image(dressImg, -100, -100)
 
+    
+ #   Hair.x = -100
+ #   Hair.y = -100
+    
+ #   Hair2.x = -100
+ #   Hair2.y = -100
 
-
-
-#BohdanZadorozhnyi123121
+#    Shoes.x = -100
+#    Shoes.y = -100
