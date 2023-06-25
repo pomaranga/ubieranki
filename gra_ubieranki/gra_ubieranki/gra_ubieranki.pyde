@@ -110,5 +110,4 @@ def draw():
 
 
 
-#otradnov1
 #BohdanZadorozhnyi123121
