@@ -69,7 +69,7 @@ if shoes_selected:
 
 
 def setup():
-    global webImg, start, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dressImg, hairImg, hair2Img, shoesImg
+    global webImg, start, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dressImg, hairImg, hair2Img, shoesImg, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg
     size(1200,800)
     textSize(50) 
     #img = loadImage('C:/Users/user_x/Desktop/ubierani/ubieranki/postasc.hair2.PNG')
@@ -79,14 +79,17 @@ def setup():
     quit = loadImage("quit_img.png") #B.Rząd
     starthover = loadImage("star_hover_img.png") #B.Rząd
     quithover = loadImage("quit_hover_img.png") #B.Rząd
-    wyjscieImg = loadImage("postasc/exit.png")  #Wladiskowacz
-    resetImg = loadImage("postasc/reset.png")  #Wladiskowacz
-    characterImg = loadImage("postasc/character.png")  #Wladiskowacz
-    dressImg = loadImage("postasc/dress.png")  #Wladiskowacz
-    hairImg = loadImage("postasc/hair.png")  #Wladiskowacz
-    hair2Img = loadImage("postasc/hair2.png")  #Wladiskowacz
-    shoesImg = loadImage("postasc/shoes.png")  #Wladiskowacz
-    
+    wyjscieImg = loadImage("exit.png")  #Wladiskowacz
+    resetImg = loadImage("reset.png")  #Wladiskowacz
+    characterImg = loadImage("character.PNG")  #Wladiskowacz
+    dressImg = loadImage("dress.PNG")  #Wladiskowacz
+    hairImg = loadImage("hair.PNG")  #Wladiskowacz
+    hair2Img = loadImage("hair2.PNG")  #Wladiskowacz
+    shoesImg = loadImage("shoes.PNG")  #Wladiskowacz
+    spodnicaniebieskaImg = loadImage("spodnicaniebieskaImg.png")
+    bluzkarozowaImg = loadImage("bluzkarozowaImg.png")
+    klapkirozoweImg = loadImage("klapkirozoweImg.png")
+    wlosyblondImg = loadImage("wlosyblondImg.png")
     
 def draw():
     if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
@@ -116,6 +119,10 @@ def draw():
     image(hairImg, -200, 200, 150, 450)  #Wladiskowacz
     image(hair2Img, 600, 200, 150, 450)  #Wladiskowacz
     image(shoesImg, 600, 180, 150, 450)  #Wladiskowacz
+    image(spodnicaniebieskaImg, 250, 180, 150, 450) #Patrycja Leśniak
+    image(bluzkarozowaImg, 250, 160, 150, 450) #Patrycja Leśniak
+    image(klapkirozoweImg, 250, 140, 150, 450) #Patrycja Leśniak
+    image(wlosyblondImg, 250, 100, 150, 450) #Patrycja Leśniak
 
 def mouseClicked():  #Wladiskowacz (prawdopodobnie po kliknięciu przycisku „sukienka” pojawia się na ekranie(dodac))
     global reset
