@@ -69,7 +69,7 @@ if shoes_selected:
 
 
 def setup():
-    global webImg,wlosybrazImg, start,flaga_wlosy, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dressImg, hairImg, hair2Img, shoesImg, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg, wlosyczarne, sukienkaczarna, koszulkaczarna, sukienkamagenta
+    global webImg,wlosybrazImg, start,flaga_wlosy, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dress, dress_x, dress_y, is_dragging, mouse_offset, hairImg, hair2Img, shoesImg, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg, wlosyczarne, sukienkaczarna, koszulkaczarna, sukienkamagenta
     size(1200,800)
     textSize(50) 
     #img = loadImage('C:/Users/user_x/Desktop/ubierani/ubieranki/postasc.hair2.PNG')
@@ -82,7 +82,11 @@ def setup():
     wyjscieImg = loadImage("exit.png")  #Wladiskowacz
     resetImg = loadImage("reset.png")  #Wladiskowacz
     characterImg = loadImage("character.PNG")  #Wladiskowacz
-    dressImg = loadImage("dress.PNG")  #Wladiskowacz
+    dress = loadImage("dress.PNG")
+    dress_x = width / 2 - dress.width / 2
+    dress_y = height / 2 - dress.height / 2
+    is_dragging = False
+    mouse_offset = PVector(0, 0)  #Wladiskowacz
     hairImg = loadImage("hair.PNG")  #Wladiskowacz
     hair2Img = loadImage("hair2.PNG")  #Wladiskowacz
     shoesImg = loadImage("shoes.PNG")  #Wladiskowacz
@@ -115,7 +119,9 @@ def draw():
     image(sukienkaczarna, 600, -400) #Kornecka
     image(sukienkamagenta, 460, -100) #Kornecka
     fill(30,30,30, 200)
-    rect(20, 100, 300, 600, 10)
+    rect(20, 100, 300, 600, 10)    
+    fill(400,400,400, 400)
+    rect(600, 200, 150, 450, 10)
 
     fill(255,255,255)
 
@@ -128,7 +134,7 @@ def draw():
     image(wyjscieImg, 10, 10, 120, 60)  #Wladiskowacz
     image(resetImg, 135, 5, 130, 70)  #Wladiskowacz
     image(characterImg, 600, 200, 150, 430)  #Wladiskowacz
-    image(dressImg, 600, 200, 150, 450)  #Wladiskowacz
+    image(dress, dress_x, dress_y) #Wladiskowacz
     image(hairImg, -200, 200, 150, 450)  #Wladiskowacz
     image(hair2Img, 600, 200, 150, 450)  #Wladiskowacz
     image(shoesImg, 600, 180, 150, 450)  #Wladiskowacz
@@ -153,6 +159,24 @@ def mouseClicked():  #Wladiskowacz (prawdopodobnie po kliknięciu przycisku „s
         exit()
     if mouseX < 300 and mouseY<300 :   #alex
       flaga_wlosy =  not flaga_wlosy
+
+def mousePressed():
+    
+    global is_dragging, mouse_offset
+    if dress_x <= mouseX <= dress_x + dress.width and dress_y <= mouseY <= dress_y + dress.height:
+        is_dragging = True
+        mouse_offset.x = dress_x - mouseX
+        mouse_offset.y = dress_y - mouseY
+
+def mouseReleased():
+    global is_dragging
+    is_dragging = False
+
+def mouseDragged():
+    global dress_x, dress_y
+    if is_dragging:
+        dress_x = mouseX + mouse_offset.x
+        dress_y = mouseY + mouse_offset.y
       
 
 
