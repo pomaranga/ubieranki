@@ -86,7 +86,12 @@ def setup():
     dress_x = width / 2 - dress.width / 2
     dress_y = height / 2 - dress.height / 2
     is_dragging = False
-    mouse_offset = PVector(0, 0)  #Wladiskowacz
+    mouse_offsetdress = PVector(0, 0)  #Wladiskowacz
+    hair = loadImage("hair.PNG")  
+    hair_x = width / 2 - hair.width / 2
+    hair_y = height / 2 - hair.height / 2
+    is_dragging2 = False 
+    mouse_offsethair = PVector(0, 0) #Pshenychniak
     hairImg = loadImage("hair.PNG")  #Wladiskowacz
     hair2Img = loadImage("hair2.PNG")  #Wladiskowacz
     shoesImg = loadImage("shoes.PNG")  #Wladiskowacz
@@ -128,13 +133,14 @@ def draw():
   
     text("hat", width//2-500, height//2-200, 40)   
     text("dress", width//2-500, height//2-150, 80)
-    text("Hair", width//2-500, height//2-100, 80)  #Wladiskowacz
+    text("hair", width//2-500, height//2-150, 80)  #Vitalii Pshenychniak
     text("Hair_2", width//2-500, height//2-50, 80)  #Wladiskowacz
     text("Shoes", width//2-500, height//2-0, 80)  #Wladiskowacz
     image(wyjscieImg, 10, 10, 120, 60)  #Wladiskowacz
     image(resetImg, 135, 5, 130, 70)  #Wladiskowacz
     image(characterImg, 600, 200, 150, 430)  #Wladiskowacz
-    image(dress, dress_x, dress_y) #Wladiskowacz
+    image(dress, dress_x, dress_y)
+    image(hair, hair_x, hair_y) #Pshenychniak
     image(hairImg, -200, 200, 150, 450)  #Wladiskowacz
     image(hair2Img, 600, 200, 150, 450)  #Wladiskowacz
     image(shoesImg, 600, 180, 150, 450)  #Wladiskowacz
@@ -161,22 +167,31 @@ def mouseClicked():  #Wladiskowacz (prawdopodobnie po kliknięciu przycisku „s
       flaga_wlosy =  not flaga_wlosy
 
 def mousePressed():
-    
-    global is_dragging, mouse_offset
+    global is_dragging, is_dragging2, mouse_offsetdress, mouse_offsethair
     if dress_x <= mouseX <= dress_x + dress.width and dress_y <= mouseY <= dress_y + dress.height:
         is_dragging = True
-        mouse_offset.x = dress_x - mouseX
-        mouse_offset.y = dress_y - mouseY
+        mouse_offsetdress.x = dress_x - mouseX
+        mouse_offsetdress.y = dress_y - mouseY
+    if hair_x <= mouseX <= hair_x + hair.width and hair_y <= mouseY <= hair_y + hair.height:
+        is_dragging2 = True
+        mouse_offsethair.x = hair_x - mouseX
+        mouse_offsethair.y = hair_y - mouseY
 
+        
+        
 def mouseReleased():
-    global is_dragging
+    global is_dragging, is_dragging2
     is_dragging = False
+    is_dragging2 = False
 
 def mouseDragged():
-    global dress_x, dress_y
+    global dress_x, dress_y, hair_x, hair_y
     if is_dragging:
-        dress_x = mouseX + mouse_offset.x
-        dress_y = mouseY + mouse_offset.y
+        dress_x = mouseX + mouse_offsetdress.x
+        dress_y = mouseY + mouse_offsetdress.y
+    if is_dragging2:
+        hair_x = mouseX + mouse_offsethair.x
+        hair_y = mouseY + mouse_offsethair.y
       
 
 
