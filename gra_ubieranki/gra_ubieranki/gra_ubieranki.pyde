@@ -69,7 +69,7 @@ if shoes_selected:
 
 
 def setup():
-    global webImg, start, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dressImg, hairImg, hair2Img, shoesImg, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg
+    global webImg, start, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dressImg, hairImg, hair2Img, shoesImg, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg, wlosyczarne, sukienkaczarna, koszulkaczarna, sukienkamagenta
     size(1200,800)
     textSize(50) 
     #img = loadImage('C:/Users/user_x/Desktop/ubierani/ubieranki/postasc.hair2.PNG')
@@ -90,6 +90,10 @@ def setup():
     bluzkarozowaImg = loadImage("bluzkarozowaImg.png") #Patrycja Leśniak
     klapkirozoweImg = loadImage("klapkirozoweImg.png") #Patrycja Leśniak
     wlosyblondImg = loadImage("wlosyblondImg.png") #Patrycja Leśniak
+    wlosyczarne = loadImage("wlosy_czarne.png") #Kornecka
+    koszulkaczarna = loadImage("koszulka_czarna.png") #Kornecka
+    sukienkaczarna = loadImage("sukienka_czarna.png") #Kornecka
+    sukienkamagenta = loadImage("sukienka_magenta.png") #Kornecka
     
 def draw():
     if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
@@ -101,6 +105,10 @@ def draw():
     menu_start()
     background(0)
     image(webImg,0,0)
+    image(wlosyczarne, -150, -400) #Kornecka
+    image(koszulkaczarna, -140, -250) #Kornecka
+    image(sukienkaczarna, 600, -400) #Kornecka
+    image(sukienkamagenta, 460, -100) #Kornecka
     fill(30,30,30, 200)
     rect(20, 100, 300, 600, 10)
 
