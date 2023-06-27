@@ -69,7 +69,7 @@ if shoes_selected:
 
 
 def setup():
-    global webImg, start, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dressImg, hairImg, hair2Img, shoesImg, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg, wlosyczarne, sukienkaczarna, koszulkaczarna, sukienkamagenta
+    global webImg,wlosybrazImg, start,flaga_wlosy, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dressImg, hairImg, hair2Img, shoesImg, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg, wlosyczarne, sukienkaczarna, koszulkaczarna, sukienkamagenta
     size(1200,800)
     textSize(50) 
     #img = loadImage('C:/Users/user_x/Desktop/ubierani/ubieranki/postasc.hair2.PNG')
@@ -89,12 +89,17 @@ def setup():
     spodnicaniebieskaImg = loadImage("spodnicaniebieskaImg.png") #Patrycja Leśniak
     bluzkarozowaImg = loadImage("bluzkarozowaImg.png") #Patrycja Leśniak
     klapkirozoweImg = loadImage("klapkirozoweImg.png") #Patrycja Leśniak
-    wlosyblondImg = loadImage("wlosyblondImg.png") #Patrycja Leśniak
+    #wlosyblondImg = loadImage("wlosyblondImg.png") #Patrycja Leśniak
     wlosyczarne = loadImage("wlosy_czarne.png") #Kornecka
     koszulkaczarna = loadImage("koszulka_czarna.png") #Kornecka
     sukienkaczarna = loadImage("sukienka_czarna.png") #Kornecka
     sukienkamagenta = loadImage("sukienka_magenta.png") #Kornecka
+   
     
+    wlosyblondImg = loadImage("wlosyblondImg.png")
+    wlosybrazImg =  loadImage("wlosybrazImg.png")
+
+    flaga_wlosy = True 
 def draw():
     if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
         cursor(HAND)
@@ -105,7 +110,7 @@ def draw():
     menu_start()
     background(0)
     image(webImg,0,0)
-    image(wlosyczarne, -150, -400) #Kornecka
+    #image(wlosyczarne, -150, -400) #Kornecka
     image(koszulkaczarna, -140, -250) #Kornecka
     image(sukienkaczarna, 600, -400) #Kornecka
     image(sukienkamagenta, 460, -100) #Kornecka
@@ -130,14 +135,26 @@ def draw():
     image(spodnicaniebieskaImg, 250, 180, 150, 450) #Patrycja Leśniak
     image(bluzkarozowaImg, 250, 160, 150, 450) #Patrycja Leśniak
     image(klapkirozoweImg, 250, 140, 150, 450) #Patrycja Leśniak
-    image(wlosyblondImg, 250, 100, 150, 450) #Patrycja Leśniak
+    #image(wlosyblondImg, 250, 100, 150, 450) #Patrycja Leśniak
+    
+    if flaga_wlosy:
+        image(wlosyblondImg, 250, 100, 150, 450)
+    else:
+        image(wlosybrazImg,250, 100, 150, 450)
+        
+        
+   
 
 def mouseClicked():  #Wladiskowacz (prawdopodobnie po kliknięciu przycisku „sukienka” pojawia się na ekranie(dodac))
-    global reset
+    global reset, flaga_wlosy
     if mouseX > 137 and mouseX < 260 and mouseY > 5 and mouseY < 75:
         reset()
     if mouseX > 5 and mouseX < 130 and mouseY > 5 and mouseY < 75:
         exit()
+    if mouseX < 300 and mouseY<300 :   #alex
+      flaga_wlosy =  not flaga_wlosy
+      
+
 
 def reset():  #Wladiskowacz (prawdopodobnie po kliknięciu znika z ekranu)
     global x, y
