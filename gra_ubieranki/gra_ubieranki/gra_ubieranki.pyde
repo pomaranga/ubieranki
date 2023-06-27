@@ -132,7 +132,7 @@ def mouseClicked():  #Wladiskowacz (prawdopodobnie po kliknięciu przycisku „s
         exit()
 
 def reset():  #Wladiskowacz (prawdopodobnie po kliknięciu znika z ekranu)
- global x, y
+    global x, y
     imageMode(CENTER)
     image(dressImg, -200, -200) #Nie dziala :(
     
