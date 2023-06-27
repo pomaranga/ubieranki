@@ -86,10 +86,10 @@ def setup():
     hairImg = loadImage("hair.PNG")  #Wladiskowacz
     hair2Img = loadImage("hair2.PNG")  #Wladiskowacz
     shoesImg = loadImage("shoes.PNG")  #Wladiskowacz
-    spodnicaniebieskaImg = loadImage("spodnicaniebieskaImg.png")
-    bluzkarozowaImg = loadImage("bluzkarozowaImg.png")
-    klapkirozoweImg = loadImage("klapkirozoweImg.png")
-    wlosyblondImg = loadImage("wlosyblondImg.png")
+    spodnicaniebieskaImg = loadImage("spodnicaniebieskaImg.png") #Patrycja Leśniak
+    bluzkarozowaImg = loadImage("bluzkarozowaImg.png") #Patrycja Leśniak
+    klapkirozoweImg = loadImage("klapkirozoweImg.png") #Patrycja Leśniak
+    wlosyblondImg = loadImage("wlosyblondImg.png") #Patrycja Leśniak
     
 def draw():
     if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
