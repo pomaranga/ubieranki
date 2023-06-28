@@ -141,7 +141,6 @@ def draw():
     image(characterImg, 600, 200, 150, 430)  #Wladiskowacz
     image(dress, dress_x, dress_y)
     image(hair, hair_x, hair_y) #Pshenychniak
-    image(hairImg, -200, 200, 150, 450)  #Wladiskowacz
     image(hair2Img, 600, 200, 150, 450)  #Wladiskowacz
     image(shoesImg, 600, 180, 150, 450)  #Wladiskowacz
     image(spodnicaniebieskaImg, 250, 180, 150, 450) #Patrycja Leśniak
