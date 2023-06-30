@@ -1,46 +1,54 @@
 class Clothes: #class for elements of clothes
-    def __init__(self, file_path, x, y):
-        self.file_path = file_path
-        self.x = x
-        self.y = y
-        
-class Torso(Clothes):
-    def super():__init__(file_path, x, y)
-    
-class Hair_Style(Clothes):
-    def super():__init__(file_path, x, y)
-    
-class Footwear(Clothes):
-    def super():__init__(file_path, x, y)
-
-class Legs(Clothes):
-    def super():__init__(file_path, x, y)
-
-class Dresses(Clothes):
-    def super():__init__(file_path, x, y)
-        
-class Interface: #class for interface elements (bottoms)
-    def __init__(self, file_path, x, y):
-        self.file_path = file_path
-        self.x = x
-        self.y = y
-    
-        
-class Wardrobe: #klasa dla szafy 
-    def __init__(self):
-        self.items = []
-        
-    def add_items(self, item): #funkcja zeby dodac rzeczy do szafy
-        self.items.append(item) 
-
-class Character(): #klasa postaci
-    def __init__(self,name):
+    def __init__(self, name file_path, x, y):
         self.name = name
+        self.file_path = file_path
+        self.x = x
+        self.y = y
+        
+class Torso(Clothes): #subclass for elements of upper body clothes
+    def super():__init__(name, file_path, x, y)
+    
+class Hair_Style(Clothes): #subclass for elements hairstyles
+    def super():__init__(name, file_path, x, y)
+    
+class Footwear(Clothes): #subclass for elements of footwear
+    def super():__init__(name, file_path, x, y)
 
-class Character():
-    def __init__(self,x,y):
-        self.rect.x = x
-        self.rect.y = y
+class Legs(Clothes): #subclass for elements of lowe body clothes
+    def super():__init__(name, file_path, x, y)
+
+class Dress(Clothes): #subclass for elements of full body clothes
+    def super():__init__(name, file_path, x, y)
+        
+        
+        
+class Interface: #class for interface elements
+    def __init__(self, name,  file_path, x, y):
+        self.name = name
+        self.file_path = file_path
+        self.x = x
+        self.y = y
+    
+class Bottoms(Interface): #subclass for bottoms
+    def super():__init__(name, file_path, x, y)
+        
+        
+        
+# class Wardrobe: #klasa dla szafy 
+#     def __init__(self):
+#         self.items = []
+        
+#     def add_items(self, item): #funkcja zeby dodac rzeczy do szafy
+#         self.items.append(item) 
+
+# class Character(): #klasa postaci
+#     def __init__(self,name):
+#         self.name = name
+
+# class Character():
+#     def __init__(self,x,y):
+#         self.rect.x = x
+#         self.rect.y = y
 
 # def menu_start():
 #     global start, quit, starthover, quithover
@@ -95,8 +103,8 @@ def setup():
     size(1200,800)
     textSize(50) 
     #img = loadImage('C:/Users/user_x/Desktop/ubierani/ubieranki/postasc.hair2.PNG')
-    url = 'https://kartinki.pibig.info/uploads/posts/2023-04/1682411811_kartinki-pibig-info-p-garderobnaya-kartinki-arti-instagram-2.jpg'
-    webImg = loadImage(url, "jpg")
+    #url = 'https://kartinki.pibig.info/uploads/posts/2023-04/1682411811_kartinki-pibig-info-p-garderobnaya-kartinki-arti-instagram-2.jpg'
+    #webImg = loadImage(url, "jpg")
     start = loadImage("star_img.png") #B.Rząd
     quit = loadImage("quit_img.png") #B.Rząd
     starthover = loadImage("star_hover_img.png") #B.Rząd
