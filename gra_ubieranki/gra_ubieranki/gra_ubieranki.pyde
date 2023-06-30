@@ -9,7 +9,7 @@ class Hair_Style(Clothes): #subclass for elements hairstyles
     def super():__init__(name, file_path, x, y)
                       
 class Torso(Clothes): #subclass for elements of upper body clothes
-    def super():__init__(name, file_path, x, y) #command 'super():' integrating previous self-commands from base class
+    def super():__init__(name, file_path, x, y) #command 'super():' integrating previous self-parameteres from base class
     
 class Legs(Clothes): #subclass for elements of lowe body clothes
     def super():__init__(name, file_path, x, y)
@@ -64,11 +64,11 @@ sukienka_magenta = Dress("sukienka_magenta", "data/Dresses/sukienka_magenta.png"
 
 
 exit_button = Button("exit_button", "data/Buttons/exit_button.png", 10, 10)
-quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)
-quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)
 reset_button = Button("reset_button", "data/Buttons/reset_button.png", 135, 5)
-start_button = Button("start_button", "data/Buttons/start_button.png", x, y)
-start_hover_button = Button("start_hover_button", "data/Buttons/start_hover_button.png", x, y)
+#quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)
+#quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)
+#start_button = Button("start_button", "data/Buttons/start_button.png", x, y)
+#start_hover_button = Button("start_hover_button", "data/Buttons/start_hover_button.png", x, y)
                      
                      
 # class Wardrobe: #klasa dla szafy 
