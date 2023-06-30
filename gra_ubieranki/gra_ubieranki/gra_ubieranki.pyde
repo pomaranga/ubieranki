@@ -20,17 +20,17 @@ class Character():
         self.rect.x = x
         self.rect.y = y
 
-def menu_start():
-    global start, quit, starthover, quithover
-    image(start,100,300) #B.Rząd
-    image(quit,650,300) #B.Rząd
-    if(mouseX > 100 and mouseX < 535 and mouseY > 310 and mouseY < 492):
-        image(starthover,100,300)
-    if(mouseX > 665 and mouseX < 1100 and mouseY > 310 and mouseY < 492):
-        image(quithover,650,300)
-    if(mousePressed and mouseX > 665 and mouseX < 1100 and mouseY > 310 and mouseY < 492):
-        clear()
-        exit()
+# def menu_start():
+#     global start, quit, starthover, quithover
+#     image(start,100,300) #B.Rząd
+#     image(quit,650,300) #B.Rząd
+#     if(mouseX > 100 and mouseX < 535 and mouseY > 310 and mouseY < 492):
+#         image(starthover,100,300)
+#     if(mouseX > 665 and mouseX < 1100 and mouseY > 310 and mouseY < 492):
+#         image(quithover,650,300)
+#     if(mousePressed and mouseX > 665 and mouseX < 1100 and mouseY > 310 and mouseY < 492):
+#         clear()
+#         exit()
 
 
 
@@ -116,7 +116,7 @@ def draw():
         cursor(ARROW)
         background(0)
         image(webImg,0,0)
-    menu_start()
+#     menu_start()
     background(0)
     image(webImg,0,0)
     #image(wlosyczarne, -150, -400) #Kornecka
