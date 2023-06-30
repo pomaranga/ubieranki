@@ -1,8 +1,11 @@
 #Anhelina Hlushanok
-class Item: #klasa dla rzeczy w szafie
-    def __init__(self, name, category):
+class Clothes: #class for elements of clothes
+    def __init__(self, file_path, x, y):
         self.name = name
         self.category = category
+        
+class Interface: #class for interface elements (bottoms)
+    
         
 class Wardrobe: #klasa dla szafy 
     def __init__(self):
