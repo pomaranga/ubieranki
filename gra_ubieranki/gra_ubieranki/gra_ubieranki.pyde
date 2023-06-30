@@ -4,18 +4,19 @@ class Clothes: #class for elements of clothes; that class was originally created
         self.file_path = file_path
         self.x = x
         self.y = y
-        
+
+class Hair_Style(Clothes): #subclass for elements hairstyles
+    def super():__init__(name, file_path, x, y)
+                      
 class Torso(Clothes): #subclass for elements of upper body clothes
     def super():__init__(name, file_path, x, y) #command 'super():' integrating previous self-commands from base class
     
-class Hair_Style(Clothes): #subclass for elements hairstyles
+class Legs(Clothes): #subclass for elements of lowe body clothes
     def super():__init__(name, file_path, x, y)
     
 class Footwear(Clothes): #subclass for elements of footwear
     def super():__init__(name, file_path, x, y)
 
-class Legs(Clothes): #subclass for elements of lowe body clothes
-    def super():__init__(name, file_path, x, y)
 
 class Dress(Clothes): #subclass for elements of full body clothes
     def super():__init__(name, file_path, x, y)
@@ -62,10 +63,10 @@ sukienka_czarna_2 = Dress("sukienka_czarna_2", "data/Dresses/sukienka_czarna_2.p
 sukienka_magenta = Dress("sukienka_magenta", "data/Dresses/sukienka_magenta.png", x, y)
 
 
-exit_button = Button("exit_button", "data/Buttons/exit_button.png", x, y)
+exit_button = Button("exit_button", "data/Buttons/exit_button.png", 10, 10)
 quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)
 quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)
-reset_button = Button("reset_button", "data/Buttons/reset_button.png", x, y)
+reset_button = Button("reset_button", "data/Buttons/reset_button.png", 135, 5)
 start_button = Button("start_button", "data/Buttons/start_button.png", x, y)
 start_hover_button = Button("start_hover_button", "data/Buttons/start_hover_button.png", x, y)
                      
@@ -111,8 +112,9 @@ hat_selected = False
 dress_selected = False
 shoes_selected = False 
 
-def nazwij_postac():
+
 # Możliwość nazwania postaci (Joanna Baran)
+def nazwij_postac():
     name_character = input(u"Wpisz nazwę postaci: ")
     if name_character:
         print(u"Miło mi Cię poznać, jestem:", name_character)
@@ -135,46 +137,70 @@ if shoes_selected:
 
 
 def setup():
-    global webImg,wlosybrazImg, start,flaga_wlosy, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dress, dress_x, dress_y, is_dragging, mouse_offsetdress, mouse_offsethair, hair, hair_x, hair_y, hair2Img, shoesImg, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg, wlosyczarne, sukienkaczarna, koszulkaczarna, sukienkamagenta
+    global exit_button, reset_button #is_dragging, mouse_offsetdress, mouse_offsethair, flaga_wlosy
     size(1200,800)
     textSize(50) 
-    #img = loadImage('C:/Users/user_x/Desktop/ubierani/ubieranki/postasc.hair2.PNG')
-    #url = 'https://kartinki.pibig.info/uploads/posts/2023-04/1682411811_kartinki-pibig-info-p-garderobnaya-kartinki-arti-instagram-2.jpg'
-    #webImg = loadImage(url, "jpg")
-    start = loadImage("star_img.png") #B.Rząd
-    quit = loadImage("quit_img.png") #B.Rząd
-    starthover = loadImage("star_hover_img.png") #B.Rząd
-    quithover = loadImage("quit_hover_img.png") #B.Rząd
-    wyjscieImg = loadImage("exit.png")  #Wladiskowacz
-    resetImg = loadImage("reset.png")  #Wladiskowacz
-    characterImg = loadImage("character.PNG")  #Wladiskowacz
-    dress = loadImage("dress.PNG")
-    dress_x = width / 2 - dress.width / 2
-    dress_y = height / 2 - dress.height / 2
-    is_dragging = False
-    mouse_offsetdress = PVector(0, 0)  #Wladiskowacz
-    hair = loadImage("hair.PNG")  
-    hair_x = width / 2 - hair.width / 2
-    hair_y = height / 2 - hair.height / 2
-    is_dragging2 = False 
-    mouse_offsethair = PVector(0, 0) #Pshenychniak
-    hairImg = loadImage("hair.PNG")  #Wladiskowacz
-    hair2Img = loadImage("hair2.PNG")  #Wladiskowacz
-    shoesImg = loadImage("shoes.PNG")  #Wladiskowacz
-    spodnicaniebieskaImg = loadImage("spodnicaniebieskaImg.png") #Patrycja Leśniak
-    bluzkarozowaImg = loadImage("bluzkarozowaImg.png") #Patrycja Leśniak
-    klapkirozoweImg = loadImage("klapkirozoweImg.png") #Patrycja Leśniak
-    #wlosyblondImg = loadImage("wlosyblondImg.png") #Patrycja Leśniak
-    wlosyczarne = loadImage("wlosy_czarne.png") #Kornecka
-    koszulkaczarna = loadImage("koszulka_czarna.png") #Kornecka
-    sukienkaczarna = loadImage("sukienka_czarna.png") #Kornecka
-    sukienkamagenta = loadImage("sukienka_magenta.png") #Kornecka
+    
+    # start = loadImage("star_img.png") #B.Rząd
+    # quit = loadImage("quit_img.png") #B.Rząd
+    # starthover = loadImage("star_hover_img.png") #B.Rząd
+    # quithover = loadImage("quit_hover_img.png") #B.Rząd
+    
+    exit_button = loadImage(exit_button.file_path)  #Władysław Bacewicz
+    reset_button = loadImage(reset_button.file_path)  #Władysław Bacewicz
+    characterImg = loadImage("data/character.png")  #Władysław Bacewicz
+    sukienka_czarna_1 = loadImage(sukienka_czarna_1.file_path)
+    
+    # dress_x = width / 2 - dress.width / 2 #it must be x coordinate of "sukienka_czarna_1"
+    # dress_y = height / 2 - dress.height / 2 #it must be y coordinate of "sukienka_czarna_1"
+    
+    
+    # is_dragging = False
+    
+    
+    # mouse_offsetdress = PVector(0, 0)  #Wladiskowacz
+    
+    
+    hair_1 = loadImage(hari_1.file_path) 
+     
+    # hair_x = width / 2 - hair.width / 2 #it must be x coordinate of "hair_1"
+    # hair_y = height / 2 - hair.height / 2 #it must be y coordinate of "hair_1"
+    
+    
+    # is_dragging2 = False 
+    
+    
+    # mouse_offsethair = PVector(0, 0) #Pshenychniak
+    
+    hair_2 = loadImage(hair_2.file_path)  #Wladiskowacz
+    wlosy_blond = loadImage(wlosy_blond.file_path)  #Patrycja Leśniak
+    wlosy_brazowe = loadImage(wlosy_brazowe.file_path)
+    wlosy_czarne_1 = loadImage(wlosy_czarne_1.file_path)
+    wlosy_czarne_2 = loadImage(wlosy_czarne_2.file_path) #Julia Kornecka
+    
+    bluzka_niebieska = loadImage(bluzka_niebieska.file_path)
+    bluzka_rozowa = loadImage(bluzka_rozowa.file_path) #Patrycja Leśniak
+    bluzka_zielona = loadImage(blizka_zielona.file_path)
+    koszulka_czarna = loadImage(koszulka_czarna.file_path) #Julia Kornecka
+    
+    spodnica_brazowa = loadImage(spodnica_brazowa.file_path)
+    spodnica_czerwona = loadImage(spodnica_czerwona.file_path)
+    spodnica_fioletowa = loadImage(spodnica_fioletowa.file_path)
+    spodnica_niebieska = loadImage(spodnica_niebieska.file_path) #Patrycja Leśniak
+    spodnica_zielona = loadImage(spodnica_zielona.file_path)
+    
+    black_shoes = loadImage(black_shoes.file_path)  #Władysław Bacewicz
+    klapki_fioletowe = loadImage(klapki_fioletowe.file_path)
+    klapki_rozowe = loadImage(klapki_rozoweImg.file_path) #Patrycja Leśniak
+    klapki_zielone = loadImage(klapki_zielone.file_path)
+    
+    sukienka_czarna_1 = loadImage(sukienka_czarna_1.file_path)
+    sukienka_czarna_2 = loadImage(sukienka_czarna_2.file_path) #Julia Kornecka
+    sukienka_magenta = loadImage(sukienka_magenta.file_path) #Julia Kornecka
    
     
-    wlosyblondImg = loadImage("wlosyblondImg.png")
-    wlosybrazImg =  loadImage("wlosybrazImg.png")
 
-    flaga_wlosy = True 
+    # flaga_wlosy = True #???
     
     
     
