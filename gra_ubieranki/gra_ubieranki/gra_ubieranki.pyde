@@ -1,5 +1,5 @@
 class Clothes: #class for elements of clothes; that class was originally created by Anhelina Hlushanok
-    def __init__(self, name file_path, x, y):
+    def __init__(self, name, file_path, x, y):
         self.name = name
         self.file_path = file_path
         self.x = x
@@ -175,6 +175,15 @@ def setup():
     wlosybrazImg =  loadImage("wlosybrazImg.png")
 
     flaga_wlosy = True 
+    
+    
+    
+    
+    
+    
+    
+    
+    
 def draw():
     if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
         cursor(HAND)
