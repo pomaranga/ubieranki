@@ -1,12 +1,12 @@
 class Clothes: #class for elements of clothes
-    def __init__(self, name file_path, x, y):
+    def __init__(self, name, file_path, x, y):
         self.name = name
         self.file_path = file_path
         self.x = x
         self.y = y
         
 class Torso(Clothes): #subclass for elements of upper body clothes
-    def super():__init__(name, file_path, x, y) #command 'super():' integrating previous self-commands from base class
+    def super():__init__(name, file_path, x, y)
     
 class Hair_Style(Clothes): #subclass for elements hairstyles
     def super():__init__(name, file_path, x, y)
@@ -29,47 +29,14 @@ class Interface: #class for interface elements
         self.x = x
         self.y = y
     
-class Button(Interface): #subclass for buttoms
+class Bottoms(Interface): #subclass for bottoms
     def super():__init__(name, file_path, x, y)
-        
-
-
-bluzka_niebieska = Torso("bluzka_niebieska", "data/Torso/bluzka_niebieska.png", x, y)
-bluzka_rozowa = Torso("bluzka_rozowa", "data/Torso/bluzka_rozowa.png", x, y)
-bluzka_zielona = Torso("bluzka_zielona", "data/Torso/bluzka_zielona.png", x, y)
-koszulka_czarna = Torso("koszulka_czarna", "data/Torso/koszulka_czarna.png", x, y)
-
-hair_1 = Hair_Style("hair_1", "data/Hair/hair_1.png", x, y)
-hair_2 = Hair_Style("hair_2", "data/Hair/hair_2.png", x, y)
-wlosy_blond = Hair_Style("wlosy_blond", "data/Hair/wlosy_blond.png", x, y)
-wlosy_brazowe = Hair_Style("wlosy_brazowe", "data/Hair/wlosy_brazowe.png", x, y)
-wlosy_czarne_1 = Hair_Style("wlosy_czarne_1", "data/Hair/wlosy_czarne_1.png", x, y)
-wlosy_czarne_2 = Hair_Style("wlosy_czarne_2", "data/Hair/wlosy_czarne_2.png", x, y)
-
-black_shoes = Footwear("black_shoes", "data/Footwear/black_shoes.png", x, y)
-klapki_fioletowe = Footwear("klapki_fioletowe", "data/Footwear/klapki_fioletowe.png", x, y)
-klapki_rozowe = Footwear("klapki_rozowe", "data/Footwear/klapki_rozowe.png", x, y)
-klapki_zielone = Footwear("klapki_fioletowe", "data/Footwear/klapki_fioletowe.png", x, y)
     
-spodnica_brazowa = Legs("spodnica_brazowa", "data/Legs/spodnica_brazowa.png", x, y)
-spodnica_czerwona = Legs("spodnica_czerwona", "data/Legs/spodnica_czerwona.png", x, y)
-spodnica_fioletowa = Legs("spodnica_fioletowa", "data/Legs/spodnica_fioletowa.png", x, y)
-spodnica_niebieska = Legs("spodnica_niebieska", "data/Legs/spodnica_niebieska.png", x, y)
-spodnica_zielona = Legs("spodnica_zielona", "data/Legs/spodnica_zielona.png", x, y)
-
-sukienka_czarna_1 = Dress("sukienka_czarna_1", "data/Dresses/sukienka_czarna_1.png", x, y)
-sukienka_czarna_2 = Dress("sukienka_czarna_2", "data/Dresses/sukienka_czarna_2.png", x, y)
-sukienka_magenta = Dress("sukienka_magenta", "data/Dresses/sukienka_magenta.png", x, y)
-
-
-exit_button = Button("exit_button", "data/Buttons/exit_button.png", x, y)
-quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)
-quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)
-reset_button = Button("reset_button", "data/Buttons/reset_button.png", x, y)
-start_button = Button("start_button", "data/Buttons/start_button.png", x, y)
-start_hover_button = Button("start_hover_button", "data/Buttons/start_hover_button.png", x, y)
-                     
-                     
+    
+bluzka_niebieska = ("Bluzka_Niebieska", "data/bluzkaniebieskaImg.png", 
+        
+        
+        
 # class Wardrobe: #klasa dla szafy 
 #     def __init__(self):
 #         self.items = []
