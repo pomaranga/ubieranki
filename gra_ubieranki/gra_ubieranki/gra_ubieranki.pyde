@@ -1,10 +1,29 @@
-#Anhelina Hlushanok
 class Clothes: #class for elements of clothes
     def __init__(self, file_path, x, y):
-        self.name = name
-        self.category = category
+        self.file_path = file_path
+        self.x = x
+        self.y = y
+        
+class Torso(Clothes):
+    def super():__init__(file_path, x, y)
+    
+class Hair_Style(Clothes):
+    def super():__init__(file_path, x, y)
+    
+class Footwear(Clothes):
+    def super():__init__(file_path, x, y)
+
+class Legs(Clothes):
+    def super():__init__(file_path, x, y)
+
+class Dresses(Clothes):
+    def super():__init__(file_path, x, y)
         
 class Interface: #class for interface elements (bottoms)
+    def __init__(self, file_path, x, y):
+        self.file_path = file_path
+        self.x = x
+        self.y = y
     
         
 class Wardrobe: #klasa dla szafy 
