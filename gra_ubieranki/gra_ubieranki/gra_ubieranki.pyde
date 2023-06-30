@@ -1,4 +1,4 @@
-class Clothes: #class for elements of clothes
+class Clothes: #class for elements of clothes; that class was originally created by Anhelina Hlushanok
     def __init__(self, name file_path, x, y):
         self.name = name
         self.file_path = file_path
