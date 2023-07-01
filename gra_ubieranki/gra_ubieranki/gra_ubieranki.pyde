@@ -7,24 +7,24 @@ class Clothes(): #class for elements of clothes; that class was originally creat
 
 class Hair(Clothes): #subclass for elements of hairstyles
     def __init__(self, name, file_path, x, y):
-                 super().__init__(name, file_path, x, y) #command 'super().' integrating previous self-parameteres from base class
+        Clothes.__init__(self, name, file_path, x, y) #command 'super().' doesn't work
                       
 class Torso(Clothes): #subclass for elements of upper body clothes
     def __init__(self, name, file_path, x, y):
-                 super().__init__(name, file_path, x, y) 
+        Clothes.__init__(self, name, file_path, x, y)
     
-class Legs(Clothes): #subclass for elements of lowe body clothes
+class Legs(Clothes): #subclass for elements of lower body clothes
     def __init__(self, name, file_path, x, y):
-                 super().__init__(name, file_path, x, y)
+        Clothes.__init__(self, name, file_path, x, y)
     
 class Footwear(Clothes): #subclass for elements of footwear
     def __init__(self, name, file_path, x, y):
-                 super().__init__(name, file_path, x, y)
+        Clothes.__init__(self, name, file_path, x, y)
 
 
 class Dress(Clothes): #subclass for elements of full body clothes
     def __init__(self, name, file_path, x, y):
-                 super().__init__(name, file_path, x, y)
+        Clothes.__init__(self, name, file_path, x, y)
         
         
         
@@ -37,9 +37,9 @@ class Interface: #class for interface elements
     
 class Button(Interface): #subclass for buttoms
     def __init__(self, name, file_path, x, y, size_x, size_y):
-                 super().__init__(name, file_path, x, y)
-                 self.size_x = size_x
-                 self.size_y = size_y
+        Interface.__init__(self, name, file_path, x, y)
+        self.size_x = size_x
+        self.size_y = size_y
 
 
 bluzka_niebieska = Torso("bluzka_niebieska", "data/Torso/bluzka_niebieska.png", 1500, 200)
@@ -148,7 +148,7 @@ dress_selected = False
 
 def setup():
     global exit_button, reset_button #is_dragging, mouse_offsetdress, mouse_offsethair, flaga_wlosy
-    size(1280,720)
+    size(1280, 720)
     textSize(40) 
     
     # start = loadImage("star_img.png") #B.Rząd
@@ -173,7 +173,7 @@ def setup():
     # mouse_offsetdress = PVector(0, 0)  #Wladiskowacz
     
     
-    hair_1 = loadImage(hari_1.file_path) 
+    hair_1 = loadImage(hair_1.file_path) 
      
     # hair_x = width / 2 - hair.width / 2 #it must be x coordinate of "hair_1"
     # hair_y = height / 2 - hair.height / 2 #it must be y coordinate of "hair_1"
