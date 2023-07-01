@@ -1,4 +1,3 @@
-
 class Clothes(): #class for elements of clothes; that class was originally created by Anhelina Hlushanok
     def __init__(self, name, file_path, x, y):
         self.name = name
@@ -149,6 +148,8 @@ def setup():
     # starthover = loadImage("star_hover_img.png") #B.Rząd
     # quithover = loadImage("quit_hover_img.png") #B.Rząd
     
+    background_image = loadImage("data/background_image.png")
+    
     exit_button = loadImage(exit_button.file_path)  #Władysław Bacewicz
     reset_button = loadImage(reset_button.file_path)  #Władysław Bacewicz
     characterImg = loadImage("data/character.png")  #Władysław Bacewicz
@@ -219,7 +220,7 @@ def draw():
     else: 
         cursor(ARROW)
         background(0)
-        image(webImg,0,0)
+        image(background_image,0,0)
 #     menu_start()
     background(0)
     image(webImg,0,0)
@@ -235,12 +236,12 @@ def draw():
     fill(255,255,255)
 
   
-    text("hat", width//2-500, height//2-200, 40)   
-    text("dress", width//2-500, height//2-150, 80)
-    text("hair", width//2-500, height//2-150, 80)  #Vitalii Pshenychniak
-    text("Hair_2", width//2-500, height//2-50, 80)  #Wladiskowacz
-    text("Shoes", width//2-500, height//2-0, 80)  #Wladiskowacz
-    image(wyjscieImg, 10, 10, 120, 60)  #Wladiskowacz
+    text("Hair", width//2-500, height//2-200, 40)   
+    text("Torso", width//2-500, height//2-150, 80)
+    text("Legs", width//2-500, height//2-100, 80)  #Vitalii Pshenychniak
+    text("Footwear", width//2-500, height//2-50, 80)  #Wladiskowacz
+    text("Dresses", width//2-500, height//2-0, 80)  #Wladiskowacz
+    image(exit_button, 10, 10, 120, 60)  #Wladiskowacz
     image(resetImg, 135, 5, 130, 70)  #Wladiskowacz
     image(characterImg, 600, 200, 150, 430)  #Wladiskowacz
     image(dress, dress_x, dress_y)
@@ -252,22 +253,22 @@ def draw():
     image(klapkirozoweImg, 250, 140, 150, 450) #Patrycja Leśniak
     #image(wlosyblondImg, 250, 100, 150, 450) #Patrycja Leśniak
     
-    if flaga_wlosy:
-        image(wlosyblondImg, 250, 100, 150, 450)
-    else:
-        image(wlosybrazImg,250, 100, 150, 450)
+    # if flaga_wlosy:
+    #     image(wlosyblondImg, 250, 100, 150, 450)
+    # else:
+    #     image(wlosybrazImg,250, 100, 150, 450)
         
         
    
 
-def mouseClicked():  #Wladiskowacz (prawdopodobnie po kliknięciu przycisku „sukienka” pojawia się na ekranie(dodac))
-    global reset, flaga_wlosy
-    if mouseX > 137 and mouseX < 260 and mouseY > 5 and mouseY < 75:
-        reset()
-    if mouseX > 5 and mouseX < 130 and mouseY > 5 and mouseY < 75:
-        exit()
-    if mouseX < 300 and mouseY<300 :   #alex
-      flaga_wlosy =  not flaga_wlosy
+# def mouseClicked():  #Wladiskowacz (prawdopodobnie po kliknięciu przycisku „sukienka” pojawia się na ekranie(dodac))
+#     global reset, flaga_wlosy
+#     if mouseX > 137 and mouseX < 260 and mouseY > 5 and mouseY < 75:
+#         reset()
+#     if mouseX > 5 and mouseX < 130 and mouseY > 5 and mouseY < 75:
+#         exit()
+#     if mouseX < 300 and mouseY<300 :   #alex
+#       flaga_wlosy =  not flaga_wlosy
 
 def mousePressed():
     global is_dragging, is_dragging2, mouse_offsetdress, mouse_offsethair
