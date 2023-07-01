@@ -42,36 +42,37 @@ class Button(Interface): #subclass for buttoms
                  self.size_y = size_y
 
 
-bluzka_niebieska = Torso("bluzka_niebieska", "data/Torso/bluzka_niebieska.png", x, y)
-bluzka_rozowa = Torso("bluzka_rozowa", "data/Torso/bluzka_rozowa.png", x, y)
-bluzka_zielona = Torso("bluzka_zielona", "data/Torso/bluzka_zielona.png", x, y)
-koszulka_czarna = Torso("koszulka_czarna", "data/Torso/koszulka_czarna.png", x, y)
+bluzka_niebieska = Torso("bluzka_niebieska", "data/Torso/bluzka_niebieska.png", 1500, 200)
+bluzka_rozowa = Torso("bluzka_rozowa", "data/Torso/bluzka_rozowa.png", 1500, 200)
+bluzka_zielona = Torso("bluzka_zielona", "data/Torso/bluzka_zielona.png", 1500, 200)
+koszulka_czarna = Torso("koszulka_czarna", "data/Torso/koszulka_czarna.png", 1500, 200)
 
-hair_1 = Hair("hair_1", "data/Hair/hair_1.png", x, y)
-hair_2 = Hair("hair_2", "data/Hair/hair_2.png", x, y)
-wlosy_blond = Hair("wlosy_blond", "data/Hair/wlosy_blond.png", x, y)
-wlosy_brazowe = Hair("wlosy_brazowe", "data/Hair/wlosy_brazowe.png", x, y)
-wlosy_czarne_1 = Hair("wlosy_czarne_1", "data/Hair/wlosy_czarne_1.png", x, y)
-wlosy_czarne_2 = Hair("wlosy_czarne_2", "data/Hair/wlosy_czarne_2.png", x, y)
+hair_1 = Hair("hair_1", "data/Hair/hair_1.png", 1500, 200)
+hair_2 = Hair("hair_2", "data/Hair/hair_2.png", 1500, 200)
+wlosy_blond = Hair("wlosy_blond", "data/Hair/wlosy_blond.png", 1500, 200)
+wlosy_brazowe = Hair("wlosy_brazowe", "data/Hair/wlosy_brazowe.png", 1500, 200)
+wlosy_czarne_1 = Hair("wlosy_czarne_1", "data/Hair/wlosy_czarne_1.png", 1500, 200)
+wlosy_czarne_2 = Hair("wlosy_czarne_2", "data/Hair/wlosy_czarne_2.png", 1500, 200)
 
-black_shoes = Footwear("black_shoes", "data/Footwear/black_shoes.png", x, y)
-klapki_fioletowe = Footwear("klapki_fioletowe", "data/Footwear/klapki_fioletowe.png", x, y)
-klapki_rozowe = Footwear("klapki_rozowe", "data/Footwear/klapki_rozowe.png", x, y)
-klapki_zielone = Footwear("klapki_fioletowe", "data/Footwear/klapki_fioletowe.png", x, y)
+black_shoes = Footwear("black_shoes", "data/Footwear/black_shoes.png", 1500, 200)
+klapki_fioletowe = Footwear("klapki_fioletowe", "data/Footwear/klapki_fioletowe.png", 1500, 200)
+klapki_rozowe = Footwear("klapki_rozowe", "data/Footwear/klapki_rozowe.png", 1500, 200)
+klapki_zielone = Footwear("klapki_fioletowe", "data/Footwear/klapki_fioletowe.png", 1500, 200)
     
-spodnica_brazowa = Legs("spodnica_brazowa", "data/Legs/spodnica_brazowa.png", x, y)
-spodnica_czerwona = Legs("spodnica_czerwona", "data/Legs/spodnica_czerwona.png", x, y)
-spodnica_fioletowa = Legs("spodnica_fioletowa", "data/Legs/spodnica_fioletowa.png", x, y)
-spodnica_niebieska = Legs("spodnica_niebieska", "data/Legs/spodnica_niebieska.png", x, y)
-spodnica_zielona = Legs("spodnica_zielona", "data/Legs/spodnica_zielona.png", x, y)
+spodnica_brazowa = Legs("spodnica_brazowa", "data/Legs/spodnica_brazowa.png", 1500, 200)
+spodnica_czerwona = Legs("spodnica_czerwona", "data/Legs/spodnica_czerwona.png", 1500, 200)
+spodnica_fioletowa = Legs("spodnica_fioletowa", "data/Legs/spodnica_fioletowa.png", 1500, 200)
+spodnica_niebieska = Legs("spodnica_niebieska", "data/Legs/spodnica_niebieska.png", 1500, 200)
+spodnica_zielona = Legs("spodnica_zielona", "data/Legs/spodnica_zielona.png", 1500, 200)
 
-sukienka_czarna_1 = Dress("sukienka_czarna_1", "data/Dresses/sukienka_czarna_1.png", x, y)
-sukienka_czarna_2 = Dress("sukienka_czarna_2", "data/Dresses/sukienka_czarna_2.png", x, y)
-sukienka_magenta = Dress("sukienka_magenta", "data/Dresses/sukienka_magenta.png", x, y)
+sukienka_czarna_1 = Dress("sukienka_czarna_1", "data/Dresses/sukienka_czarna_1.png", 1500, 200)
+sukienka_czarna_2 = Dress("sukienka_czarna_2", "data/Dresses/sukienka_czarna_2.png", 1500, 200)
+sukienka_magenta = Dress("sukienka_magenta", "data/Dresses/sukienka_magenta.png", 1500, 200)
 
 
 exit_button = Button("exit_button", "data/Buttons/exit_button.png", 1155, 5, 80, 40)
 reset_button = Button("reset_button", "data/Buttons/reset_button.png", 700, 625, 80, 40)
+
 #quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)
 #quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)
 #start_button = Button("start_button", "data/Buttons/start_button.png", x, y)
@@ -133,15 +134,15 @@ dress_selected = False
 
 
 # Przesunięcie wybranych elementów ubioru za pomocą myszy
-if hat_selected:
-        hair_x = mouse_x - hair_img.get_width() // 2
-        hair_y = mouse_y - hair_img.get_height() // 2
-if dress_selected:
-        dress_x = mouse_x - dress_img.get_width() // 2
-        dress_y = mouse_y - dress_img.get_height() // 2
-if shoes_selected:
-        shoes_x = mouse_x - shoes_img.get_width() // 2
-        shoes_y = mouse_y - shoes_img.get_height() // 2
+# if hair_selected:
+#         hair.x = mouseX - hair_img.get_width() // 2
+#         hair.y = mouseY - hair_img.get_height() // 2
+# if dress_selected:
+#         dress.x = mouseX - dress_img.get_width() // 2
+#         dress.y = mouseY - dress_img.get_height() // 2
+# if footwear_selected:
+#         footwear.x = mouseX - shoes_img.get_width() // 2
+#         footwear.y = mouseY - shoes_img.get_height() // 2
 
 
 
@@ -227,17 +228,17 @@ def draw():
     else: 
         cursor(ARROW)
         background(0)
-        image(background_image,0,0)
+        image(background_image, 0, 0)
 #     menu_start()
     background(0)
-    image(webImg,0,0)
+    image(background_image, 0, 0)
     #image(wlosyczarne, -150, -400) #Kornecka
-    image(koszulkaczarna, -140, -250) #Kornecka
-    image(sukienkaczarna, 600, -400) #Kornecka
-    image(sukienkamagenta, 460, -100) #Kornecka
-    fill(30,30,30, 200)
+    # image(koszulkaczarna, -140, -250) #Kornecka
+    # image(sukienkaczarna, 600, -400) #Kornecka
+    # image(sukienkamagenta, 460, -100) #Kornecka
+    fill(30, 30, 30, 200)
     rect(20, 100, 300, 600, 10)    
-    fill(400,400,400, 400)
+    fill(400, 400, 400, 400)
     rect(600, 200, 150, 450, 10)
 
     fill(255,255,255)
@@ -250,15 +251,15 @@ def draw():
     text("Dresses", width//2-500, height//2-0, 80)  #Wladiskowacz
     image(exit_button, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)  #Wladiskowacz
     image(reset_button, reset_button.x, reset_button.y, reset_button.size_x, reset_button.size_y)  #Wladiskowacz
-    image(character_mage, 600, 200, 150, 430)  #Wladiskowacz
-    image(dress, dress_x, dress_y)
-    image(hair, hair_x, hair_y) #Pshenychniak
-    image(hair2Img, 600, 200, 150, 450)  #Wladiskowacz
-    image(shoesImg, 600, 180, 150, 450)  #Wladiskowacz
-    image(spodnicaniebieskaImg, 250, 180, 150, 450) #Patrycja Leśniak
-    image(bluzkarozowaImg, 250, 160, 150, 450) #Patrycja Leśniak
-    image(klapkirozoweImg, 250, 140, 150, 450) #Patrycja Leśniak
-    #image(wlosyblondImg, 250, 100, 150, 450) #Patrycja Leśniak
+    image(character_image, 600, 200)  #Wladiskowacz
+    # image(dress, dress_x, dress_y)
+    # image(hair, hair_x, hair_y) #Pshenychniak
+    # image(hair2Img, 600, 200, 150, 450)  #Wladiskowacz
+    # image(shoesImg, 600, 180, 150, 450)  #Wladiskowacz
+    # image(spodnicaniebieskaImg, 250, 180, 150, 450) #Patrycja Leśniak
+    # image(bluzkarozowaImg, 250, 160, 150, 450) #Patrycja Leśniak
+    # image(klapkirozoweImg, 250, 140, 150, 450) #Patrycja Leśniak
+    # image(wlosyblondImg, 250, 100, 150, 450) #Patrycja Leśniak
     
     # if flaga_wlosy:
     #     image(wlosyblondImg, 250, 100, 150, 450)
@@ -277,39 +278,39 @@ def draw():
 #     if mouseX < 300 and mouseY<300 :   #alex
 #       flaga_wlosy =  not flaga_wlosy
 
-def mousePressed():
-    global is_dragging, is_dragging2, mouse_offsetdress, mouse_offsethair
-    if dress_x <= mouseX <= dress_x + dress.width and dress_y <= mouseY <= dress_y + dress.height:
-        is_dragging = True
-        mouse_offsetdress.x = dress_x - mouseX
-        mouse_offsetdress.y = dress_y - mouseY
-    if hair_x <= mouseX <= hair_x + hair.width and hair_y <= mouseY <= hair_y + hair.height:
-        is_dragging2 = True
-        mouse_offsethair.x = hair_x - mouseX
-        mouse_offsethair.y = hair_y - mouseY
+# def mousePressed():
+#     global is_dragging, is_dragging2, mouse_offsetdress, mouse_offsethair
+#     if dress_x <= mouseX <= dress_x + dress.width and dress_y <= mouseY <= dress_y + dress.height:
+#         is_dragging = True
+#         mouse_offsetdress.x = dress_x - mouseX
+#         mouse_offsetdress.y = dress_y - mouseY
+#     if hair_x <= mouseX <= hair_x + hair.width and hair_y <= mouseY <= hair_y + hair.height:
+#         is_dragging2 = True
+#         mouse_offsethair.x = hair_x - mouseX
+#         mouse_offsethair.y = hair_y - mouseY
 
         
         
-def mouseReleased():
-    global is_dragging, is_dragging2
-    is_dragging = False
-    is_dragging2 = False
+# def mouseReleased():
+#     global is_dragging, is_dragging2
+#     is_dragging = False
+#     is_dragging2 = False
 
-def mouseDragged():
-    global dress_x, dress_y, hair_x, hair_y
-    if is_dragging:
-        dress_x = mouseX + mouse_offsetdress.x
-        dress_y = mouseY + mouse_offsetdress.y
-    if is_dragging2:
-        hair_x = mouseX + mouse_offsethair.x
-        hair_y = mouseY + mouse_offsethair.y
+# def mouseDragged():
+#     global dress_x, dress_y, hair_x, hair_y
+#     if is_dragging:
+#         dress_x = mouseX + mouse_offsetdress.x
+#         dress_y = mouseY + mouse_offsetdress.y
+#     if is_dragging2:
+#         hair_x = mouseX + mouse_offsethair.x
+#         hair_y = mouseY + mouse_offsethair.y
       
 
 
-def reset():  #Wladiskowacz (prawdopodobnie po kliknięciu znika z ekranu)
-    global x, y
-    imageMode(CENTER)
-    image(dressImg, -200, -200) #Nie dziala :(
+# def reset():  #Wladiskowacz (prawdopodobnie po kliknięciu znika z ekranu)
+#     global x, y
+#     imageMode(CENTER)
+#     image(dressImg, -200, -200) #Nie dziala :(
     
 
     
