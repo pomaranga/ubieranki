@@ -31,8 +31,10 @@ class Interface: #class for interface elements
         self.y = y
     
 class Button(Interface): #subclass for buttoms
-    def super():__init__(name, file_path, x, y)
-        
+    def __init__(self, name, file_path, x, y, size_x, size_y):
+                 super().__init__(name, file_path, x, y)
+                 self.size_x = size_x
+                 self.size_y = size_y
 
 
 bluzka_niebieska = Torso("bluzka_niebieska", "data/Torso/bluzka_niebieska.png", x, y)
@@ -63,8 +65,8 @@ sukienka_czarna_2 = Dress("sukienka_czarna_2", "data/Dresses/sukienka_czarna_2.p
 sukienka_magenta = Dress("sukienka_magenta", "data/Dresses/sukienka_magenta.png", x, y)
 
 
-exit_button = Button("exit_button", "data/Buttons/exit_button.png", 10, 10)
-reset_button = Button("reset_button", "data/Buttons/reset_button.png", 135, 5)
+exit_button = Button("exit_button", "data/Buttons/exit_button.png", 1155, 5, 80, 40)
+reset_button = Button("reset_button", "data/Buttons/reset_button.png", 700, 625, 80, 40)
 #quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)
 #quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)
 #start_button = Button("start_button", "data/Buttons/start_button.png", x, y)
@@ -152,7 +154,7 @@ def setup():
     
     exit_button = loadImage(exit_button.file_path)  #Władysław Bacewicz
     reset_button = loadImage(reset_button.file_path)  #Władysław Bacewicz
-    characterImg = loadImage("data/character.png")  #Władysław Bacewicz
+    character_image = loadImage("data/character.png")  #Władysław Bacewicz
     sukienka_czarna_1 = loadImage(sukienka_czarna_1.file_path)
     
     # dress_x = width / 2 - dress.width / 2 #it must be x coordinate of "sukienka_czarna_1"
@@ -241,9 +243,9 @@ def draw():
     text("Legs", width//2-500, height//2-100, 80)  #Vitalii Pshenychniak
     text("Footwear", width//2-500, height//2-50, 80)  #Wladiskowacz
     text("Dresses", width//2-500, height//2-0, 80)  #Wladiskowacz
-    image(exit_button, 10, 10, 120, 60)  #Wladiskowacz
-    image(resetImg, 135, 5, 130, 70)  #Wladiskowacz
-    image(characterImg, 600, 200, 150, 430)  #Wladiskowacz
+    image(exit_button, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)  #Wladiskowacz
+    image(reset_button, reset_button.x, reset_button.y, reset_button.size_x, reset_button.size_y)  #Wladiskowacz
+    image(character_mage, 600, 200, 150, 430)  #Wladiskowacz
     image(dress, dress_x, dress_y)
     image(hair, hair_x, hair_y) #Pshenychniak
     image(hair2Img, 600, 200, 150, 450)  #Wladiskowacz
