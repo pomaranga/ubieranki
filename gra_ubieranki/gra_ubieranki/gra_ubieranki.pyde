@@ -1,11 +1,12 @@
-class Clothes: #class for elements of clothes; that class was originally created by Anhelina Hlushanok
+
+class Clothes(): #class for elements of clothes; that class was originally created by Anhelina Hlushanok
     def __init__(self, name, file_path, x, y):
         self.name = name
         self.file_path = file_path
         self.x = x
         self.y = y
 
-class Hair_Style(Clothes): #subclass for elements hairstyles
+class Hair(Clothes): #subclass for elements of hairstyles
     def super():__init__(name, file_path, x, y)
                       
 class Torso(Clothes): #subclass for elements of upper body clothes
@@ -40,12 +41,12 @@ bluzka_rozowa = Torso("bluzka_rozowa", "data/Torso/bluzka_rozowa.png", x, y)
 bluzka_zielona = Torso("bluzka_zielona", "data/Torso/bluzka_zielona.png", x, y)
 koszulka_czarna = Torso("koszulka_czarna", "data/Torso/koszulka_czarna.png", x, y)
 
-hair_1 = Hair_Style("hair_1", "data/Hair/hair_1.png", x, y)
-hair_2 = Hair_Style("hair_2", "data/Hair/hair_2.png", x, y)
-wlosy_blond = Hair_Style("wlosy_blond", "data/Hair/wlosy_blond.png", x, y)
-wlosy_brazowe = Hair_Style("wlosy_brazowe", "data/Hair/wlosy_brazowe.png", x, y)
-wlosy_czarne_1 = Hair_Style("wlosy_czarne_1", "data/Hair/wlosy_czarne_1.png", x, y)
-wlosy_czarne_2 = Hair_Style("wlosy_czarne_2", "data/Hair/wlosy_czarne_2.png", x, y)
+hair_1 = Hair("hair_1", "data/Hair/hair_1.png", x, y)
+hair_2 = Hair("hair_2", "data/Hair/hair_2.png", x, y)
+wlosy_blond = Hair("wlosy_blond", "data/Hair/wlosy_blond.png", x, y)
+wlosy_brazowe = Hair("wlosy_brazowe", "data/Hair/wlosy_brazowe.png", x, y)
+wlosy_czarne_1 = Hair("wlosy_czarne_1", "data/Hair/wlosy_czarne_1.png", x, y)
+wlosy_czarne_2 = Hair("wlosy_czarne_2", "data/Hair/wlosy_czarne_2.png", x, y)
 
 black_shoes = Footwear("black_shoes", "data/Footwear/black_shoes.png", x, y)
 klapki_fioletowe = Footwear("klapki_fioletowe", "data/Footwear/klapki_fioletowe.png", x, y)
@@ -108,9 +109,11 @@ reset_button = Button("reset_button", "data/Buttons/reset_button.png", 135, 5)
 
 
 
-hat_selected = False
+hair_selected = False
+torso_selected = False
+legs_selected = False
+footwear_selected = False
 dress_selected = False
-shoes_selected = False 
 
 
 # Możliwość nazwania postaci (Joanna Baran)
