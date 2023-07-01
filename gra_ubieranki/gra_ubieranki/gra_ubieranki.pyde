@@ -117,12 +117,12 @@ dress_selected = False
 
 
 # Możliwość nazwania postaci (Joanna Baran)
-def nazwij_postac():
-    name_character = input(u"Wpisz nazwę postaci: ")
-    if name_character:
-        print(u"Miło mi Cię poznać, jestem:", name_character)
-    else:
-        print(u"Nie wpisano nazwy postaci.")
+# def nazwij_postac():
+#     name_character = input(u"Wpisz nazwę postaci: ")
+#     if name_character:
+#         print(u"Miło mi Cię poznać, jestem:", name_character)
+#     else:
+#         print(u"Nie wpisano nazwy postaci.")
 
 
 
@@ -141,8 +141,8 @@ if shoes_selected:
 
 def setup():
     global exit_button, reset_button #is_dragging, mouse_offsetdress, mouse_offsethair, flaga_wlosy
-    size(1200,800)
-    textSize(50) 
+    size(1280,720)
+    textSize(40) 
     
     # start = loadImage("star_img.png") #B.Rząd
     # quit = loadImage("quit_img.png") #B.Rząd
