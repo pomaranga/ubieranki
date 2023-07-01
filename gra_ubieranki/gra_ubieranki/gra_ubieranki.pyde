@@ -92,7 +92,6 @@ def setup():
     hair_y = height / 2 - hair.height / 2
     is_dragging2 = False 
     mouse_offsethair = PVector(0, 0) #Pshenychniak
-    hairImg = loadImage("hair.PNG")  #Wladiskowacz
     hair2Img = loadImage("hair2.PNG")  #Wladiskowacz
     shoesImg = loadImage("shoes.PNG")  #Wladiskowacz
     spodnicaniebieskaImg = loadImage("spodnicaniebieskaImg.png") #Patrycja Leśniak
