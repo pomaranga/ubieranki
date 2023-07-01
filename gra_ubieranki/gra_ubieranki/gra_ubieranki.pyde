@@ -69,7 +69,7 @@ if shoes_selected:
 
 
 def setup():
-    global webImg,wlosybrazImg, start,flaga_wlosy, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dress, dress_x, dress_y, is_dragging, mouse_offsetdress, mouse_offsethair, hair, hair_x, hair_y, hair2Img, shoesImg, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg, wlosyczarne, sukienkaczarna, koszulkaczarna, sukienkamagenta,barImg,button_dressImg,button_heelsImg,button_haircolorImg,dress_shadowImg,heels_shadowImg,haircolor_shadowImg,skirt_shadow,skirt,b_dress,b_wlosy,b_heels,b_skirt,bluzkaniebieskaImg,bluzkazielonaImg,spodnicabrazowaImg,spodnicaczerwonaImg,spodnicafioletowaImg,spodnicazielonaImg,klapkirfioletoweImg,klapkizieloneImg
+    global webImg,wlosybrazImg, start,flaga_wlosy, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dress, dress_x, dress_y, is_dragging, mouse_offsetdress, mouse_offsethair, hair, hair_x, hair_y, hair2Img, shoesImg, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg, wlosyczarne, sukienkaczarna, koszulkaczarna, sukienkamagenta,barImg,button_dressImg,button_heelsImg,button_haircolorImg,dress_shadowImg,heels_shadowImg,haircolor_shadowImg,skirt_shadow,skirt,b_dress,b_wlosy,b_heels,b_skirt,bluzkaniebieskaImg,bluzkazielonaImg,spodnicabrazowaImg,spodnicaczerwonaImg,spodnicafioletowaImg,spodnicazielonaImg,klapkirfioletoweImg,klapkizieloneImg,hair3,hair4,hair5,hair6,hair7
     size(1200,800)
     textSize(50) 
     #img = loadImage('C:/Users/user_x/Desktop/ubierani/ubieranki/postasc.hair2.PNG')
@@ -122,6 +122,11 @@ def setup():
     spodnicazielonaImg = loadImage("spodnicazielonaImg.png")
     klapkirfioletoweImg = loadImage("klapkirfioletoweImg.png")
     klapkizieloneImg = loadImage("klapkizieloneImg.png")
+    hair3 = loadImage("hair3.png")
+    hair4 = loadImage("hair4.png")
+    hair5 = loadImage("hair5.png")
+    hair6 = loadImage("hair6.png")
+    hair7 = loadImage("hair7.png")
 
     
    
@@ -177,6 +182,18 @@ def draw():
     image(hair2Img, 600, 200, 150, 450)  #Wladiskowacz
     image(shoesImg, 600, 180, 150, 450)  #Wladiskowacz
     
+    if b_wlosy == 0:
+        image(hair3,600,200,150,450)
+    elif b_wlosy == 2:
+        image(hair4,600,200,150,450)
+    elif b_wlosy == 3:
+        image(hair5,600,200,150,450)
+    elif b_wlosy == 4:
+        image(hair6,600,200,150,450)
+    elif b_wlosy == 5:
+        image(hair7,600,200,150,450)
+
+    
     if b_skirt == 0:
         image(spodnicaniebieskaImg, 600, 196, 150, 450) #Patrycja Leśniak
     elif b_skirt == 1:
@@ -187,7 +204,6 @@ def draw():
         image(spodnicafioletowaImg,600,196,150,450)
     elif b_skirt == 4:
         image(spodnicazielonaImg,600,196,150,450)
-        
         
     if b_dress == 0:
         image(bluzkarozowaImg, 600, 196, 150, 450) #Patrycja Leśniak
@@ -277,7 +293,7 @@ def mouseClicked():  #Wladiskowacz (prawdopodobnie po kliknięciu przycisku „s
         
     if mouseX > 635 and mouseX < 730  and mouseY > 680 and mouseY < 1100:
         b_wlosy = b_wlosy +1
-        if b_wlosy == 3:
+        if b_wlosy == 5:
             b_wlosy = 0
         
     if mouseX > 525 and mouseX < 620  and mouseY > 680 and mouseY < 1100:
