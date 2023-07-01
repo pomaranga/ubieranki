@@ -6,20 +6,25 @@ class Clothes(): #class for elements of clothes; that class was originally creat
         self.y = y
 
 class Hair(Clothes): #subclass for elements of hairstyles
-    def super():__init__(name, file_path, x, y)
+    def __init__(self, name, file_path, x, y):
+                 super().__init__(name, file_path, x, y) #command 'super().' integrating previous self-parameteres from base class
                       
 class Torso(Clothes): #subclass for elements of upper body clothes
-    def super():__init__(name, file_path, x, y) #command 'super():' integrating previous self-parameteres from base class
+    def __init__(self, name, file_path, x, y):
+                 super().__init__(name, file_path, x, y) 
     
 class Legs(Clothes): #subclass for elements of lowe body clothes
-    def super():__init__(name, file_path, x, y)
+    def __init__(self, name, file_path, x, y):
+                 super().__init__(name, file_path, x, y)
     
 class Footwear(Clothes): #subclass for elements of footwear
-    def super():__init__(name, file_path, x, y)
+    def __init__(self, name, file_path, x, y):
+                 super().__init__(name, file_path, x, y)
 
 
 class Dress(Clothes): #subclass for elements of full body clothes
-    def super():__init__(name, file_path, x, y)
+    def __init__(self, name, file_path, x, y):
+                 super().__init__(name, file_path, x, y)
         
         
         
