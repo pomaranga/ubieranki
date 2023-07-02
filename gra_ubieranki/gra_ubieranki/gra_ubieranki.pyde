@@ -101,11 +101,11 @@ sukienka_magenta = Dress("sukienka_magenta", "data/Dresses/sukienka_magenta.png"
 
 
 background_image = Interface("background_image", "data/background_image.png", 0, 0)
-character_image = Interface("character_image", "data/character.png", 600, 200)
+character_image = Interface("character_image", "data/character.png", 600, 75)
 
 
-exit_button = Button("exit_button", "data/Buttons/exit_button.png", 1155, 5, 80, 40)
-reset_button = Button("reset_button", "data/Buttons/reset_button.png", 700, 625, 80, 40)
+exit_button = Button("exit_button", "data/Buttons/exit_button.png", 1193, 7, 80, 40)
+reset_button = Button("reset_button", "data/Buttons/reset_button.png", 750, 650, 80, 40)
 
 #quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)
 #quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)
@@ -181,7 +181,7 @@ dress_selected = False
 
 
 def setup():
-    # global is_dragging, mouse_offsetdress, mouse_offsethair, flaga_wlosy
+    global background_image #is_dragging, mouse_offsetdress, mouse_offsethair, flaga_wlosy
     size(1280, 720)
     textSize(40) 
     
@@ -249,6 +249,7 @@ def setup():
     
     
 def draw():
+    global background_image
     # if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
     #     cursor(HAND)
     # else: 
@@ -258,29 +259,27 @@ def draw():
         
 #     menu_start() #B.Rząd
 
-    background(0)
-    image(background_image.img, backgroung_img.x, backgroung_img.y)
+    background(background_image.img)
    
     fill(30, 30, 30, 200)
-    rect(20, 100, 300, 600, 10)    
-    fill(400, 400, 400, 400)
-    rect(600, 200, 150, 450, 10)
+    rect(20, 50, 300, 600, 10)    
+
 
     fill(255,255,255)
-    text("Hair", width//2-500, height//2-200, 40)   
-    text("Torso", width//2-500, height//2-150, 80)
-    text("Legs", width//2-500, height//2-100, 80)  #Vitalii Pshenychniak
-    text("Footwear", width//2-500, height//2-50, 80)  #Władysław Bacewicz
-    text("Dresses", width//2-500, height//2-0, 80)  #Władysław Bacewicz
+    text("Hair", width//2-550, height//2-200)   
+    text("Torso", width//2-550, height//2-130)
+    text("Legs", width//2-550, height//2-60)  #Vitalii Pshenychniak
+    text("Footwear", width//2-550, height//2+10)  #Władysław Bacewicz
+    text("Dresses", width//2-550, height//2+80)  #Władysław Bacewicz
     
     image(exit_button.img, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)  #Wladiskowacz
     image(reset_button.img, reset_button.x, reset_button.y, reset_button.size_x, reset_button.size_y)  #Wladiskowacz
-    image(character_image.img, 600, 200)  #Wladiskowacz
+    image(character_image.img, character_image.x, character_image.y)  #Wladiskowacz
     
     image(hair_1.img, hair_1.x, hair_1.y) #Vitalii Pshenychniak
     image(hair_2.img, hair_2.y, hair_2.y) #Władysław Bacewicz
     image(wlosy_blond.img, wlosy_blond.x, wlosy_blond.y) #Patrycja Leśniak
-    image(wlosy_brazowe.img, wlosy_brazowe.x, wlost_brazowe.y)
+    image(wlosy_brazowe.img, wlosy_brazowe.x, wlosy_brazowe.y)
     image(wlosy_czarne_1.img, wlosy_czarne_1.x, wlosy_czarne_1.y)
     image(wlosy_czarne_2.img, wlosy_czarne_2.x, wlosy_czarne_2.y) #Julia Kornecka
     
@@ -356,14 +355,3 @@ def draw():
 #     global x, y
 #     imageMode(CENTER)
 #     image(dressImg, -200, -200) #Nie dziala :(
-    
-
-    
- #   Hair.x = -100
- #   Hair.y = -100
-    
- #   Hair2.x = -100
- #   Hair2.y = -100
-
-#    Shoes.x = -100
-#    Shoes.y = -100
