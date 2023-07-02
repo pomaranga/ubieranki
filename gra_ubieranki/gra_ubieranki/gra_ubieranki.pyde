@@ -133,7 +133,7 @@ def exit_game(): #that function was originally created by Bartosz Rząd
     if (mousePressed and mouseX >= 1193 and mouseX <= 1268 and mouseY >= 7 and mouseY <= 47):
         exit()
         
-def choose_category(): #function that shows if user clicked on "Hair" text (Aleksander Otradnov)
+def choose_category(): #function that shows if user clicked on clothes category (Aleksander Otradnov)
     hair_selected = None #not sure if is that variable is needed
     torso_selected = None
     legs_selected = None
@@ -145,9 +145,9 @@ def choose_category(): #function that shows if user clicked on "Hair" text (Alek
                 text("Hair", width//2-550, height//2-200)
                 fill(255, 255, 255)
                 text("Torso", width//2-550, height//2-130)
-                text("Legs", width//2-550, height//2-60)
-                text("Footwear", width//2-550, height//2+10)
-                text("Dresses", width//2-550, height//2+80)
+                text("Legs", width//2-550, height//2-60) #Vitalii Pshenychniak
+                text("Footwear", width//2-550, height//2+10) #Władysław Bacewicz
+                text("Dresses", width//2-550, height//2+80) #Władysław Bacewicz
                 cursor(HAND) # this part of function was originally conceived by Patrycja Leśniak
     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 110 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3):
                 torso_selected = True 
@@ -198,9 +198,9 @@ def choose_category(): #function that shows if user clicked on "Hair" text (Alek
                 fill(255,255,255)
                 text("Hair", width//2-550, height//2-200)
                 text("Torso", width//2-550, height//2-130)
-                text("Legs", width//2-550, height//2-60)  #Vitalii Pshenychniak
-                text("Footwear", width//2-550, height//2+10)  #Władysław Bacewicz
-                text("Dresses", width//2-550, height//2+80)  #Władysław Bacewicz
+                text("Legs", width//2-550, height//2-60)
+                text("Footwear", width//2-550, height//2+10)
+                text("Dresses", width//2-550, height//2+80)
                 cursor(ARROW)            
 
 
