@@ -149,7 +149,7 @@ def choose_category(): #function that shows if user clicked on "Hair" text (Alek
                 text("Footwear", width//2-550, height//2+10)
                 text("Dresses", width//2-550, height//2+80)
                 cursor(HAND) # this part of function was originally conceived by Patrycja Leśniak
-    elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3):
+    elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 110 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3):
                 torso_selected = True 
                 fill(150, 255, 150)
                 text("Torso", width//2-550, height//2-130)
@@ -159,7 +159,7 @@ def choose_category(): #function that shows if user clicked on "Hair" text (Alek
                 text("Footwear", width//2-550, height//2+10)
                 text("Dresses", width//2-550, height//2+80)
                 cursor(HAND)
-    elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-60 - 30 and mouseY <= height//2-60 + 3):
+    elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 90 and mouseY >= height//2-60 - 30 and mouseY <= height//2-60 + 3):
                 legs_selected = True
                 fill(150, 255, 150)
                 text("Legs", width//2-550, height//2-60)
@@ -169,7 +169,7 @@ def choose_category(): #function that shows if user clicked on "Hair" text (Alek
                 text("Footwear", width//2-550, height//2+10)
                 text("Dresses", width//2-550, height//2+80)
                 cursor(HAND)
-    elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2+10 - 30 and mouseY <= height//2+10 + 3):
+    elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 175 and mouseY >= height//2+10 - 30 and mouseY <= height//2+10 + 3):
                 footwear_selected = True
                 fill(150, 255, 150)
                 text("Footwear", width//2-550, height//2+10)
@@ -179,7 +179,7 @@ def choose_category(): #function that shows if user clicked on "Hair" text (Alek
                 text("Legs", width//2-550, height//2-60)
                 text("Dresses", width//2-550, height//2+80)
                 cursor(HAND)           
-    elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2+80 - 30 and mouseY <= height//2+80 + 3):
+    elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 150 and mouseY >= height//2+80 - 30 and mouseY <= height//2+80 + 3):
                 dresses_selected = True
                 fill(150, 255, 150)
                 text("Dresses", width//2-550, height//2+80)
