@@ -131,32 +131,37 @@ reset_button = Button("reset_button", "data/Buttons/reset_button.png", 945, 650,
 
 def exit_game(): #that function was originally created by Bartosz Rząd
     if (mousePressed and mouseX >= 1193 and mouseX <= 1268 and mouseY >= 7 and mouseY <= 47):
+        cursor(HAND)
         exit()
+    else:
+        cursor(ARROW)
 
         
 def choose_category(): #function that shows if user clicked on clothes category (Aleksander Otradnov)
-    global hair_selected
-    hair_selected = None #not sure if that variable is needed
-    torso_selected = None
-    legs_selected = None
-    footwear_selected = None
-    dresses_selected = None
+    # global hair_selected
+    textSize(40)
+    # hair_selected = None #not sure if that variable is needed
+    # torso_selected = None
+    # legs_selected = None
+    # footwear_selected = None
+    # dresses_selected = None
     if (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-200 - 30 and mouseY <= height//2-200 + 3):
-                hair_selected = True #not sure if is that variable is needed
+                # hair_selected = True #not sure if is that variable is needed
+                # print(hair_selected)
                 # fill(150, 255, 150)
-                # text("Hair", width//2-550, height//2-200)
+                text("Hair", width//2-550, height//2-200)
                 fill(255, 255, 255)
                 text("Torso", width//2-550, height//2-130)
                 text("Legs", width//2-550, height//2-60) #Vitalii Pshenychniak
                 text("Footwear", width//2-550, height//2+10) #Władysław Bacewicz
                 text("Dresses", width//2-550, height//2+80) #Władysław Bacewicz
                 cursor(HAND) # this part of function was originally conceived by Patrycja Leśniak
-                torso_selected = False
-                legs_selected = False
-                footwear_selected = False
-                dresses_selected = False
+                # torso_selected = False
+                # legs_selected = False
+                # footwear_selected = False
+                # dresses_selected = False
     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 110 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3):
-                torso_selected = True 
+                # torso_selected = True 
                 fill(150, 255, 150)
                 text("Torso", width//2-550, height//2-130)
                 fill(255, 255, 255)
@@ -165,12 +170,12 @@ def choose_category(): #function that shows if user clicked on clothes category 
                 text("Footwear", width//2-550, height//2+10)
                 text("Dresses", width//2-550, height//2+80)
                 cursor(HAND)
-                hair_selected = False
-                legs_selected = False
-                footwear_selected = False
-                dresses_selected = False
+                # hair_selected = False
+                # legs_selected = False
+                # footwear_selected = False
+                # dresses_selected = False
     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 90 and mouseY >= height//2-60 - 30 and mouseY <= height//2-60 + 3):
-                legs_selected = True
+                # legs_selected = True
                 fill(150, 255, 150)
                 text("Legs", width//2-550, height//2-60)
                 fill(255, 255, 255)
@@ -179,12 +184,12 @@ def choose_category(): #function that shows if user clicked on clothes category 
                 text("Footwear", width//2-550, height//2+10)
                 text("Dresses", width//2-550, height//2+80)
                 cursor(HAND)
-                hair_selected = False
-                torso_selected = False
-                footwear_selected = False
-                dresses_selected = False
+                # hair_selected = False
+                # torso_selected = False
+                # footwear_selected = False
+                # dresses_selected = False
     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 175 and mouseY >= height//2+10 - 30 and mouseY <= height//2+10 + 3):
-                footwear_selected = True
+                # footwear_selected = True
                 fill(150, 255, 150)
                 text("Footwear", width//2-550, height//2+10)
                 fill(255, 255, 255)
@@ -193,12 +198,12 @@ def choose_category(): #function that shows if user clicked on clothes category 
                 text("Legs", width//2-550, height//2-60)
                 text("Dresses", width//2-550, height//2+80)
                 cursor(HAND)
-                hair_selected = False
-                torso_selected = False
-                legs_selected = False
-                dresses_selected = False           
+                # hair_selected = False
+                # torso_selected = False
+                # legs_selected = False
+                # dresses_selected = False           
     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 150 and mouseY >= height//2+80 - 30 and mouseY <= height//2+80 + 3):
-                dresses_selected = True
+                # dresses_selected = True
                 fill(150, 255, 150)
                 text("Dresses", width//2-550, height//2+80)
                 fill(255, 255, 255)
@@ -207,11 +212,12 @@ def choose_category(): #function that shows if user clicked on clothes category 
                 text("Legs", width//2-550, height//2-60)
                 text("Footwear", width//2-550, height//2+10)
                 cursor(HAND)
-                hair_selected = False
-                torso_selected = False
-                legs_selected = False
-                footwear_selected = False
+                # hair_selected = False
+                # torso_selected = False
+                # legs_selected = False
+                # footwear_selected = False
     else:
+                # print(hair_selected)
                 fill(255,255,255)
                 text("Hair", width//2-550, height//2-200)
                 text("Torso", width//2-550, height//2-130)
@@ -222,9 +228,11 @@ def choose_category(): #function that shows if user clicked on clothes category 
 
 # def category_chosen():
 #     global hair_selected
-#     def mouseClicked():
-#         hair_selected = True
+#     if hair_selected is True:
 #         fill(150, 255, 150)
+#         text("Hair", width//2-550, height//2-200)
+#     else:
+#         fill(255, 255, 255)
 #         text("Hair", width//2-550, height//2-200)
 
 
@@ -263,9 +271,11 @@ def choose_category(): #function that shows if user clicked on clothes category 
 
 
 def setup():
-    global background_image #is_dragging, mouse_offsetdress, mouse_offsethair, flaga_wlosy
+    # global #is_dragging, mouse_offsetdress, mouse_offsethair, flaga_wlosy
     size(1280, 720)
-    textSize(40) 
+
+    
+
     
     # start = loadImage("star_img.png") #B.Rząd
     # quit = loadImage("quit_img.png") #B.Rząd
@@ -305,6 +315,14 @@ def setup():
     sukienka_czarna_2.load_image(sukienka_czarna_2.file_path) #Julia Kornecka
     sukienka_magenta.load_image(sukienka_magenta.file_path) #Julia Kornecka
     
+    background(background_image.img)
+    image(character_image.img, character_image.x, character_image.y)
+    
+    
+    fill(30, 30, 30, 200)
+    rect(20, 65, 300, 600, 10)
+    
+    
     # dress_x = width / 2 - dress.width / 2 #it must be x coordinate of "sukienka_czarna_1"
     # dress_y = height / 2 - dress.height / 2 #it must be y coordinate of "sukienka_czarna_1"
     
@@ -331,18 +349,14 @@ def setup():
     
     
 def draw():
-    background(background_image.img)
-   
-    fill(30, 30, 30, 200)
-    rect(20, 65, 300, 600, 10)    
-    
     choose_category()
     # category_chosen()
     exit_game()
     
+    
     image(exit_button.img, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)  #Wladiskowacz
     image(reset_button.img, reset_button.x, reset_button.y, reset_button.size_x, reset_button.size_y)  #Wladiskowacz
-    image(character_image.img, character_image.x, character_image.y)  #Wladiskowacz
+    # image(character_image.img, character_image.x, character_image.y)  #Wladiskowacz
     
     image(hair_1.img, hair_1.x, hair_1.y) #Vitalii Pshenychniak
     image(hair_2.img, hair_2.x, hair_2.y) #Władysław Bacewicz
