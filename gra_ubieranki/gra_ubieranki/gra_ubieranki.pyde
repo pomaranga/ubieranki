@@ -130,8 +130,56 @@ reset_button = Button("reset_button", "data/Buttons/reset_button.png", 945, 650,
 #         self.rect.y = y
 
 def exit_game(): #that function was originally created by Bartosz Rząd
-    if(mousePressed and mouseX >= 1193 and mouseX <= 1268 and mouseY >= 7 and mouseY <= 47):
+    if (mousePressed and mouseX >= 1193 and mouseX <= 1268 and mouseY >= 7 and mouseY <= 47):
         exit()
+        
+def choose_category_hair(): #function that shows if user clicked on "Hair" text (Aleksander Otradnov)
+    hair_selected = None #not sure if is that variable is needed
+    torso_selected = None
+    legs_selected = None
+    footwear_selected = None
+    dress_selected = None
+    if (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-200 - 30 and mouseY <= height//2-200 + 3):
+                hair_selected = True #not sure if is that variable is needed
+                fill(150, 255, 150)
+                text("Hair", width//2-550, height//2-200)
+                fill(255, 255, 255)
+                text("Torso", width//2-550, height//2-130)
+                text("Legs", width//2-550, height//2-60)
+                text("Footwear", width//2-550, height//2+10)
+                text("Dresses", width//2-550, height//2+80)
+                cursor(HAND) # this part of function was originally conceived by Patrycja Leśniak
+    elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3):
+                torso_selected = True 
+                fill(150, 255, 150)
+                text("Torso", width//2-550, height//2-130)
+                fill(255, 255, 255)
+                text("Hair", width//2-550, height//2-200)
+                text("Legs", width//2-550, height//2-60)
+                text("Footwear", width//2-550, height//2+10)
+                text("Dresses", width//2-550, height//2+80)
+                cursor(HAND)
+    elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-60 - 30 and mouseY <= height//2-60 + 3):
+                legs_selected = True
+                fill(150, 255, 150)
+                text("Legs", width//2-550, height//2-60)
+                fill(255, 255, 255)
+                text("Hair", width//2-550, height//2-200)
+                text("Torso", width//2-550, height//2-130)
+                text("Footwear", width//2-550, height//2+10)
+                text("Dresses", width//2-550, height//2+80)
+                cursor(HAND)
+    
+    else:
+                hair_selected = False #not sure if is that variable is needed
+                torso_selected = False
+                fill(255,255,255)
+                text("Hair", width//2-550, height//2-200)
+                text("Torso", width//2-550, height//2-130)
+                text("Legs", width//2-550, height//2-60)  #Vitalii Pshenychniak
+                text("Footwear", width//2-550, height//2+10)  #Władysław Bacewicz
+                text("Dresses", width//2-550, height//2+80)  #Władysław Bacewicz
+                cursor(ARROW)            
 
 
 
@@ -142,11 +190,9 @@ def exit_game(): #that function was originally created by Bartosz Rząd
 
 
 
-hair_selected = False
-torso_selected = False
-legs_selected = False
-footwear_selected = False
-dress_selected = False
+
+
+
 
 
 # Możliwość nazwania postaci (Joanna Baran)
@@ -248,7 +294,9 @@ def draw():
         # background(background_image.img)
         
 #     menu_start() #B.Rząd
-
+    
+    
+    
     background(background_image.img)
    
     fill(30, 30, 30, 200)
@@ -256,11 +304,13 @@ def draw():
 
 
     fill(255,255,255)
-    text("Hair", width//2-550, height//2-200)   
-    text("Torso", width//2-550, height//2-130)
+    # text("Hair", width//2-550, height//2-200)   
+    # text("Torso", width//2-550, height//2-130)
     text("Legs", width//2-550, height//2-60)  #Vitalii Pshenychniak
     text("Footwear", width//2-550, height//2+10)  #Władysław Bacewicz
     text("Dresses", width//2-550, height//2+80)  #Władysław Bacewicz
+    
+    choose_category_hair()
     
     image(exit_button.img, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)  #Wladiskowacz
     image(reset_button.img, reset_button.x, reset_button.y, reset_button.size_x, reset_button.size_y)  #Wladiskowacz
