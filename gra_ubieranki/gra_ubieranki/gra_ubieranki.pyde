@@ -132,23 +132,29 @@ reset_button = Button("reset_button", "data/Buttons/reset_button.png", 945, 650,
 def exit_game(): #that function was originally created by Bartosz Rząd
     if (mousePressed and mouseX >= 1193 and mouseX <= 1268 and mouseY >= 7 and mouseY <= 47):
         exit()
+
         
 def choose_category(): #function that shows if user clicked on clothes category (Aleksander Otradnov)
-    hair_selected = None #not sure if is that variable is needed
+    global hair_selected
+    hair_selected = None #not sure if that variable is needed
     torso_selected = None
     legs_selected = None
     footwear_selected = None
     dresses_selected = None
     if (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-200 - 30 and mouseY <= height//2-200 + 3):
                 hair_selected = True #not sure if is that variable is needed
-                fill(150, 255, 150)
-                text("Hair", width//2-550, height//2-200)
+                # fill(150, 255, 150)
+                # text("Hair", width//2-550, height//2-200)
                 fill(255, 255, 255)
                 text("Torso", width//2-550, height//2-130)
                 text("Legs", width//2-550, height//2-60) #Vitalii Pshenychniak
                 text("Footwear", width//2-550, height//2+10) #Władysław Bacewicz
                 text("Dresses", width//2-550, height//2+80) #Władysław Bacewicz
                 cursor(HAND) # this part of function was originally conceived by Patrycja Leśniak
+                torso_selected = False
+                legs_selected = False
+                footwear_selected = False
+                dresses_selected = False
     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 110 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3):
                 torso_selected = True 
                 fill(150, 255, 150)
@@ -159,6 +165,10 @@ def choose_category(): #function that shows if user clicked on clothes category 
                 text("Footwear", width//2-550, height//2+10)
                 text("Dresses", width//2-550, height//2+80)
                 cursor(HAND)
+                hair_selected = False
+                legs_selected = False
+                footwear_selected = False
+                dresses_selected = False
     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 90 and mouseY >= height//2-60 - 30 and mouseY <= height//2-60 + 3):
                 legs_selected = True
                 fill(150, 255, 150)
@@ -169,6 +179,10 @@ def choose_category(): #function that shows if user clicked on clothes category 
                 text("Footwear", width//2-550, height//2+10)
                 text("Dresses", width//2-550, height//2+80)
                 cursor(HAND)
+                hair_selected = False
+                torso_selected = False
+                footwear_selected = False
+                dresses_selected = False
     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 175 and mouseY >= height//2+10 - 30 and mouseY <= height//2+10 + 3):
                 footwear_selected = True
                 fill(150, 255, 150)
@@ -178,7 +192,11 @@ def choose_category(): #function that shows if user clicked on clothes category 
                 text("Torso", width//2-550, height//2-130)
                 text("Legs", width//2-550, height//2-60)
                 text("Dresses", width//2-550, height//2+80)
-                cursor(HAND)           
+                cursor(HAND)
+                hair_selected = False
+                torso_selected = False
+                legs_selected = False
+                dresses_selected = False           
     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 150 and mouseY >= height//2+80 - 30 and mouseY <= height//2+80 + 3):
                 dresses_selected = True
                 fill(150, 255, 150)
@@ -189,12 +207,11 @@ def choose_category(): #function that shows if user clicked on clothes category 
                 text("Legs", width//2-550, height//2-60)
                 text("Footwear", width//2-550, height//2+10)
                 cursor(HAND)
-    else:
-                hair_selected = False #not sure if is that variable is needed
+                hair_selected = False
                 torso_selected = False
                 legs_selected = False
                 footwear_selected = False
-                dresses_selected = False
+    else:
                 fill(255,255,255)
                 text("Hair", width//2-550, height//2-200)
                 text("Torso", width//2-550, height//2-130)
@@ -203,7 +220,12 @@ def choose_category(): #function that shows if user clicked on clothes category 
                 text("Dresses", width//2-550, height//2+80)
                 cursor(ARROW)            
 
-
+# def category_chosen():
+#     global hair_selected
+#     def mouseClicked():
+#         hair_selected = True
+#         fill(150, 255, 150)
+#         text("Hair", width//2-550, height//2-200)
 
 
 
@@ -309,22 +331,14 @@ def setup():
     
     
 def draw():
-    # if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
-    #     cursor(HAND)
-    # else: 
-    #     cursor(ARROW)
-        # background(background_image.img)
-        
-#     menu_start() #B.Rząd
-    
-    
-    
     background(background_image.img)
    
     fill(30, 30, 30, 200)
     rect(20, 65, 300, 600, 10)    
     
     choose_category()
+    # category_chosen()
+    exit_game()
     
     image(exit_button.img, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)  #Wladiskowacz
     image(reset_button.img, reset_button.x, reset_button.y, reset_button.size_x, reset_button.size_y)  #Wladiskowacz
@@ -357,7 +371,7 @@ def draw():
     image(sukienka_czarna_2.img, sukienka_czarna_2.x, sukienka_czarna_2.y) #Julia Kornecka
     image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y) #Julia Kornecka
     
-    exit_game()
+    
 
     
     # if flaga_wlosy:
