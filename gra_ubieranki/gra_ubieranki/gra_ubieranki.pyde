@@ -129,17 +129,9 @@ reset_button = Button("reset_button", "data/Buttons/reset_button.png", 945, 650,
 #         self.rect.x = x
 #         self.rect.y = y
 
-# def menu_start():
-#     global start, quit, starthover, quithover
-#     image(start,100,300) #B.Rząd
-#     image(quit,650,300) #B.Rząd
-#     if(mouseX > 100 and mouseX < 535 and mouseY > 310 and mouseY < 492):
-#         image(starthover,100,300)
-#     if(mouseX > 665 and mouseX < 1100 and mouseY > 310 and mouseY < 492):
-#         image(quithover,650,300)
-#     if(mousePressed and mouseX > 665 and mouseX < 1100 and mouseY > 310 and mouseY < 492):
-#         clear()
-#         exit()
+def exit_game(): #that function was originally created by Bartosz Rząd
+    if(mousePressed and mouseX >= 1193 and mouseX <= 1268 and mouseY >= 7 and mouseY <= 47):
+        exit()
 
 
 
@@ -249,13 +241,11 @@ def setup():
     
     
 def draw():
-    global background_image
     # if mousePressed: #ta konstrukcja odpowiada za kursor (Patrycja Leśniak)
     #     cursor(HAND)
     # else: 
     #     cursor(ARROW)
-        # background(0)
-        # image(background_image.img, 0, 0)
+        # background(background_image.img)
         
 #     menu_start() #B.Rząd
 
@@ -303,6 +293,7 @@ def draw():
     image(sukienka_czarna_2.img, sukienka_czarna_2.x, sukienka_czarna_2.y) #Julia Kornecka
     image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y) #Julia Kornecka
     
+    exit_game()
 
     
     # if flaga_wlosy:
