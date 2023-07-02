@@ -101,11 +101,11 @@ sukienka_magenta = Dress("sukienka_magenta", "data/Dresses/sukienka_magenta.png"
 
 
 background_image = Interface("background_image", "data/background_image.png", 0, 0)
-character_image = Interface("character_image", "data/character.png", 600, 75)
+character_image = Interface("character_image", "data/character.png", 795, 75)
 
 
 exit_button = Button("exit_button", "data/Buttons/exit_button.png", 1193, 7, 80, 40)
-reset_button = Button("reset_button", "data/Buttons/reset_button.png", 750, 650, 80, 40)
+reset_button = Button("reset_button", "data/Buttons/reset_button.png", 945, 650, 80, 40)
 
 #quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)
 #quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)
@@ -262,7 +262,7 @@ def draw():
     background(background_image.img)
    
     fill(30, 30, 30, 200)
-    rect(20, 50, 300, 600, 10)    
+    rect(20, 65, 300, 600, 10)    
 
 
     fill(255,255,255)
@@ -277,7 +277,7 @@ def draw():
     image(character_image.img, character_image.x, character_image.y)  #Wladiskowacz
     
     image(hair_1.img, hair_1.x, hair_1.y) #Vitalii Pshenychniak
-    image(hair_2.img, hair_2.y, hair_2.y) #Władysław Bacewicz
+    image(hair_2.img, hair_2.x, hair_2.y) #Władysław Bacewicz
     image(wlosy_blond.img, wlosy_blond.x, wlosy_blond.y) #Patrycja Leśniak
     image(wlosy_brazowe.img, wlosy_brazowe.x, wlosy_brazowe.y)
     image(wlosy_czarne_1.img, wlosy_czarne_1.x, wlosy_czarne_1.y)
