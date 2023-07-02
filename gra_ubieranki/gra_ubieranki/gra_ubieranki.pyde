@@ -146,9 +146,9 @@ def choose_category(): #function that shows if user clicked on clothes category 
     # footwear_selected = None
     # dresses_selected = None
     if (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-200 - 30 and mouseY <= height//2-200 + 3):
-                # hair_selected = True #not sure if is that variable is needed
+                hair_selected = True #not sure if is that variable is needed
                 # print(hair_selected)
-                # fill(150, 255, 150)
+                fill(150, 255, 150)
                 text("Hair", width//2-550, height//2-200)
                 fill(255, 255, 255)
                 text("Torso", width//2-550, height//2-130)
