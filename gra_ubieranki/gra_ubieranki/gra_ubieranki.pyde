@@ -255,13 +255,11 @@ def draw():
     #     cursor(ARROW)
         # background(0)
         # image(background_image.img, 0, 0)
-#     menu_start()
+        
+#     menu_start() #B.Rząd
+
     background(0)
     image(background_image.img, backgroung_img.x, backgroung_img.y)
-    #image(wlosyczarne, -150, -400) #Kornecka
-    # image(koszulkaczarna, -140, -250) #Kornecka
-    # image(sukienkaczarna, 600, -400) #Kornecka
-    # image(sukienkamagenta, 460, -100) #Kornecka
    
     fill(30, 30, 30, 200)
     rect(20, 100, 300, 600, 10)    
@@ -272,20 +270,41 @@ def draw():
     text("Hair", width//2-500, height//2-200, 40)   
     text("Torso", width//2-500, height//2-150, 80)
     text("Legs", width//2-500, height//2-100, 80)  #Vitalii Pshenychniak
-    text("Footwear", width//2-500, height//2-50, 80)  #Wladiskowacz
-    text("Dresses", width//2-500, height//2-0, 80)  #Wladiskowacz
+    text("Footwear", width//2-500, height//2-50, 80)  #Władysław Bacewicz
+    text("Dresses", width//2-500, height//2-0, 80)  #Władysław Bacewicz
     
     image(exit_button.img, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)  #Wladiskowacz
     image(reset_button.img, reset_button.x, reset_button.y, reset_button.size_x, reset_button.size_y)  #Wladiskowacz
     image(character_image.img, 600, 200)  #Wladiskowacz
-    # image(dress, dress_x, dress_y)
-    # image(hair, hair_x, hair_y) #Pshenychniak
-    # image(hair2Img, 600, 200, 150, 450)  #Wladiskowacz
-    # image(shoesImg, 600, 180, 150, 450)  #Wladiskowacz
-    # image(spodnicaniebieskaImg, 250, 180, 150, 450) #Patrycja Leśniak
-    # image(bluzkarozowaImg, 250, 160, 150, 450) #Patrycja Leśniak
-    # image(klapkirozoweImg, 250, 140, 150, 450) #Patrycja Leśniak
-    # image(wlosyblondImg, 250, 100, 150, 450) #Patrycja Leśniak
+    
+    image(hair_1.img, hair_1.x, hair_1.y) #Vitalii Pshenychniak
+    image(hair_2.img, hair_2.y, hair_2.y) #Władysław Bacewicz
+    image(wlosy_blond.img, wlosy_blond.x, wlosy_blond.y) #Patrycja Leśniak
+    image(wlosy_brazowe.img, wlosy_brazowe.x, wlost_brazowe.y)
+    image(wlosy_czarne_1.img, wlosy_czarne_1.x, wlosy_czarne_1.y)
+    image(wlosy_czarne_2.img, wlosy_czarne_2.x, wlosy_czarne_2.y) #Julia Kornecka
+    
+    image(bluzka_niebieska.img, bluzka_niebieska.x, bluzka_niebieska.y)
+    image(bluzka_rozowa.img, bluzka_rozowa.x, bluzka_rozowa.y) #Patrycja Leśniak
+    image(bluzka_zielona.img, bluzka_zielona.x, bluzka_zielona.y)
+    image(koszulka_czarna.img, koszulka_czarna.x, koszulka_czarna.y) #Julia Kornecka
+    
+    image(spodnica_brazowa.img, spodnica_brazowa.x, spodnica_brazowa.y)
+    image(spodnica_czerwona.img, spodnica_czerwona.x, spodnica_czerwona.y)
+    image(spodnica_fioletowa.img, spodnica_fioletowa.x, spodnica_fioletowa.y)
+    image(spodnica_niebieska.img, spodnica_niebieska.x, spodnica_niebieska.y) #Patrycja Leśniak
+    image(spodnica_zielona.img, spodnica_zielona.x, spodnica_zielona.y)
+    
+    image(black_shoes.img, black_shoes.x, black_shoes.y) #Władysław Bacewicz
+    image(klapki_fioletowe.img, klapki_fioletowe.x, klapki_fioletowe.y)
+    image(klapki_rozowe.img, klapki_rozowe.x, klapki_rozowe.y) #Patrycja Leśniak
+    image(klapki_zielone.img, klapki_zielone.x, klapki_zielone.y)
+    
+    image(sukienka_czarna_1.img, sukienka_czarna_1.x, sukienka_czarna_1.y)
+    image(sukienka_czarna_2.img, sukienka_czarna_2.x, sukienka_czarna_2.y) #Julia Kornecka
+    image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y) #Julia Kornecka
+    
+
     
     # if flaga_wlosy:
     #     image(wlosyblondImg, 250, 100, 150, 450)
