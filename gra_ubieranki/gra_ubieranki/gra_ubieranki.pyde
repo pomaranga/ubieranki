@@ -137,56 +137,7 @@ def exit_game(): #that function was originally created by Bartosz Rząd
         cursor(ARROW)
 
         
-# def choose_category(): #function that shows if user clicked on clothes category (Aleksander Otradnov)
-#     textSize(40)
-#     if (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-200 - 30 and mouseY <= height//2-200 + 3):
-#                 fill(150, 255, 150)
-#                 text("Hair", width//2-550, height//2-200)
-#                 fill(255, 255, 255)
-#                 text("Torso", width//2-550, height//2-130)
-#                 text("Legs", width//2-550, height//2-60) #Vitalii Pshenychniak
-#                 text("Footwear", width//2-550, height//2+10) #Władysław Bacewicz
-#                 text("Dresses", width//2-550, height//2+80) #Władysław Bacewicz
-#                 # cursor(HAND) # this part of function was originally conceived by Patrycja Leśniak
-#     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 110 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3):
-#                 fill(150, 255, 150)
-#                 text("Torso", width//2-550, height//2-130)
-#                 fill(255, 255, 255)
-#                 text("Hair", width//2-550, height//2-200)
-#                 text("Legs", width//2-550, height//2-60)
-#                 text("Footwear", width//2-550, height//2+10)
-#                 text("Dresses", width//2-550, height//2+80)
-#     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 90 and mouseY >= height//2-60 - 30 and mouseY <= height//2-60 + 3):
-#                 fill(150, 255, 150)
-#                 text("Legs", width//2-550, height//2-60)
-#                 fill(255, 255, 255)
-#                 text("Hair", width//2-550, height//2-200)
-#                 text("Torso", width//2-550, height//2-130)
-#                 text("Footwear", width//2-550, height//2+10)
-#                 text("Dresses", width//2-550, height//2+80)
-#     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 175 and mouseY >= height//2+10 - 30 and mouseY <= height//2+10 + 3):
-#                 fill(150, 255, 150)
-#                 text("Footwear", width//2-550, height//2+10)
-#                 fill(255, 255, 255)
-#                 text("Hair", width//2-550, height//2-200)
-#                 text("Torso", width//2-550, height//2-130)
-#                 text("Legs", width//2-550, height//2-60)
-#                 text("Dresses", width//2-550, height//2+80)        
-#     elif (mousePressed and mouseX >= width//2-550 and mouseX <= width//2-550 + 150 and mouseY >= height//2+80 - 30 and mouseY <= height//2+80 + 3):
-#                 fill(150, 255, 150)
-#                 text("Dresses", width//2-550, height//2+80)
-#                 fill(255, 255, 255)
-#                 text("Hair", width//2-550, height//2-200)
-#                 text("Torso", width//2-550, height//2-130)
-#                 text("Legs", width//2-550, height//2-60)
-#                 text("Footwear", width//2-550, height//2+10)
-#     else:
-#                 fill(255,255,255)
-#                 text("Hair", width//2-550, height//2-200)
-#                 text("Torso", width//2-550, height//2-130)
-#                 text("Legs", width//2-550, height//2-60)
-#                 text("Footwear", width//2-550, height//2+10)
-#                 text("Dresses", width//2-550, height//2+80)            
+            
 
 hair_selected = False
 torso_selected = False
@@ -194,17 +145,12 @@ legs_selected = False
 footwear_selected = False
 dresses_selected = False
 
-fill_1 = 255
-fill_2 = 255
-fill_3 = 255
-fill_4 = 255
-fill_5 = 255
+fill_1 = 255 # fill_1 variable that colors text "Hair"
+fill_2 = 255 # fill_2 variable that colors text "Torso"
+fill_3 = 255 # fill_3 variable that colors text "Legs"
+fill_4 = 255 # fill_4 variable that colors text "Footwear"
+fill_5 = 255 # fill_5 variable that colors text "Dresses"
  
-
-
-
-
-
 
 
 
@@ -345,6 +291,11 @@ def draw():
     image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y) #Julia Kornecka
     
     
+#  'mouseClicked()'
+#  function is responsible for
+#  changing the state of chosen
+#  clothes category    
+
 def mouseClicked():
     global hair_selected, torso_selected, legs_selected, footwear_selected, dresses_selected
     if mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-200 - 30 and mouseY <= height//2-200 + 3:
@@ -380,6 +331,11 @@ def mouseClicked():
         dresses_selected = True
         
         
+#  'text_color()'
+#  function is responsible for
+#  changing a variable that colors
+#  a text of clothes category  
+      
 def text_color():
     global fill_1, fill_2, fill_3, fill_4, fill_5, hair_selected, torso_selected, legs_selected, footwear_selected, dresses_selected
     if hair_selected == True:
