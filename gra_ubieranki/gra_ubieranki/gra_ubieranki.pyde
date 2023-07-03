@@ -1,4 +1,53 @@
-class Clothes: #class for elements of clothes; that class was originally created by Anhelina Hlushanok
+# I decided to create an abstract class
+# for clothes items in our game,
+# because of better orderliness of code.
+#
+# Moreover, clothes in real world are
+# the abstract things themselves, so you need to
+# specify what are you talking about exactly.
+#
+# And so a coder won't create any abstract
+# clothes item, he/she needs to categorize
+# particular item to it's class before
+# use it in our code.
+
+
+from abc import ABCMeta, abstractmethod
+class Clothes(): #abstract class for elements of clothes; that class was originally created by Anhelina Hlushanok
+    __metaclass__ = ABCMeta
+    @abstractmethod      
+    def load_image(self):
+        super().__init__()
+
+
+class Hair(Clothes): #subclass for elements of hairstyles
+    def __init__(self, name, file_path):
+        self.name = name
+        self.file_path = file_path
+        
+    def load_image(self, file_path):
+        self.img = loadImage(file_path)
+         
+                                   
+class Torso(Clothes): #subclass for elements of upper body clothes
+    def __init__(self, name, file_path):
+        self.name = name
+        self.file_path = file_path
+        
+    def load_image(self, file_path):
+        self.img = loadImage(file_path)
+    
+    
+class Legs(Clothes): #subclass for elements of lower body clothes
+    def __init__(self, name, file_path):
+        self.name = name
+        self.file_path = file_path
+        
+    def load_image(self, file_path):
+        self.img = loadImage(file_path)
+    
+    
+class Footwear(Clothes): #subclass for elements of footwear
     def __init__(self, name, file_path):
         self.name = name
         self.file_path = file_path
@@ -7,41 +56,13 @@ class Clothes: #class for elements of clothes; that class was originally created
         self.img = loadImage(file_path)
 
 
-class Hair(Clothes): #subclass for elements of hairstyles
-    def __init__(self, name, file_path):
-        Clothes.__init__(self, name, file_path) #command 'super().' doesn't work
-        
-    def load_image(self, file_path):
-        Clothes.load_image(self, file_path)
-         
-                                   
-class Torso(Clothes): #subclass for elements of upper body clothes
-    def __init__(self, name, file_path):
-        Clothes.__init__(self, name, file_path)
-        
-    def load_image(self, file_path):
-        Clothes.load_image(self, file_path)
-    
-    
-class Legs(Clothes): #subclass for elements of lower body clothes
-    def __init__(self, name, file_path):
-        Clothes.__init__(self, name, file_path)
-        
-    def load_image(self, file_path):
-        Clothes.load_image(self, file_path)
-    
-    
-class Footwear(Clothes): #subclass for elements of footwear
-    def __init__(self, name, file_path):
-        Clothes.__init__(self, name, file_path)
-    
-    def load_image(self, file_path):
-        Clothes.load_image(self, file_path)
-
-
 class Dress(Clothes): #subclass for elements of full body clothes
     def __init__(self, name, file_path):
-        Clothes.__init__(self, name, file_path)
+        self.name = name
+        self.file_path = file_path
+        
+    def load_image(self, file_path):
+        self.img = loadImage(file_path)
         
         
         
@@ -66,6 +87,12 @@ class Button(Interface): #subclass for buttoms
         Interface.load_image(self, file_path)
 
 
+# def __init__(self, name, file_path):
+#         self.name = name
+#         self.file_path = file_path
+#        
+#     def load_image(self, file_path):
+#         self.img = loadImage(file_path)
 
 # In lines below
 # I created objects withing
@@ -197,15 +224,6 @@ sukienka_magenta.y = 200
 #     def add_items(self, item): #funkcja zeby dodac rzeczy do szafy
 #         self.items.append(item) 
 
-
-
-def exit_game(): #that function was originally created by Bartosz Rząd
-    if (mousePressed and mouseX >= 1193 and mouseX <= 1268 and mouseY >= 7 and mouseY <= 47):
-        cursor(HAND)
-        exit()
-    else:
-        cursor(ARROW)
-
         
             
 
@@ -320,7 +338,6 @@ def draw():
     fill(30, 30, 30, 200)
     rect(20, 65, 300, 600, 10)
     
-    exit_game()
     text_color()
     textSize(40)
     
@@ -380,6 +397,8 @@ def draw():
 
 def mouseClicked():
     global hair_selected, torso_selected, legs_selected, footwear_selected, dresses_selected
+    if mouseX >= 1193 and mouseX <= 1268 and mouseY >= 7 and mouseY <= 47:
+        exit()
     if mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-200 - 30 and mouseY <= height//2-200 + 3:
         hair_selected = True
         torso_selected = False
