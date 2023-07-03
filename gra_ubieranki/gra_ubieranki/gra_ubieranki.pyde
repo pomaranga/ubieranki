@@ -145,11 +145,11 @@ legs_selected = False
 footwear_selected = False
 dresses_selected = False
 
-fill_1 = 255 # fill_1 variable that colors text "Hair"
-fill_2 = 255 # fill_2 variable that colors text "Torso"
-fill_3 = 255 # fill_3 variable that colors text "Legs"
-fill_4 = 255 # fill_4 variable that colors text "Footwear"
-fill_5 = 255 # fill_5 variable that colors text "Dresses"
+fill_1 = 255     # fill_1 variable that colors text "Hair"
+fill_2 = 255     # fill_2 variable that colors text "Torso"
+fill_3 = 255     # fill_3 variable that colors text "Legs"
+fill_4 = 255     # fill_4 variable that colors text "Footwear"
+fill_5 = 255     # fill_5 variable that colors text "Dresses"
  
 
 
