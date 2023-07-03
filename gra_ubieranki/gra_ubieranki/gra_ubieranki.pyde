@@ -227,13 +227,16 @@ sukienka_magenta.y = 200
 #         self.items.append(item) 
 
         
-# I i            
+        
+# Below I set variable statements for classes            
 
 hair_selected = False
 torso_selected = False
 legs_selected = False
 footwear_selected = False
 dresses_selected = False
+
+
 
 fill_1 = 255     # fill_1 variable colors the text "Hair"
 fill_2 = 255     # fill_2 variable colors the text "Torso"
