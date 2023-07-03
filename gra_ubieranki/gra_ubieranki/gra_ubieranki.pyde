@@ -454,6 +454,11 @@ def text_color():
  
  
  
+# 'show_clothes()'
+# function moves hair items
+# to the center of background
+# when variable hair_selected is True
+
 def show_clothes():
     if hair_selected is True:
         hair_1.x = 395
