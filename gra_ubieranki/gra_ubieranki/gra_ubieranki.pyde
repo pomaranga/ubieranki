@@ -371,7 +371,7 @@ def draw():
     image(sukienka_czarna_2.img, sukienka_czarna_2.x, sukienka_czarna_2.y) #Julia Kornecka
     image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y) #Julia Kornecka
     
-    show_clothes()
+    # show_clothes()
     
 #  'mouseClicked()'
 #  function is responsible for
@@ -387,6 +387,18 @@ def mouseClicked():
         footwear_selected = False
         dresses_selected = False
         print(hair_selected)
+        hair_1.x = 395
+        hair_1.y = 75
+        hair_2.x = 495
+        hair_2.y = 75
+        wlosy_blond.x = 595
+        wlosy_blond.y = 75
+        wlosy_brazowe.x = 395
+        wlosy_brazowe.y = 175
+        wlosy_czarne_1.x = 495
+        wlosy_czarne_1.y = 175
+        wlosy_czarne_2.x = 595
+        wlosy_czarne_2.y = 175
     if mouseX >= width//2-550 and mouseX <= width//2-550 + 110 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3:
         hair_selected = False
         torso_selected = True
@@ -394,6 +406,18 @@ def mouseClicked():
         footwear_selected = False
         dresses_selected = False
         print(hair_selected)
+        hair_1.x = 1500
+        hair_1.y = 200
+        hair_2.x = 1500
+        hair_2.y = 200
+        wlosy_blond.x = 1500
+        wlosy_blond.y = 200
+        wlosy_brazowe.x = 1500
+        wlosy_brazowe.y = 200
+        wlosy_czarne_1.x = 1500
+        wlosy_czarne_1.y = 200
+        wlosy_czarne_2.x = 1500
+        wlosy_czarne_2.y = 200
     if mouseX >= width//2-550 and mouseX <= width//2-550 + 90 and mouseY >= height//2-60 - 30 and mouseY <= height//2-60 + 3:
         hair_selected = False
         torso_selected = False
@@ -412,6 +436,9 @@ def mouseClicked():
         legs_selected = False
         footwear_selected = False
         dresses_selected = True
+    if mouseX >= 395 and mouseX <= 395+207 and mouseY >= 75 and mouseY <= 75 + 110 and hair_selected is True:
+        hair_1.x = 795
+        
         
         
 #  'text_color()'
@@ -457,35 +484,41 @@ def text_color():
 # 'show_clothes()'
 # function moves hair items
 # to the center of background
-# when variable hair_selected is True
+# when variable 'hair_selected' is True
+#
+# sadly, that function conflicts
+# with picking a certain hairstyle,
+# because a hairstyle comes back at
+# original coordinates due to
+# the variable 'hair_selected'
 
-def show_clothes():
-    if hair_selected is True:
-        hair_1.x = 395
-        hair_1.y = 75
-        hair_2.x = 495
-        hair_2.y = 75
-        wlosy_blond.x = 595
-        wlosy_blond.y = 75
-        wlosy_brazowe.x = 395
-        wlosy_brazowe.y = 175
-        wlosy_czarne_1.x = 495
-        wlosy_czarne_1.y = 175
-        wlosy_czarne_2.x = 595
-        wlosy_czarne_2.y = 175    
-    elif hair_selected is False:
-        hair_1.x = 1500
-        hair_1.y = 200
-        hair_2.x = 1500
-        hair_2.y = 200
-        wlosy_blond.x = 1500
-        wlosy_blond.y = 200
-        wlosy_brazowe.x = 1500
-        wlosy_brazowe.y = 200
-        wlosy_czarne_1.x = 1500
-        wlosy_czarne_1.y = 200
-        wlosy_czarne_2.x = 1500
-        wlosy_czarne_2.y = 200
+# def show_clothes():
+#     if hair_selected is True:
+#         hair_1.x = 395
+#         hair_1.y = 75
+#         hair_2.x = 495
+#         hair_2.y = 75
+#         wlosy_blond.x = 595
+#         wlosy_blond.y = 75
+#         wlosy_brazowe.x = 395
+#         wlosy_brazowe.y = 175
+#         wlosy_czarne_1.x = 495
+#         wlosy_czarne_1.y = 175
+#         wlosy_czarne_2.x = 595
+#         wlosy_czarne_2.y = 175    
+#     elif hair_selected is False:
+#         hair_1.x = 1500
+#         hair_1.y = 200
+#         hair_2.x = 1500
+#         hair_2.y = 200
+#         wlosy_blond.x = 1500
+#         wlosy_blond.y = 200
+#         wlosy_brazowe.x = 1500
+#         wlosy_brazowe.y = 200
+#         wlosy_czarne_1.x = 1500
+#         wlosy_czarne_1.y = 200
+#         wlosy_czarne_2.x = 1500
+#         wlosy_czarne_2.y = 200
         
    
 
