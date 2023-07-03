@@ -154,11 +154,11 @@ fill_5 = 255     # fill_5 variable that colors text "Dresses"
 
 
 
-
+# unfortunately, the 'unput' command DOESN'T WORK in processing :(
 
 # Możliwość nazwania postaci (Joanna Baran)
 # def nazwij_postac():
-#     character_name = input(u"Wpisz nazwę postaci: ") # unfortunately, the 'unput' command doesn't work in processing :(
+#     character_name = input(u"Wpisz nazwę postaci: ")
 #     # if name_character:
 #     #     print(u"Miło mi Cię poznać, jestem:", name_character)
 #     # else:
