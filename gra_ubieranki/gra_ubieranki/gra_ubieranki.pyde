@@ -107,6 +107,11 @@ reset_button = Button("reset_button", "data/Buttons/reset_button.png", 945, 650,
 
 
 
+# In following lines I wrote
+# coordinates for clothes elements.
+# I did not create them as class parameters
+# because they'll be changing in future.
+
 hair_1.x = 1500
 hair_1.y = 200
 
