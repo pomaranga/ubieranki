@@ -66,6 +66,10 @@ class Dress(Clothes): #subclass for elements of full body clothes
         
         
         
+# For interface elements will suit a standard class,
+# because there won't be a lot of
+# interface elements, that we could lost in.
+                
 class Interface: #class for interface elements
     def __init__(self, name,  file_path, x, y):
         self.name = name
@@ -76,7 +80,11 @@ class Interface: #class for interface elements
     def load_image(self, file_path):
         self.img = loadImage(file_path)
     
-    
+
+# But still I created the button subclass
+# for better readability of code and maybe
+# to a future use for you.
+            
 class Button(Interface): #subclass for buttoms
     def __init__(self, name, file_path, x, y, size_x, size_y):
         Interface.__init__(self, name, file_path, x, y)
@@ -87,12 +95,6 @@ class Button(Interface): #subclass for buttoms
         Interface.load_image(self, file_path)
 
 
-# def __init__(self, name, file_path):
-#         self.name = name
-#         self.file_path = file_path
-#        
-#     def load_image(self, file_path):
-#         self.img = loadImage(file_path)
 
 # In lines below
 # I created objects withing
@@ -225,7 +227,7 @@ sukienka_magenta.y = 200
 #         self.items.append(item) 
 
         
-            
+# I i            
 
 hair_selected = False
 torso_selected = False
