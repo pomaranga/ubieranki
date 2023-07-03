@@ -189,12 +189,17 @@ def exit_game(): #that function was originally created by Bartosz Rząd
 #                 text("Dresses", width//2-550, height//2+80)            
 
 hair_selected = False
+torso_selected = False
+legs_selected = False
+footwear_selected = False
+dresses_selected = False
 
-# def category_choose():
-#     global hair_selected
-    
-
-
+fill_1 = 255
+fill_2 = 255
+fill_3 = 255
+fill_4 = 255
+fill_5 = 255
+ 
 
 
 
@@ -278,42 +283,35 @@ def setup():
     fill(30, 30, 30, 200)
     rect(20, 65, 300, 600, 10)
     
-    textSize(40)
-    fill(255,255,255)
-    text("Hair", width//2-550, height//2-200)
-    text("Torso", width//2-550, height//2-130)
-    text("Legs", width//2-550, height//2-60) #Vitalii Pshenychniak
-    text("Footwear", width//2-550, height//2+10) #Władysław Bacewicz
-    text("Dresses", width//2-550, height//2+80) #Władysław Bacewicz
-    
-    
-    # dress_x = width / 2 - dress.width / 2 #it must be x coordinate of "sukienka_czarna_1"
-    # dress_y = height / 2 - dress.height / 2 #it must be y coordinate of "sukienka_czarna_1"
-    
     
     # is_dragging = False
-    
-    
     # mouse_offsetdress = PVector(0, 0)  #Wladiskowacz
-    
-    
-     
-     
-    # hair_x = width / 2 - hair.width / 2 #it must be x coordinate of "hair_1"
-    # hair_y = height / 2 - hair.height / 2 #it must be y coordinate of "hair_1"
-    
-    
-    # is_dragging2 = False 
-    
-    
+    # is_dragging2 = False     
     # mouse_offsethair = PVector(0, 0) #Pshenychniak
-    
-    # flaga_wlosy = True #???
     
     
     
 def draw():
+    global fill_1, fill_2, fill_3, fill_4, fill_5
     exit_game()
+    text_color()
+    textSize(40)
+    
+    fill(fill_1, 255, fill_1)
+    text("Hair", width//2-550, height//2-200)
+    
+    fill(fill_2, 255, fill_2)
+    text("Torso", width//2-550, height//2-130)
+    
+    fill(fill_3, 255, fill_3)
+    text("Legs", width//2-550, height//2-60) #Vitalii Pshenychniak
+    
+    fill(fill_4, 255, fill_4)
+    text("Footwear", width//2-550, height//2+10) #Władysław Bacewicz
+    
+    fill(fill_5, 255, fill_5)
+    text("Dresses", width//2-550, height//2+80) #Władysław Bacewicz
+    
     
     
     image(exit_button.img, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)  #Wladiskowacz
@@ -348,19 +346,72 @@ def draw():
     
     
 def mouseClicked():
-    global hair_selected
+    global hair_selected, torso_selected, legs_selected, footwear_selected, dresses_selected
     if mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-200 - 30 and mouseY <= height//2-200 + 3:
         hair_selected = True
+        torso_selected = False
+        legs_selected = False
+        footwear_selected = False
+        dresses_selected = False
         # print(hair_selected)
-    if mouseX < width//2-550 and mouseX > width//2-550 + 80 and mouseY < height//2-200 - 30 and mouseY > height//2-200 + 3 and hair_selected == True:
+    if mouseX >= width//2-550 and mouseX <= width//2-550 + 110 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3:
         hair_selected = False
-        # print(hair_selected)
-    
-    
-    # if flaga_wlosy:
-    #     image(wlosyblondImg, 250, 100, 150, 450)
-    # else:
-    #     image(wlosybrazImg,250, 100, 150, 450)
+        torso_selected = True
+        legs_selected = False
+        footwear_selected = False
+        dresses_selected = False
+    if mouseX >= width//2-550 and mouseX <= width//2-550 + 90 and mouseY >= height//2-60 - 30 and mouseY <= height//2-60 + 3:
+        hair_selected = False
+        torso_selected = False
+        legs_selected = True
+        footwear_selected = False
+        dresses_selected = False
+    if mouseX >= width//2-550 and mouseX <= width//2-550 + 175 and mouseY >= height//2+10 - 30 and mouseY <= height//2+10 + 3:
+        hair_selected = False
+        torso_selected = False
+        legs_selected = False
+        footwear_selected = True
+        dresses_selected = False
+    if mouseX >= width//2-550 and mouseX <= width//2-550 + 150 and mouseY >= height//2+80 - 30 and mouseY <= height//2+80 + 3:
+        hair_selected = False
+        torso_selected = False
+        legs_selected = False
+        footwear_selected = False
+        dresses_selected = True
+        
+        
+def text_color():
+    global fill_1, fill_2, fill_3, fill_4, fill_5, hair_selected, torso_selected, legs_selected, footwear_selected, dresses_selected
+    if hair_selected == True:
+        fill_1 = 150
+        fill_2 = 255
+        fill_3 = 255
+        fill_4 = 255
+        fill_5 = 255
+    elif torso_selected == True:
+        fill_1 = 255
+        fill_2 = 150
+        fill_3 = 255
+        fill_4 = 255
+        fill_5 = 255
+    elif legs_selected == True:
+        fill_1 = 255
+        fill_2 = 255
+        fill_3 = 150
+        fill_4 = 255
+        fill_5 = 255
+    elif footwear_selected == True:
+        fill_1 = 255
+        fill_2 = 255
+        fill_3 = 255
+        fill_4 = 150
+        fill_5 = 255
+    elif dresses_selected == True:
+        fill_1 = 255
+        fill_2 = 255
+        fill_3 = 255
+        fill_4 = 255
+        fill_5 = 150
         
         
    
