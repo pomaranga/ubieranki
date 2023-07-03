@@ -1,49 +1,47 @@
 class Clothes: #class for elements of clothes; that class was originally created by Anhelina Hlushanok
-    def __init__(self, name, file_path, x, y):
+    def __init__(self, name, file_path):
         self.name = name
         self.file_path = file_path
-        self.x = x
-        self.y = y
         
     def load_image(self, file_path):
         self.img = loadImage(file_path)
 
 
 class Hair(Clothes): #subclass for elements of hairstyles
-    def __init__(self, name, file_path, x, y):
-        Clothes.__init__(self, name, file_path, x, y) #command 'super().' doesn't work
+    def __init__(self, name, file_path):
+        Clothes.__init__(self, name, file_path) #command 'super().' doesn't work
         
     def load_image(self, file_path):
         Clothes.load_image(self, file_path)
          
                                    
 class Torso(Clothes): #subclass for elements of upper body clothes
-    def __init__(self, name, file_path, x, y):
-        Clothes.__init__(self, name, file_path, x, y)
+    def __init__(self, name, file_path):
+        Clothes.__init__(self, name, file_path)
         
     def load_image(self, file_path):
         Clothes.load_image(self, file_path)
     
     
 class Legs(Clothes): #subclass for elements of lower body clothes
-    def __init__(self, name, file_path, x, y):
-        Clothes.__init__(self, name, file_path, x, y)
+    def __init__(self, name, file_path):
+        Clothes.__init__(self, name, file_path)
         
     def load_image(self, file_path):
         Clothes.load_image(self, file_path)
     
     
 class Footwear(Clothes): #subclass for elements of footwear
-    def __init__(self, name, file_path, x, y):
-        Clothes.__init__(self, name, file_path, x, y)
+    def __init__(self, name, file_path):
+        Clothes.__init__(self, name, file_path)
     
     def load_image(self, file_path):
         Clothes.load_image(self, file_path)
 
 
 class Dress(Clothes): #subclass for elements of full body clothes
-    def __init__(self, name, file_path, x, y):
-        Clothes.__init__(self, name, file_path, x, y)
+    def __init__(self, name, file_path):
+        Clothes.__init__(self, name, file_path)
         
         
         
@@ -68,36 +66,36 @@ class Button(Interface): #subclass for buttoms
         Interface.load_image(self, file_path)
 
 
-hair_1 = Hair("hair_1", "data/Hair/hair_1.png", 1500, 200)
-hair_2 = Hair("hair_2", "data/Hair/hair_2.png", 1500, 200)
-wlosy_blond = Hair("wlosy_blond", "data/Hair/wlosy_blond.png", 1500, 200)
-wlosy_brazowe = Hair("wlosy_brazowe", "data/Hair/wlosy_brazowe.png", 1500, 200)
-wlosy_czarne_1 = Hair("wlosy_czarne_1", "data/Hair/wlosy_czarne_1.png", 1500, 200)
-wlosy_czarne_2 = Hair("wlosy_czarne_2", "data/Hair/wlosy_czarne_2.png", 1500, 200)
+hair_1 = Hair("hair_1", "data/Hair/hair_1.png")
+hair_2 = Hair("hair_2", "data/Hair/hair_2.png")
+wlosy_blond = Hair("wlosy_blond", "data/Hair/wlosy_blond.png")
+wlosy_brazowe = Hair("wlosy_brazowe", "data/Hair/wlosy_brazowe.png")
+wlosy_czarne_1 = Hair("wlosy_czarne_1", "data/Hair/wlosy_czarne_1.png")
+wlosy_czarne_2 = Hair("wlosy_czarne_2", "data/Hair/wlosy_czarne_2.png")
 
 
-bluzka_niebieska = Torso("bluzka_niebieska", "data/Torso/bluzka_niebieska.png", 1500, 200)
-bluzka_rozowa = Torso("bluzka_rozowa", "data/Torso/bluzka_rozowa.png", 1500, 200)
-bluzka_zielona = Torso("bluzka_zielona", "data/Torso/bluzka_zielona.png", 1500, 200)
-koszulka_czarna = Torso("koszulka_czarna", "data/Torso/koszulka_czarna.png", 1500, 200)
+bluzka_niebieska = Torso("bluzka_niebieska", "data/Torso/bluzka_niebieska.png")
+bluzka_rozowa = Torso("bluzka_rozowa", "data/Torso/bluzka_rozowa.png")
+bluzka_zielona = Torso("bluzka_zielona", "data/Torso/bluzka_zielona.png")
+koszulka_czarna = Torso("koszulka_czarna", "data/Torso/koszulka_czarna.png")
 
 
-spodnica_brazowa = Legs("spodnica_brazowa", "data/Legs/spodnica_brazowa.png", 1500, 200)
-spodnica_czerwona = Legs("spodnica_czerwona", "data/Legs/spodnica_czerwona.png", 1500, 200)
-spodnica_fioletowa = Legs("spodnica_fioletowa", "data/Legs/spodnica_fioletowa.png", 1500, 200)
-spodnica_niebieska = Legs("spodnica_niebieska", "data/Legs/spodnica_niebieska.png", 1500, 200)
-spodnica_zielona = Legs("spodnica_zielona", "data/Legs/spodnica_zielona.png", 1500, 200)
+spodnica_brazowa = Legs("spodnica_brazowa", "data/Legs/spodnica_brazowa.png")
+spodnica_czerwona = Legs("spodnica_czerwona", "data/Legs/spodnica_czerwona.png")
+spodnica_fioletowa = Legs("spodnica_fioletowa", "data/Legs/spodnica_fioletowa.png")
+spodnica_niebieska = Legs("spodnica_niebieska", "data/Legs/spodnica_niebieska.png")
+spodnica_zielona = Legs("spodnica_zielona", "data/Legs/spodnica_zielona.png")
 
 
-black_shoes = Footwear("black_shoes", "data/Footwear/black_shoes.png", 1500, 200)
-klapki_fioletowe = Footwear("klapki_fioletowe", "data/Footwear/klapki_fioletowe.png", 1500, 200)
-klapki_rozowe = Footwear("klapki_rozowe", "data/Footwear/klapki_rozowe.png", 1500, 200)
-klapki_zielone = Footwear("klapki_fioletowe", "data/Footwear/klapki_fioletowe.png", 1500, 200)
+black_shoes = Footwear("black_shoes", "data/Footwear/black_shoes.png")
+klapki_fioletowe = Footwear("klapki_fioletowe", "data/Footwear/klapki_fioletowe.png")
+klapki_rozowe = Footwear("klapki_rozowe", "data/Footwear/klapki_rozowe.png")
+klapki_zielone = Footwear("klapki_fioletowe", "data/Footwear/klapki_fioletowe.png")
 
 
-sukienka_czarna_1 = Dress("sukienka_czarna_1", "data/Dresses/sukienka_czarna_1.png", 1500, 200)
-sukienka_czarna_2 = Dress("sukienka_czarna_2", "data/Dresses/sukienka_czarna_2.png", 1500, 200)
-sukienka_magenta = Dress("sukienka_magenta", "data/Dresses/sukienka_magenta.png", 1500, 200)
+sukienka_czarna_1 = Dress("sukienka_czarna_1", "data/Dresses/sukienka_czarna_1.png")
+sukienka_czarna_2 = Dress("sukienka_czarna_2", "data/Dresses/sukienka_czarna_2.png")
+sukienka_magenta = Dress("sukienka_magenta", "data/Dresses/sukienka_magenta.png")
 
 
 background_image = Interface("background_image", "data/background_image.png", 0, 0)
@@ -107,27 +105,89 @@ character_image = Interface("character_image", "data/character.png", 795, 75)
 exit_button = Button("exit_button", "data/Buttons/exit_button.png", 1193, 7, 80, 40)
 reset_button = Button("reset_button", "data/Buttons/reset_button.png", 945, 650, 80, 40)
 
+
+
+hair_1.x = 1500
+hair_1.y = 200
+
+hair_2.x = 1500
+hair_2.y = 200
+
+wlosy_blond.x = 1500
+wlosy_blond.y = 200
+
+wlosy_brazowe.x = 1500
+wlosy_brazowe.y = 200
+
+wlosy_czarne_1.x = 1500
+wlosy_czarne_1.y = 200
+
+wlosy_czarne_2.x = 1500
+wlosy_czarne_2.y = 200
+
+bluzka_niebieska.x = 1500
+bluzka_niebieska.y = 200
+
+bluzka_rozowa.x = 1500
+bluzka_rozowa.y = 200
+
+bluzka_zielona.x = 1500
+bluzka_zielona.y = 200
+
+koszulka_czarna.x = 1500
+koszulka_czarna.y = 200
+
+spodnica_brazowa.x = 1500
+spodnica_brazowa.y = 200
+
+spodnica_czerwona.x = 1500
+spodnica_czerwona.y = 200
+
+spodnica_fioletowa.x = 1500
+spodnica_fioletowa.y = 200
+
+spodnica_niebieska.x = 1500
+spodnica_niebieska.y = 200
+
+spodnica_zielona.x = 1500
+spodnica_zielona.y = 200
+
+black_shoes.x = 1500
+black_shoes.y = 200
+
+klapki_fioletowe.x = 1500
+klapki_fioletowe.y = 200
+
+klapki_rozowe.x = 1500
+klapki_rozowe.y = 200
+
+klapki_zielone.x = 1500
+klapki_zielone.y = 200
+
+sukienka_czarna_1.x = 1500
+sukienka_czarna_1.y = 200
+
+sukienka_czarna_2.x = 1500
+sukienka_czarna_2.y = 200
+
+sukienka_magenta.x = 1500
+sukienka_magenta.y = 200
+
+
 #quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)
 #quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)
 #start_button = Button("start_button", "data/Buttons/start_button.png", x, y)
 #start_hover_button = Button("start_hover_button", "data/Buttons/start_hover_button.png", x, y)
                      
                      
-# class Wardrobe: #klasa dla szafy 
+# class Wardrobe: #klasa dla szafy
 #     def __init__(self):
 #         self.items = []
         
 #     def add_items(self, item): #funkcja zeby dodac rzeczy do szafy
 #         self.items.append(item) 
 
-# class Character(): #klasa postaci
-#     def __init__(self,name):
-#         self.name = name
 
-# class Character():
-#     def __init__(self,x,y):
-#         self.rect.x = x
-#         self.rect.y = y
 
 def exit_game(): #that function was originally created by Bartosz Rząd
     if (mousePressed and mouseX >= 1193 and mouseX <= 1268 and mouseY >= 7 and mouseY <= 47):
@@ -181,7 +241,7 @@ fill_5 = 255     # fill_5 variable that colors text "Dresses"
 
 
 def setup():
-    # global #is_dragging, mouse_offsetdress, mouse_offsethair, flaga_wlosy
+    # global #is_dragging, mouse_offsetdress, mouse_offsethair
     size(1280, 720)
         
     # start = loadImage("star_img.png") #B.Rząd
