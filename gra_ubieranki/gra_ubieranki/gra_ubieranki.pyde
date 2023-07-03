@@ -184,10 +184,10 @@ sukienka_magenta.x = 1500
 sukienka_magenta.y = 200
 
 
-#quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)
-#quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)
-#start_button = Button("start_button", "data/Buttons/start_button.png", x, y)
-#start_hover_button = Button("start_hover_button", "data/Buttons/start_hover_button.png", x, y)
+#quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)                      #B. Rząd
+#quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)    #B. Rząd
+#start_button = Button("start_button", "data/Buttons/start_button.png", x, y)                   #B. Rząd
+#start_hover_button = Button("start_hover_button", "data/Buttons/start_hover_button.png", x, y) #B. Rząd
                      
                      
 # class Wardrobe: #klasa dla szafy
@@ -223,6 +223,13 @@ fill_5 = 255     # fill_5 variable colors the text "Dresses"
  
 
 
+        
+        
+        
+        
+        
+        
+        
 
 # unfortunately,
 # the 'input' command
@@ -295,12 +302,7 @@ def setup():
     sukienka_czarna_2.load_image(sukienka_czarna_2.file_path) #Julia Kornecka
     sukienka_magenta.load_image(sukienka_magenta.file_path) #Julia Kornecka
     
-    background(background_image.img)
-    image(character_image.img, character_image.x, character_image.y)
     
-    
-    fill(30, 30, 30, 200)
-    rect(20, 65, 300, 600, 10)
     
     
     # is_dragging = False
@@ -311,6 +313,13 @@ def setup():
     
     
 def draw():
+    background(background_image.img)
+    image(character_image.img, character_image.x, character_image.y)
+    
+    
+    fill(30, 30, 30, 200)
+    rect(20, 65, 300, 600, 10)
+    
     exit_game()
     text_color()
     textSize(40)
@@ -362,7 +371,7 @@ def draw():
     image(sukienka_czarna_2.img, sukienka_czarna_2.x, sukienka_czarna_2.y) #Julia Kornecka
     image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y) #Julia Kornecka
     
-    
+    show_clothes()
     
 #  'mouseClicked()'
 #  function is responsible for
@@ -377,13 +386,14 @@ def mouseClicked():
         legs_selected = False
         footwear_selected = False
         dresses_selected = False
-        # print(hair_selected)
+        print(hair_selected)
     if mouseX >= width//2-550 and mouseX <= width//2-550 + 110 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3:
         hair_selected = False
         torso_selected = True
         legs_selected = False
         footwear_selected = False
         dresses_selected = False
+        print(hair_selected)
     if mouseX >= width//2-550 and mouseX <= width//2-550 + 90 and mouseY >= height//2-60 - 30 and mouseY <= height//2-60 + 3:
         hair_selected = False
         torso_selected = False
@@ -411,37 +421,66 @@ def mouseClicked():
       
 def text_color():
     global fill_1, fill_2, fill_3, fill_4, fill_5, hair_selected, torso_selected, legs_selected, footwear_selected, dresses_selected
-    if hair_selected == True:
+    if hair_selected is True:
         fill_1 = 150
         fill_2 = 255
         fill_3 = 255
         fill_4 = 255
         fill_5 = 255
-    elif torso_selected == True:
+    elif torso_selected is True:
         fill_1 = 255
         fill_2 = 150
         fill_3 = 255
         fill_4 = 255
         fill_5 = 255
-    elif legs_selected == True:
+    elif legs_selected is True:
         fill_1 = 255
         fill_2 = 255
         fill_3 = 150
         fill_4 = 255
         fill_5 = 255
-    elif footwear_selected == True:
+    elif footwear_selected is True:
         fill_1 = 255
         fill_2 = 255
         fill_3 = 255
         fill_4 = 150
         fill_5 = 255
-    elif dresses_selected == True:
+    elif dresses_selected is True:
         fill_1 = 255
         fill_2 = 255
         fill_3 = 255
         fill_4 = 255
         fill_5 = 150
-        
+ 
+ 
+ 
+def show_clothes():
+    if hair_selected is True:
+        hair_1.x = 395
+        hair_1.y = 75
+        hair_2.x = 495
+        hair_2.y = 75
+        wlosy_blond.x = 595
+        wlosy_blond.y = 75
+        wlosy_brazowe.x = 395
+        wlosy_brazowe.y = 175
+        wlosy_czarne_1.x = 495
+        wlosy_czarne_1.y = 175
+        wlosy_czarne_2.x = 595
+        wlosy_czarne_2.y = 175    
+    elif hair_selected is False:
+        hair_1.x = 1500
+        hair_1.y = 200
+        hair_2.x = 1500
+        hair_2.y = 200
+        wlosy_blond.x = 1500
+        wlosy_blond.y = 200
+        wlosy_brazowe.x = 1500
+        wlosy_brazowe.y = 200
+        wlosy_czarne_1.x = 1500
+        wlosy_czarne_1.y = 200
+        wlosy_czarne_2.x = 1500
+        wlosy_czarne_2.y = 200
         
    
 
