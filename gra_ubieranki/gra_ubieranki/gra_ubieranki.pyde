@@ -66,6 +66,11 @@ class Button(Interface): #subclass for buttoms
         Interface.load_image(self, file_path)
 
 
+
+# In lines below
+# I created objects withing
+# existing classes/subclasses
+
 hair_1 = Hair("hair_1", "data/Hair/hair_1.png")
 hair_2 = Hair("hair_2", "data/Hair/hair_2.png")
 wlosy_blond = Hair("wlosy_blond", "data/Hair/wlosy_blond.png")
@@ -210,24 +215,27 @@ legs_selected = False
 footwear_selected = False
 dresses_selected = False
 
-fill_1 = 255     # fill_1 variable that colors text "Hair"
-fill_2 = 255     # fill_2 variable that colors text "Torso"
-fill_3 = 255     # fill_3 variable that colors text "Legs"
-fill_4 = 255     # fill_4 variable that colors text "Footwear"
-fill_5 = 255     # fill_5 variable that colors text "Dresses"
+fill_1 = 255     # fill_1 variable colors the text "Hair"
+fill_2 = 255     # fill_2 variable colors the text "Torso"
+fill_3 = 255     # fill_3 variable colors the text "Legs"
+fill_4 = 255     # fill_4 variable colors the text "Footwear"
+fill_5 = 255     # fill_5 variable colors the text "Dresses"
  
 
 
 
-# unfortunately, the 'input' command DOESN'T WORK in processing :(
+# unfortunately,
+# the 'input' command
+# DOESN'T WORK
+# in processing :(
 
 # Możliwość nazwania postaci (Joanna Baran)
 # def nazwij_postac():
 #     character_name = input(u"Wpisz nazwę postaci: ")
-#     # if name_character:
-#     #     print(u"Miło mi Cię poznać, jestem:", name_character)
-#     # else:
-#     #     # print(u"Nie wpisano nazwy postaci.")
+#     if name_character:
+#         print(u"Miło mi Cię poznać, jestem:", name_character)
+#     else:
+#         print(u"Nie wpisano nazwy postaci.")
 
 
 
@@ -353,6 +361,7 @@ def draw():
     image(sukienka_czarna_1.img, sukienka_czarna_1.x, sukienka_czarna_1.y)
     image(sukienka_czarna_2.img, sukienka_czarna_2.x, sukienka_czarna_2.y) #Julia Kornecka
     image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y) #Julia Kornecka
+    
     
     
 #  'mouseClicked()'
