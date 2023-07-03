@@ -154,7 +154,7 @@ fill_5 = 255     # fill_5 variable that colors text "Dresses"
 
 
 
-# unfortunately, the 'unput' command DOESN'T WORK in processing :(
+# unfortunately, the 'input' command DOESN'T WORK in processing :(
 
 # Możliwość nazwania postaci (Joanna Baran)
 # def nazwij_postac():
