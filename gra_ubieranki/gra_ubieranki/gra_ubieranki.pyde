@@ -238,7 +238,6 @@ def setup():
     
     
 def draw():
-    global fill_1, fill_2, fill_3, fill_4, fill_5
     exit_game()
     text_color()
     textSize(40)
