@@ -20,17 +20,52 @@ class Character():
         self.rect.x = x
         self.rect.y = y
 
+class RzeciRuszanie:
+    def __init__(self, image_path, x, y):
+        self.image = loadImage(image_path)
+        self.x = x
+        self.y = y
+        self.is_dragging = False
+        self.mouse_offset = PVector(0, 0)
+        self.scale_factor = 0.8
+
+    def display(self):
+        pushMatrix()
+        translate(self.x, self.y)
+        scale(self.scale_factor)
+        image(self.image, 0, 0)
+        popMatrix()
+
+    def check_mouse_over(self):
+        if (
+            mouseX > self.x
+            and mouseX < self.x + self.image.width * self.scale_factor
+            and mouseY > self.y
+            and mouseY < self.y + self.image.height * self.scale_factor
+        ):
+            return True
+        return False
+
+    def mouse_pressed(self):
+        if self.check_mouse_over():
+            self.is_dragging = True
+            self.mouse_offset.x = self.x - mouseX
+            self.mouse_offset.y = self.y - mouseY
+
+    def mouse_released(self):
+        self.is_dragging = False
+
+    def mouse_dragged(self):
+        if self.is_dragging:
+            self.x = mouseX + self.mouse_offset.x
+            self.y = mouseY + self.mouse_offset.y
+
+
+
 def menu_start():
     global start, quit, starthover, quithover
     image(start,100,300) #B.Rząd
     image(quit,650,300) #B.Rząd
-    if(mouseX > 100 and mouseX < 535 and mouseY > 310 and mouseY < 492):
-        image(starthover,100,300)
-    if(mouseX > 665 and mouseX < 1100 and mouseY > 310 and mouseY < 492):
-        image(quithover,650,300)
-    if(mousePressed and mouseX > 665 and mouseX < 1100 and mouseY > 310 and mouseY < 492):
-        clear()
-        exit()
 
 
 
@@ -69,7 +104,7 @@ if shoes_selected:
 
 
 def setup():
-    global webImg,wlosybrazImg, start,flaga_wlosy, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dress, dress_x, dress_y, is_dragging, mouse_offsetdress, mouse_offsethair, hair, hair_x, hair_y, hair2Img, shoesImg, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg, wlosyczarne, sukienkaczarna, koszulkaczarna, sukienkamagenta,barImg,button_dressImg,button_heelsImg,button_haircolorImg,dress_shadowImg,heels_shadowImg,haircolor_shadowImg,skirt_shadow,skirt,b_dress,b_wlosy,b_heels,b_skirt,bluzkaniebieskaImg,bluzkazielonaImg,spodnicabrazowaImg,spodnicaczerwonaImg,spodnicafioletowaImg,spodnicazielonaImg,klapkirfioletoweImg,klapkizieloneImg,hair3,hair4,hair5,hair6,hair7
+    global webImg,wlosybrazImg, start,flaga_wlosy, quit, starthover, quithover, wyjscieImg, resetImg, characterImg, dress, dress_x, dress_y, is_dragging, mouse_offsetdress, mouse_offsethair, hair, hair_x, hair_y, hair2, shoes, spodnicaniebieskaImg, bluzkarozowaImg, klapkirozoweImg, wlosyblondImg, wlosyczarne, sukienkaczarna, koszulkaczarna, sukienkamagenta,barImg,button_dressImg,button_heelsImg,button_haircolorImg,dress_shadowImg,heels_shadowImg,haircolor_shadowImg,skirt_shadow,skirt,b_dress,b_wlosy,b_heels,b_skirt,bluzkaniebieskaImg,bluzkazielonaImg,spodnicabrazowaImg,spodnicaczerwonaImg,spodnicafioletowaImg,spodnicazielonaImg,klapkirfioletoweImg,klapkizieloneImg,hair3,hair4,hair5,hair6,hair7
     size(1200,800)
     textSize(50) 
     #img = loadImage('C:/Users/user_x/Desktop/ubierani/ubieranki/postasc.hair2.PNG')
@@ -82,15 +117,10 @@ def setup():
     wyjscieImg = loadImage("exit.png")  #Wladiskowacz
     resetImg = loadImage("reset.png")  #Wladiskowacz
     characterImg = loadImage("character.PNG")  #Wladiskowacz
-    dress = loadImage("dress.PNG")
-    dress_x = width / 2 - dress.width / 2
-    dress_y = height / 2 - dress.height / 2
-    is_dragging = False
-    mouse_offsetdress = PVector(0, 0)  #Wladiskowacz
-    hair = loadImage("hair.PNG")  
-    hair_x = width / 2 - hair.width / 2
-    hair_y = height / 2 - hair.height / 2
-    is_dragging2 = False 
+    dress = RzeciRuszanie("dress.PNG", 600, 200)
+    hair = RzeciRuszanie("hair.PNG", -200, 200)
+    hair2 = RzeciRuszanie("hair2.PNG", 600, 200)
+    shoes = RzeciRuszanie("shoes.PNG", 600, 180)
     mouse_offsethair = PVector(0, 0) #Pshenychniak
     hair2Img = loadImage("hair2.PNG")  #Wladiskowacz
     shoesImg = loadImage("shoes.PNG")  #Wladiskowacz
@@ -98,10 +128,10 @@ def setup():
     bluzkarozowaImg = loadImage("bluzkarozowaImg.png") #Patrycja Leśniak
     klapkirozoweImg = loadImage("klapkirozoweImg.png") #Patrycja Leśniak
     #wlosyblondImg = loadImage("wlosyblondImg.png") #Patrycja Leśniak
-    wlosyczarne = loadImage("wlosy_czarne.png") #Kornecka
-    koszulkaczarna = loadImage("koszulka_czarna.png") #Kornecka
-    sukienkaczarna = loadImage("sukienka_czarna.png") #Kornecka
-    sukienkamagenta = loadImage("sukienka_magenta.png") #Kornecka
+    wlosyczarne = RzeciRuszanie("wlosy_czarne.png", 600, 200) #Kornecka
+    koszulkaczarna = RzeciRuszanie("koszulka_czarna.png", 600, 200) #Kornecka
+    sukienkaczarna = RzeciRuszanie("sukienka_czarna.png", 600, 200) #Kornecka
+    sukienkamagenta = RzeciRuszanie("sukienka_magenta.png", 600, 200) #Kornecka
     
     
     barImg = loadImage("rectangle.png") #Zadorozhnyi
@@ -156,10 +186,6 @@ def draw():
     menu_start()
     background(0)
     image(webImg,0,0)
-    #image(wlosyczarne, -150, -400) #Kornecka
-    image(koszulkaczarna, -140, -250) #Kornecka
-    image(sukienkaczarna, 600, -400) #Kornecka
-    image(sukienkamagenta, 460, -100) #Kornecka
     fill(30,30,30, 200)
     rect(20, 100, 300, 600, 10)    
     fill(400,400,400, 400)
@@ -176,10 +202,17 @@ def draw():
     image(wyjscieImg, 10, 10, 120, 60)  #Wladiskowacz
     image(resetImg, 135, 5, 130, 70)  #Wladiskowacz
     image(characterImg, 600, 200, 150, 430)  #Wladiskowacz
-    image(dress, dress_x, dress_y)
-    image(hair, hair_x, hair_y) #Pshenychniak
-    image(hair2Img, 600, 200, 150, 450)  #Wladiskowacz
-    image(shoesImg, 600, 180, 150, 450)  #Wladiskowacz
+
+    dress.display()
+    hair.display()
+    hair2.display()
+    shoes.display()
+    wlosyczarne.display()
+    koszulkaczarna.display()
+    sukienkaczarna.display()
+    sukienkamagenta.display()
+
+
     
     if b_wlosy == 0:
         image(hair3,600,200,150,450)
@@ -307,46 +340,38 @@ def mouseClicked():  #Wladiskowacz (prawdopodobnie po kliknięciu przycisku „s
             b_skirt = 0
 
 def mousePressed():
-    global is_dragging, is_dragging2, mouse_offsetdress, mouse_offsethair
-    if dress_x <= mouseX <= dress_x + dress.width and dress_y <= mouseY <= dress_y + dress.height:
-        is_dragging = True
-        mouse_offsetdress.x = dress_x - mouseX
-        mouse_offsetdress.y = dress_y - mouseY
-    if hair_x <= mouseX <= hair_x + hair.width and hair_y <= mouseY <= hair_y + hair.height:
-        is_dragging2 = True
-        mouse_offsethair.x = hair_x - mouseX
-        mouse_offsethair.y = hair_y - mouseY
+    for rzecz in [dress, hair, hair2, shoes, wlosyczarne, koszulkaczarna, sukienkaczarna, sukienkamagenta]:
+        rzecz.mouse_pressed()
+        if rzecz.is_dragging:
+            break
 
-        
-        
+
 def mouseReleased():
-    global is_dragging, is_dragging2
-    is_dragging = False
-    is_dragging2 = False
+    for rzecz in [dress, hair, hair2, shoes, wlosyczarne, koszulkaczarna, sukienkaczarna, sukienkamagenta]:
+        rzecz.mouse_released()
+
 
 def mouseDragged():
-    global dress_x, dress_y, hair_x, hair_y
-    if is_dragging:
-        dress_x = mouseX + mouse_offsetdress.x
-        dress_y = mouseY + mouse_offsetdress.y
-    if is_dragging2:
-        hair_x = mouseX + mouse_offsethair.x
-        hair_y = mouseY + mouse_offsethair.y
+    for rzecz in [dress, hair, hair2, shoes, wlosyczarne, koszulkaczarna, sukienkaczarna, sukienkamagenta]:
+        rzecz.mouse_dragged()
+        
+        
+def keyPressed():
+    if key == 'r':
+        dress.x = width / 2 - dress.image.width * dress.scale_factor / 2
+        dress.y = height / 2 - dress.image.height * dress.scale_factor / 2
+        hair.x = width / 2 - hair.image.width * hair.scale_factor / 2
+        hair.y = height / 2 - hair.image.height * hair.scale_factor / 2
+        hair2.x = width / 2 - hair2.image.width * hair2.scale_factor / 2
+        hair2.y = height / 2 - hair2.image.height * hair2.scale_factor / 2
+        shoes.x = width / 2 - shoes.image.width * shoes.scale_factor / 2
+        shoes.y = height / 2 - shoes.image.height * shoes.scale_factor / 2
+        wlosyczarne.x = width / 2 - dress.image.width * dress.scale_factor / 2
+        wlosyczarne.y = height / 2 - dress.image.height * dress.scale_factor / 2
+        koszulkaczarna.x = width / 2 - dress.image.width * dress.scale_factor / 2
+        koszulkaczarna.y = height / 2 - dress.image.height * dress.scale_factor / 2
+        sukienkaczarna.x = width / 2 - dress.image.width * dress.scale_factor / 2
+        sukienkaczarna.y = height / 2 - dress.image.height * dress.scale_factor / 2
+        sukienkamagenta.x = width / 2 - dress.image.width * dress.scale_factor / 2
+        sukienkamagenta.y = height / 2 - dress.image.height * dress.scale_factor / 2
       
-
-
-def reset():  #Wladiskowacz (prawdopodobnie po kliknięciu znika z ekranu)
-    global x, y
-    imageMode(CENTER)
-    image(dressImg, -200, -200) #Nie dziala :(
-    
-
-    
- #   Hair.x = -100
- #   Hair.y = -100
-    
- #   Hair2.x = -100
- #   Hair2.y = -100
-
-#    Shoes.x = -100
-#    Shoes.y = -100
