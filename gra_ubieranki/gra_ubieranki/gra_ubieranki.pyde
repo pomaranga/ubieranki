@@ -136,8 +136,11 @@ background_image = Interface("background_image", "data/background_image.png", 0,
 character_image = Interface("character_image", "data/character.png", 795, 75)
 
 
+start_button = Button("start_button", "data/Buttons/start_button.png", 200, 250, 100, 100)           #Natalia Kunach
+language_button = Button("language_button", "data/Buttons/language_button.png", 200, 400, 100, 100)  #Natalia Kunach
 exit_button = Button("exit_button", "data/Buttons/exit_button.png", 1193, 7, 80, 40)
 reset_button = Button("reset_button", "data/Buttons/reset_button.png", 945, 650, 80, 40)
+
 
 
 
@@ -211,22 +214,10 @@ sukienka_czarna_2.y = 200
 
 sukienka_magenta.x = 1500
 sukienka_magenta.y = 200
-
-
-#quit_button = Button("quit_button", "data/Buttons/quit_button.png", x, y)                      #B. Rząd
-#quit_hover_button = Button("quit_hover_button", "data/Buttons/quit_hover_button.png", x, y)    #B. Rząd
-#start_button = Button("start_button", "data/Buttons/start_button.png", x, y)                   #B. Rząd
-#start_hover_button = Button("start_hover_button", "data/Buttons/start_hover_button.png", x, y) #B. Rząd
                      
-                     
-# class Wardrobe: #klasa dla szafy
-#     def __init__(self):
-#         self.items = []
-        
-#     def add_items(self, item): #funkcja zeby dodac rzeczy do szafy
-#         self.items.append(item) 
-
-        
+                
+                        
+                                        
         
 # Below I set variable statements for classes            
 
@@ -286,15 +277,15 @@ fill_5 = 255     # fill_5 variable colors the text "Dresses"
 def setup():
     # global #is_dragging, mouse_offsetdress, mouse_offsethair
     size(1280, 720)
+    
         
-    # start = loadImage("star_img.png") #B.Rząd
-    # quit = loadImage("quit_img.png") #B.Rząd
-    # starthover = loadImage("star_hover_img.png") #B.Rząd
-    # quithover = loadImage("quit_hover_img.png") #B.Rząd
     
     background_image.load_image(background_image.file_path)
     character_image.load_image(character_image.file_path)  #Władysław Bacewicz
     
+    
+    start_button.load_image(start_button.file_path) #Natalia Kunach
+    language_button.load_image(language_button.file_path) #Natalia Kunach
     exit_button.load_image(exit_button.file_path)  #Władysław Bacewicz
     reset_button.load_image(reset_button.file_path)  #Władysław Bacewicz
     
@@ -341,8 +332,10 @@ def draw():
     
     
     fill(30, 30, 30, 200)
-    rect(20, 65, 300, 600, 10)
+    rect(20, 65, 400, 600, 10)
     
+    font = createFont("Vallena.ttf", 50)  #Natalia Kunach
+    textFont(font)                        #Natalia Kunach
     text_color()
     textSize(40)
     
