@@ -387,27 +387,7 @@ def draw():
     image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y)      #Julia Kornecka
 
 
-#Name a character #Joanna Baran
-import tkinter as tk
-from tkinter import messagebox
 
-def zapisz_imie():
-    imie = pole_tekstowe.get()
-    messagebox.showinfo("Witaj!", f"Witaj, {imie}!")
-
-okno = tk.Tk()
-okno.title("Wpisz imię postaci")
-
-etykieta = tk.Label(okno, text="Wpisz imię postaci:")
-etykieta.pack()
-
-pole_tekstowe = tk.Entry(okno)
-pole_tekstowe.pack()
-
-przycisk = tk.Button(okno, text="Zapisz", command=zapisz_imie)
-przycisk.pack()
-
-okno.mainloop()
   
 #  'mouseClicked()'
 #  function is responsible for
