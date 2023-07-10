@@ -385,9 +385,16 @@ def draw():
     image(sukienka_czarna_1.img, sukienka_czarna_1.x, sukienka_czarna_1.y)
     image(sukienka_czarna_2.img, sukienka_czarna_2.x, sukienka_czarna_2.y)   #Julia Kornecka
     image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y)      #Julia Kornecka
-    
-    # show_clothes()
-    
+
+
+#Name a character #Joanna Baran
+ def nazwij_postac():
+    character_name = input(u"Wpisz nazwę postaci: ")
+    if name_character:
+        print(u"Miło mi Cię poznać, jestem:", name_character)
+    else:
+        print(u"Nie wpisano nazwy postaci.")
+  
 #  'mouseClicked()'
 #  function is responsible for
 #  changing the state of chosen
