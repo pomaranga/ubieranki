@@ -284,22 +284,22 @@ def setup():
     character_image.load_image(character_image.file_path)  #Władysław Bacewicz
     
     
-    start_button.load_image(start_button.file_path) #Natalia Kunach
-    language_button.load_image(language_button.file_path) #Natalia Kunach
-    exit_button.load_image(exit_button.file_path)  #Władysław Bacewicz
-    reset_button.load_image(reset_button.file_path)  #Władysław Bacewicz
+    start_button.load_image(start_button.file_path)        #Natalia Kunach
+    language_button.load_image(language_button.file_path)  #Natalia Kunach
+    exit_button.load_image(exit_button.file_path)          #Władysław Bacewicz
+    reset_button.load_image(reset_button.file_path)        #Władysław Bacewicz
     
     hair_1.load_image(hair_1.file_path)
-    hair_2.load_image(hair_2.file_path)  #Władysław Bacewicz
-    wlosy_blond.load_image(wlosy_blond.file_path)  #Patrycja Leśniak
+    hair_2.load_image(hair_2.file_path)                    #Władysław Bacewicz
+    wlosy_blond.load_image(wlosy_blond.file_path)          #Patrycja Leśniak
     wlosy_brazowe.load_image(wlosy_brazowe.file_path)
     wlosy_czarne_1.load_image(wlosy_czarne_1.file_path)
-    wlosy_czarne_2.load_image(wlosy_czarne_2.file_path) #Julia Kornecka
+    wlosy_czarne_2.load_image(wlosy_czarne_2.file_path)    #Julia Kornecka
     
     bluzka_niebieska.load_image(bluzka_niebieska.file_path)
-    bluzka_rozowa.load_image(bluzka_rozowa.file_path) #Patrycja Leśniak
+    bluzka_rozowa.load_image(bluzka_rozowa.file_path)      #Patrycja Leśniak
     bluzka_zielona.load_image(bluzka_zielona.file_path)
-    koszulka_czarna.load_image(koszulka_czarna.file_path) #Julia Kornecka
+    koszulka_czarna.load_image(koszulka_czarna.file_path)  #Julia Kornecka
     
     spodnica_brazowa.load_image(spodnica_brazowa.file_path)
     spodnica_czerwona.load_image(spodnica_czerwona.file_path)
@@ -307,14 +307,14 @@ def setup():
     spodnica_niebieska.load_image(spodnica_niebieska.file_path) #Patrycja Leśniak
     spodnica_zielona.load_image(spodnica_zielona.file_path)
     
-    black_shoes.load_image(black_shoes.file_path)  #Władysław Bacewicz
+    black_shoes.load_image(black_shoes.file_path)               #Władysław Bacewicz
     klapki_fioletowe.load_image(klapki_fioletowe.file_path)
-    klapki_rozowe.load_image(klapki_rozowe.file_path) #Patrycja Leśniak
+    klapki_rozowe.load_image(klapki_rozowe.file_path)           #Patrycja Leśniak
     klapki_zielone.load_image(klapki_zielone.file_path)
     
     sukienka_czarna_1.load_image(sukienka_czarna_1.file_path)
-    sukienka_czarna_2.load_image(sukienka_czarna_2.file_path) #Julia Kornecka
-    sukienka_magenta.load_image(sukienka_magenta.file_path) #Julia Kornecka
+    sukienka_czarna_2.load_image(sukienka_czarna_2.file_path)   #Julia Kornecka
+    sukienka_magenta.load_image(sukienka_magenta.file_path)     #Julia Kornecka
     
     
     
@@ -322,7 +322,7 @@ def setup():
     # is_dragging = False
     # mouse_offsetdress = PVector(0, 0)  #Wladiskowacz
     # is_dragging2 = False     
-    # mouse_offsethair = PVector(0, 0) #Pshenychniak
+    # mouse_offsethair = PVector(0, 0)   #Pshenychniak
     
     
     
@@ -356,20 +356,20 @@ def draw():
     
     
     
-    image(exit_button.img, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)  #Wladiskowacz
+    image(exit_button.img, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)       #Wladiskowacz
     image(reset_button.img, reset_button.x, reset_button.y, reset_button.size_x, reset_button.size_y)  #Wladiskowacz
     
-    image(hair_1.img, hair_1.x, hair_1.y) #Vitalii Pshenychniak
-    image(hair_2.img, hair_2.x, hair_2.y) #Władysław Bacewicz
-    image(wlosy_blond.img, wlosy_blond.x, wlosy_blond.y) #Patrycja Leśniak
+    image(hair_1.img, hair_1.x, hair_1.y)                                 #Vitalii Pshenychniak
+    image(hair_2.img, hair_2.x, hair_2.y)                                 #Władysław Bacewicz
+    image(wlosy_blond.img, wlosy_blond.x, wlosy_blond.y)                  #Patrycja Leśniak
     image(wlosy_brazowe.img, wlosy_brazowe.x, wlosy_brazowe.y)
     image(wlosy_czarne_1.img, wlosy_czarne_1.x, wlosy_czarne_1.y)
-    image(wlosy_czarne_2.img, wlosy_czarne_2.x, wlosy_czarne_2.y) #Julia Kornecka
+    image(wlosy_czarne_2.img, wlosy_czarne_2.x, wlosy_czarne_2.y)         #Julia Kornecka
     
     image(bluzka_niebieska.img, bluzka_niebieska.x, bluzka_niebieska.y)
-    image(bluzka_rozowa.img, bluzka_rozowa.x, bluzka_rozowa.y) #Patrycja Leśniak
+    image(bluzka_rozowa.img, bluzka_rozowa.x, bluzka_rozowa.y)            #Patrycja Leśniak
     image(bluzka_zielona.img, bluzka_zielona.x, bluzka_zielona.y)
-    image(koszulka_czarna.img, koszulka_czarna.x, koszulka_czarna.y) #Julia Kornecka
+    image(koszulka_czarna.img, koszulka_czarna.x, koszulka_czarna.y)      #Julia Kornecka
     
     image(spodnica_brazowa.img, spodnica_brazowa.x, spodnica_brazowa.y)
     image(spodnica_czerwona.img, spodnica_czerwona.x, spodnica_czerwona.y)
@@ -377,14 +377,14 @@ def draw():
     image(spodnica_niebieska.img, spodnica_niebieska.x, spodnica_niebieska.y) #Patrycja Leśniak
     image(spodnica_zielona.img, spodnica_zielona.x, spodnica_zielona.y)
     
-    image(black_shoes.img, black_shoes.x, black_shoes.y) #Władysław Bacewicz
+    image(black_shoes.img, black_shoes.x, black_shoes.y)                      #Władysław Bacewicz
     image(klapki_fioletowe.img, klapki_fioletowe.x, klapki_fioletowe.y)
-    image(klapki_rozowe.img, klapki_rozowe.x, klapki_rozowe.y) #Patrycja Leśniak
+    image(klapki_rozowe.img, klapki_rozowe.x, klapki_rozowe.y)                #Patrycja Leśniak
     image(klapki_zielone.img, klapki_zielone.x, klapki_zielone.y)
     
     image(sukienka_czarna_1.img, sukienka_czarna_1.x, sukienka_czarna_1.y)
-    image(sukienka_czarna_2.img, sukienka_czarna_2.x, sukienka_czarna_2.y) #Julia Kornecka
-    image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y) #Julia Kornecka
+    image(sukienka_czarna_2.img, sukienka_czarna_2.x, sukienka_czarna_2.y)   #Julia Kornecka
+    image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y)      #Julia Kornecka
     
     # show_clothes()
     
