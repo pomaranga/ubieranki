@@ -388,12 +388,26 @@ def draw():
 
 
 #Name a character #Joanna Baran
- def nazwij_postac():
-    character_name = input(u"Wpisz nazwę postaci: ")
-    if name_character:
-        print(u"Miło mi Cię poznać, jestem:", name_character)
-    else:
-        print(u"Nie wpisano nazwy postaci.")
+import tkinter as tk
+from tkinter import messagebox
+
+def zapisz_imie():
+    imie = pole_tekstowe.get()
+    messagebox.showinfo("Witaj!", f"Witaj, {imie}!")
+
+okno = tk.Tk()
+okno.title("Wpisz imię postaci")
+
+etykieta = tk.Label(okno, text="Wpisz imię postaci:")
+etykieta.pack()
+
+pole_tekstowe = tk.Entry(okno)
+pole_tekstowe.pack()
+
+przycisk = tk.Button(okno, text="Zapisz", command=zapisz_imie)
+przycisk.pack()
+
+okno.mainloop()
   
 #  'mouseClicked()'
 #  function is responsible for
