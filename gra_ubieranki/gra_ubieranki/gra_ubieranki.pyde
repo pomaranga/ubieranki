@@ -13,14 +13,14 @@
 
 
 from abc import ABCMeta, abstractmethod
-class Clothes(): #abstract class for elements of clothes; that class was originally created by Anhelina Hlushanok
+class ImageAbstract(): #abstract class for elements of clothes; that class was originally created by Anhelina Hlushanok
     __metaclass__ = ABCMeta
     @abstractmethod      
     def load_image(self):
         super().__init__()
 
 
-class Hair(Clothes): #subclass for elements of hairstyles
+class Hair(ImageAbstract): #subclass for elements of hairstyles
     def __init__(self, name, file_path):
         self.name = name
         self.file_path = file_path
@@ -29,7 +29,7 @@ class Hair(Clothes): #subclass for elements of hairstyles
         self.img = loadImage(file_path)
          
                                    
-class Torso(Clothes): #subclass for elements of upper body clothes
+class Torso(ImageAbstract): #subclass for elements of upper body clothes
     def __init__(self, name, file_path):
         self.name = name
         self.file_path = file_path
@@ -38,7 +38,7 @@ class Torso(Clothes): #subclass for elements of upper body clothes
         self.img = loadImage(file_path)
     
     
-class Legs(Clothes): #subclass for elements of lower body clothes
+class Legs(ImageAbstract): #subclass for elements of lower body clothes
     def __init__(self, name, file_path):
         self.name = name
         self.file_path = file_path
@@ -47,7 +47,7 @@ class Legs(Clothes): #subclass for elements of lower body clothes
         self.img = loadImage(file_path)
     
     
-class Footwear(Clothes): #subclass for elements of footwear
+class Footwear(ImageAbstract): #subclass for elements of footwear
     def __init__(self, name, file_path):
         self.name = name
         self.file_path = file_path
@@ -56,7 +56,7 @@ class Footwear(Clothes): #subclass for elements of footwear
         self.img = loadImage(file_path)
 
 
-class Dress(Clothes): #subclass for elements of full body clothes
+class Dress(ImageAbstract): #subclass for elements of full body clothes
     def __init__(self, name, file_path):
         self.name = name
         self.file_path = file_path
@@ -70,7 +70,7 @@ class Dress(Clothes): #subclass for elements of full body clothes
 # because there won't be a lot of
 # interface elements, that we could lost in.
                 
-class Interface: #class for interface elements
+class ButtonInterface: #changed from Interface class to ButtonInterface N.Kunach 
     def __init__(self, name,  file_path, x, y):
         self.name = name
         self.file_path = file_path
@@ -85,15 +85,30 @@ class Interface: #class for interface elements
 # for better readability of code and maybe
 # to a future use for you.
             
-class Button(Interface): #subclass for buttoms
+class Button(ButtonInterface): #subclass for buttoms
     def __init__(self, name, file_path, x, y, size_x, size_y):
-        Interface.__init__(self, name, file_path, x, y)
+        ButtonInterface.__init__(self, name, file_path, x, y)
         self.size_x = size_x
         self.size_y = size_y
         
     def load_image(self, file_path):
-        Interface.load_image(self, file_path)
+        ButtonInterface.load_image(self, file_path)
 
+class CategoryInterface: #klasa N.Kunach
+    def __init__(self, name, x, y):
+        self.name = name
+        self.x = x
+        self.y = y
+
+class Category(CategoryInterface): #N.Kunach
+    def __init__(self, name, x, y,):
+        CategoryInterface.__init__(self, name, x, y)
+        self.size_x = x + 90
+        self.size_y = y - 30
+        
+    def print_text(self, r, g, b):
+        fill(r, g, b)
+        text(self.name, self.x, self.y)
 
 
 # In lines below
@@ -132,16 +147,23 @@ sukienka_czarna_2 = Dress("sukienka_czarna_2", "data/Dresses/sukienka_czarna_2.p
 sukienka_magenta = Dress("sukienka_magenta", "data/Dresses/sukienka_magenta.png")
 
 
-background_image = Interface("background_image", "data/background_image.png", 0, 0)
-character_image = Interface("character_image", "data/character.png", 795, 75)
+background_image = ButtonInterface("background_image", "data/background_image.png", 0, 0) #N.Kunach
+character_image = ButtonInterface("character_image", "data/character.png", 795, 75) #N.Kunach
 
 
-start_button = Button("start_button", "data/Buttons/start_button.png", 200, 250, 100, 100)           #Natalia Kunach
-language_button = Button("language_button", "data/Buttons/language_button.png", 200, 400, 100, 100)  #Natalia Kunach
 exit_button = Button("exit_button", "data/Buttons/exit_button.png", 1193, 7, 80, 40)
 reset_button = Button("reset_button", "data/Buttons/reset_button.png", 945, 650, 80, 40)
 
+start_button = Button("start_button", "data/Buttons/start_button.png", 75, 100, 200, 100) #N.Kunach
+how_to_play_button = Button("how_to_play_button", "data/Buttons/htp_img.png", 75, 300, 200, 100) #N.Kunach
+quit_button = Button("quit_button", "data/Buttons/quit_button.png", 75, 500, 200, 100) #N.Kunach
 
+
+hair_category = Category("Hair", 90, 230)            #N.Kunach categories
+torso_category = Category("Torso", 90, 300)
+legs_category = Category("Legs", 90, 370)
+footwear_category = Category("Footwearr", 90, 440)
+dresses_category = Category("Dresses", 90, 520)
 
 
 # In following lines I wrote
@@ -221,6 +243,7 @@ sukienka_magenta.y = 200
         
 # Below I set variable statements for classes            
 
+game_started = False #N.Kunach
 hair_selected = False
 torso_selected = False
 legs_selected = False
@@ -284,10 +307,13 @@ def setup():
     character_image.load_image(character_image.file_path)  #Władysław Bacewicz
     
     
-    start_button.load_image(start_button.file_path)        #Natalia Kunach
-    language_button.load_image(language_button.file_path)  #Natalia Kunach
     exit_button.load_image(exit_button.file_path)          #Władysław Bacewicz
     reset_button.load_image(reset_button.file_path)        #Władysław Bacewicz
+    
+    
+    start_button.load_image(start_button.file_path)             #N.Kunach
+    how_to_play_button.load_image(how_to_play_button.file_path) #N.Kunach
+    quit_button.load_image(quit_button.file_path)               #N.Kunach  
     
     hair_1.load_image(hair_1.file_path)
     hair_2.load_image(hair_2.file_path)                    #Władysław Bacewicz
@@ -324,52 +350,53 @@ def setup():
     # is_dragging2 = False     
     # mouse_offsethair = PVector(0, 0)   #Pshenychniak
     
-    
-    
-def draw():
+def background_screen(): #N.Kunach zmiana def draw na background_screen
     background(background_image.img)
-    image(character_image.img, character_image.x, character_image.y)
-    
-    
     fill(30, 30, 30, 200)
-    rect(20, 65, 400, 600, 10)
-    
-    font = createFont("Vallena.ttf", 50)  #Natalia Kunach
-    textFont(font)                        #Natalia Kunach
+    rect(20, 65, 300, 600, 10)
     text_color()
     textSize(40)
     
-    fill(fill_1, 255, fill_1)
-    text("Hair", width//2-550, height//2-200)
+def menu_screen(): #N.Kunach
+    image(start_button.img, start_button.x, start_button.y, start_button.size_x, start_button.size_y)
+    image(how_to_play_button.img, how_to_play_button.x, how_to_play_button.y, how_to_play_button.size_x, how_to_play_button.size_y)
+    image(quit_button.img, quit_button.x, quit_button.y, quit_button.size_x, quit_button.size_y)
     
-    fill(fill_2, 255, fill_2)
-    text("Torso", width//2-550, height//2-130)
+    # Set font N.Kunach
+    fill(114, 26, 48) 
+    font = createFont("Vallena.ttf", 50) 
+    textFont(font)
+    textSize(74)  
+    textAlign(CENTER, CENTER)  
+    text("UBIERANKI", width / 2.08, height / 20)
+    # Back to default N.Kunach
+    fill(0)
+    font = createFont("Arial", 36)
+    textFont(font)
+    textSize(36)
+    textAlign(LEFT, BASELINE)    
     
-    fill(fill_3, 255, fill_3)
-    text("Legs", width//2-550, height//2-60) #Vitalii Pshenychniak
+def game_screen(): #N.Kunach
+    image(character_image.img, character_image.x, character_image.y) 
     
-    fill(fill_4, 255, fill_4)
-    text("Footwear", width//2-550, height//2+10) #Władysław Bacewicz
-    
-    fill(fill_5, 255, fill_5)
-    text("Dresses", width//2-550, height//2+80) #Władysław Bacewicz
-    
-    
-    
-    image(exit_button.img, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)       #Wladiskowacz
-    image(reset_button.img, reset_button.x, reset_button.y, reset_button.size_x, reset_button.size_y)  #Wladiskowacz
-    
-    image(hair_1.img, hair_1.x, hair_1.y)                                 #Vitalii Pshenychniak
-    image(hair_2.img, hair_2.x, hair_2.y)                                 #Władysław Bacewicz
-    image(wlosy_blond.img, wlosy_blond.x, wlosy_blond.y)                  #Patrycja Leśniak
+
+    hair_category.print_text(fill_1, 255, fill_1) # using the print_text method instead of the fill and text N.Kunach
+    torso_category.print_text(fill_2, 255, fill_2)
+    legs_category.print_text(fill_3, 255, fill_3)
+    footwear_category.print_text(fill_4, 255, fill_4)
+    dresses_category.print_text(fill_5, 255, fill_5) #N.Kunach
+        
+    image(hair_1.img, hair_1.x, hair_1.y) #Vitalii Pshenychniak
+    image(hair_2.img, hair_2.x, hair_2.y) #Władysław Bacewicz
+    image(wlosy_blond.img, wlosy_blond.x, wlosy_blond.y) #Patrycja Leśniak
     image(wlosy_brazowe.img, wlosy_brazowe.x, wlosy_brazowe.y)
     image(wlosy_czarne_1.img, wlosy_czarne_1.x, wlosy_czarne_1.y)
-    image(wlosy_czarne_2.img, wlosy_czarne_2.x, wlosy_czarne_2.y)         #Julia Kornecka
+    image(wlosy_czarne_2.img, wlosy_czarne_2.x, wlosy_czarne_2.y) #Julia Kornecka
     
     image(bluzka_niebieska.img, bluzka_niebieska.x, bluzka_niebieska.y)
-    image(bluzka_rozowa.img, bluzka_rozowa.x, bluzka_rozowa.y)            #Patrycja Leśniak
+    image(bluzka_rozowa.img, bluzka_rozowa.x, bluzka_rozowa.y) #Patrycja Leśniak
     image(bluzka_zielona.img, bluzka_zielona.x, bluzka_zielona.y)
-    image(koszulka_czarna.img, koszulka_czarna.x, koszulka_czarna.y)      #Julia Kornecka
+    image(koszulka_czarna.img, koszulka_czarna.x, koszulka_czarna.y) #Julia Kornecka
     
     image(spodnica_brazowa.img, spodnica_brazowa.x, spodnica_brazowa.y)
     image(spodnica_czerwona.img, spodnica_czerwona.x, spodnica_czerwona.y)
@@ -377,14 +404,28 @@ def draw():
     image(spodnica_niebieska.img, spodnica_niebieska.x, spodnica_niebieska.y) #Patrycja Leśniak
     image(spodnica_zielona.img, spodnica_zielona.x, spodnica_zielona.y)
     
-    image(black_shoes.img, black_shoes.x, black_shoes.y)                      #Władysław Bacewicz
+    image(black_shoes.img, black_shoes.x, black_shoes.y) #Władysław Bacewicz
     image(klapki_fioletowe.img, klapki_fioletowe.x, klapki_fioletowe.y)
-    image(klapki_rozowe.img, klapki_rozowe.x, klapki_rozowe.y)                #Patrycja Leśniak
+    image(klapki_rozowe.img, klapki_rozowe.x, klapki_rozowe.y) #Patrycja Leśniak
     image(klapki_zielone.img, klapki_zielone.x, klapki_zielone.y)
     
     image(sukienka_czarna_1.img, sukienka_czarna_1.x, sukienka_czarna_1.y)
-    image(sukienka_czarna_2.img, sukienka_czarna_2.x, sukienka_czarna_2.y)   #Julia Kornecka
-    image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y)      #Julia Kornecka
+    image(sukienka_czarna_2.img, sukienka_czarna_2.x, sukienka_czarna_2.y) #Julia Kornecka
+    image(sukienka_magenta.img, sukienka_magenta.x, sukienka_magenta.y) #Julia Kornecka
+    
+    image(exit_button.img, exit_button.x, exit_button.y, exit_button.size_x, exit_button.size_y)  #Wladiskowacz
+    image(reset_button.img, reset_button.x, reset_button.y, reset_button.size_x, reset_button.size_y)  #Wladiskowacz    
+    
+def draw():
+    background_screen()
+    
+    if game_started:
+        game_screen()
+    else:
+        menu_screen()
+ 
+def between(x, limit1, limit2): #N.Kunach will always be between two numbers
+    return (x >= min(limit1, limit2) and (x <= max(limit1, limit2)))
 
 
 
@@ -395,67 +436,104 @@ def draw():
 #  clothes category    
 
 def mouseClicked():
-    global hair_selected, torso_selected, legs_selected, footwear_selected, dresses_selected
-    if mouseX >= 1193 and mouseX <= 1268 and mouseY >= 7 and mouseY <= 47:
-        exit()
-    if mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-200 - 30 and mouseY <= height//2-200 + 3:
-        hair_selected = True
-        torso_selected = False
-        legs_selected = False
-        footwear_selected = False
-        dresses_selected = False
-        print(hair_selected)
-        hair_1.x = 395
-        hair_1.y = 75
-        hair_2.x = 495
-        hair_2.y = 75
-        wlosy_blond.x = 595
-        wlosy_blond.y = 75
-        wlosy_brazowe.x = 395
-        wlosy_brazowe.y = 175
-        wlosy_czarne_1.x = 495
-        wlosy_czarne_1.y = 175
-        wlosy_czarne_2.x = 595
-        wlosy_czarne_2.y = 175
-    if mouseX >= width//2-550 and mouseX <= width//2-550 + 110 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3:
-        hair_selected = False
-        torso_selected = True
-        legs_selected = False
-        footwear_selected = False
-        dresses_selected = False
-        print(hair_selected)
-        hair_1.x = 1500
-        hair_1.y = 200
-        hair_2.x = 1500
-        hair_2.y = 200
-        wlosy_blond.x = 1500
-        wlosy_blond.y = 200
-        wlosy_brazowe.x = 1500
-        wlosy_brazowe.y = 200
-        wlosy_czarne_1.x = 1500
-        wlosy_czarne_1.y = 200
-        wlosy_czarne_2.x = 1500
-        wlosy_czarne_2.y = 200
-    if mouseX >= width//2-550 and mouseX <= width//2-550 + 90 and mouseY >= height//2-60 - 30 and mouseY <= height//2-60 + 3:
-        hair_selected = False
-        torso_selected = False
-        legs_selected = True
-        footwear_selected = False
-        dresses_selected = False
-    if mouseX >= width//2-550 and mouseX <= width//2-550 + 175 and mouseY >= height//2+10 - 30 and mouseY <= height//2+10 + 3:
-        hair_selected = False
-        torso_selected = False
-        legs_selected = False
-        footwear_selected = True
-        dresses_selected = False
-    if mouseX >= width//2-550 and mouseX <= width//2-550 + 150 and mouseY >= height//2+80 - 30 and mouseY <= height//2+80 + 3:
-        hair_selected = False
-        torso_selected = False
-        legs_selected = False
-        footwear_selected = False
-        dresses_selected = True
-    if mouseX >= 395 and mouseX <= 395+207 and mouseY >= 75 and mouseY <= 75 + 110 and hair_selected is True:
-        hair_1.x = 795
+    global hair_selected, torso_selected, legs_selected, footwear_selected, dresses_selected, game_started #N.Kunach game_started, htp, quit
+
+    #print "mouseClicked: x:{} y:{} ".format(mouseX, mouseY) #position search by N.Kunach
+    # print "hair? x:{} size_x:{} y:{} size_y:{}".format(mouseX >= hair_category.x, mouseX <= hair_category.size_x, mouseY >= hair_category.y, mouseY <= hair_category.size_y)
+    # print "Hair: x:{} y:{} size_x:{} size_y:{}".format(hair_category.x, hair_category.y, hair_category.size_x, hair_category.size_y) 
+
+    if game_started is False:
+        if mouseX >= start_button.x and mouseX <= start_button.x + start_button.size_x and mouseY >= start_button.y and mouseY <= start_button.y + start_button.size_y: #N.Kunach
+            game_started = True
+        if mouseX >= how_to_play_button.x and mouseX <= how_to_play_button.x + how_to_play_button.size_x and mouseY >= how_to_play_button.y and mouseY <= how_to_play_button.y + how_to_play_button.size_y: #N.Kunach
+            print "how to play"
+        if mouseX >= quit_button.x and mouseX <= quit_button.x + quit_button.size_x and mouseY >= quit_button.y and mouseY <= quit_button.y + quit_button.size_y: #N.Kunach
+            exit()
+    if game_started is True:    
+        if mouseX >= exit_button.x and mouseX <= exit_button.x + exit_button.size_x and mouseY <= exit_button.y and mouseY >= exit_button.y + exit_button.size_y:
+            exit()
+            
+        if between(mouseX, hair_category.x, hair_category.size_x) and between(mouseY, hair_category.y, hair_category.size_y):
+            # if False: # mouseX >= width//2-550 and mouseX <= width//2-550 + 80 and mouseY >= height//2-200 - 30 and mouseY <= height//2-200 + 3:
+            print "Hair clicked: x:{} y:{} size_x:{} size_y:{}".format(hair_category.x, hair_category.y, hair_category.size_x, hair_category.size_y)
+            
+            
+            
+            hair_selected = True
+            torso_selected = False
+            legs_selected = False
+            footwear_selected = False
+            dresses_selected = False
+            hair_1.x = 395
+            hair_1.y = 75
+            hair_2.x = 495
+            hair_2.y = 75
+            wlosy_blond.x = 595
+            wlosy_blond.y = 75
+            wlosy_brazowe.x = 395
+            wlosy_brazowe.y = 175
+            wlosy_czarne_1.x = 495
+            wlosy_czarne_1.y = 175
+            wlosy_czarne_2.x = 595
+            wlosy_czarne_2.y = 175
+        if between(mouseX, torso_category.x, torso_category.size_x) and between(mouseY, torso_category.y, torso_category.size_y): #N.Kunach each of between, corrected, to make the categories torso, legs and etc better written
+        # if mouseX >= width//2-550 and mouseX <= width//2-550 + 110 and mouseY >= height//2-130 - 30 and mouseY <= height//2-130 + 3:
+            print "Torso clicked"
+            hair_selected = False
+            torso_selected = True
+            legs_selected = False
+            footwear_selected = False
+            dresses_selected = False
+            hair_1.x = 1500
+            hair_1.y = 200
+            hair_2.x = 1500
+            hair_2.y = 200
+            wlosy_blond.x = 1500
+            wlosy_blond.y = 200
+            wlosy_brazowe.x = 1500
+            wlosy_brazowe.y = 200
+            wlosy_czarne_1.x = 1500
+            wlosy_czarne_1.y = 200
+            wlosy_czarne_2.x = 1500
+            wlosy_czarne_2.y = 200
+        if between(mouseX, legs_category.x, legs_category.size_x) and between(mouseY, legs_category.y, legs_category.size_y):
+        # if mouseX >= legs_category.x and mouseX <= legs_category.x + legs_category.size_x  and mouseY >= legs_category.y and mouseY <= legs_category.y + legs_category.size_y:
+            print "Legs clicked"
+            hair_selected = False
+            torso_selected = False
+            legs_selected = True
+            footwear_selected = False
+            dresses_selected = False
+        if between(mouseX, footwear_category.x, footwear_category.size_x) and between(mouseY, footwear_category.y, footwear_category.size_y):
+        # if mouseX >= footwear_category.x and mouseX <= footwear_category.x + footwear_category.size_x  and mouseY >= footwear_category.y and mouseY <= footwear_category.y + footwear_category.size_y:
+            print "Footwear clicked"
+            hair_selected = False
+            torso_selected = False
+            legs_selected = False
+            footwear_selected = True
+            dresses_selected = False
+        if between(mouseX, dresses_category.x, dresses_category.size_x) and between(mouseY, dresses_category.y, dresses_category.size_y):
+        # if mouseX >= dresses_category.x and mouseX <= dresses_category.x + dresses_category.size_x and mouseY >= dresses_category.y and mouseY <= dresses_category.y + dresses_category.size_y:
+            print "Dresses clicked"
+            hair_selected = False
+            torso_selected = False
+            legs_selected = False
+            footwear_selected = False
+            dresses_selected = True
+        # if mouseX >= 395 and mouseX <= 395+207 and mouseY >= 75 and mouseY <= 75 + 110 and hair_selected is True:
+            # hair_1.x = 795
+        if between(mouseX, hair_1.x, hair_1.x - 30) and between(mouseY, hair_1.y, hair_1.y + 75): #N.Kunach próby naprawienia wlosów
+            hair_1.x = 795
+        if between(mouseX, hair_2.x, hair_2.x - 30) and between(mouseY, hair_2.y, hair_2.y + 75):
+            hair_2.x = 795
+        if between(mouseX, wlosy_blond.x, wlosy_blond.x - 30) and between(mouseY, wlosy_blond.y, wlosy_blond.y + 75):
+            wlosy_blond.x = 795
+        if between(mouseX, wlosy_brazowe.x, wlosy_brazowe.x - 30) and between(mouseY, wlosy_brazowe.y, wlosy_brazowe.y + 75):
+            wlosy_brazowe.x = 795
+        if between(mouseX, wlosy_czarne_1.x, wlosy_czarne_1.x - 30) and between(mouseY, wlosy_czarne_1.y, wlosy_czarne_1.y + 75):
+            wlosy_czarne_1.x = 795
+        if between(mouseX, wlosy_czarne_2.x, wlosy_czarne_2.x - 30) and between(mouseY, wlosy_czarne_2.y, wlosy_czarne_2.y + 75):
+            wlosy_czarne_2.x = 795
         
         
         
