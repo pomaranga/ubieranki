@@ -271,25 +271,25 @@ def draw():
     
     
 
-    if b_skirt % 2 == 0:
-        image(skirt_shadow, 750,696)
-    else:
+    if mouseX > 755 and mouseX < 875  and mouseY > 680 and mouseY < 1100 and mousePressed == True:
         image(skirt,750,696)
-        
-    if b_heels % 2 == 0:
-        image(heels_shadowImg,525,696)
     else:
+        image(skirt_shadow, 750,696)
+        
+    if mouseX > 525 and mouseX < 620  and mouseY > 680 and mouseY < 1100 and mousePressed == True:
         image(button_heelsImg,525,696)
+    else:
+        image(heels_shadowImg,525,696)
 
-    if b_dress % 2 == 0:
-        image(dress_shadowImg, 410, 696)
-    else:
+    if mouseX > 400 and mouseX < 500  and mouseY > 680 and mouseY < 1100 and mousePressed == True:
         image(button_dressImg, 410, 696)
-        
-    if b_wlosy % 2 == 0:
-        image(haircolor_shadowImg,635,696)
     else:
+        image(dress_shadowImg, 410, 696)
+        
+    if mouseX > 635 and mouseX < 730  and mouseY > 680 and mouseY < 1100 and mousePressed == True:
         image(button_haircolorImg, 635, 696)
+    else:
+        image(haircolor_shadowImg,635,696)
     
     if flaga_wlosy:
         image(wlosyblondImg, 250, 100, 150, 450)
