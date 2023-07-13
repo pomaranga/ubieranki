@@ -301,9 +301,9 @@ def draw():
         
         
 def mouseClicked():  #Wladiskowacz (prawdopodobnie po kliknięciu przycisku „sukienka” pojawia się na ekranie(dodac))
-    global reset, flaga_wlosy, b_dress, b_wlosy, b_heels,b_skirt
+    global, flaga_wlosy, b_dress, b_wlosy, b_heels,b_skirt
     if mouseX > 137 and mouseX < 260 and mouseY > 5 and mouseY < 75:
-        reset()
+        setup()  # nie ma potrzeby pisać funkcji reset, bo zawołanie setup da ten sam efekt
     if mouseX > 5 and mouseX < 130 and mouseY > 5 and mouseY < 75:
         exit()
     if mouseX < 300 and mouseY<300 :   #alex
