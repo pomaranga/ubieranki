@@ -80,15 +80,6 @@ hat_selected = False
 dress_selected = False
 shoes_selected = False 
 
-def nazwij_postac():
-# Możliwość nazwania postaci (Joanna Baran)
-    name_character = input(u"Wpisz nazwę postaci: ")
-    if name_character:
-        print(u"Miło mi Cię poznać, jestem:", name_character)
-    else:
-        print(u"Nie wpisano nazwy postaci.")
-
-
 
 # Przesunięcie wybranych elementów ubioru za pomocą myszy
 if hat_selected:
