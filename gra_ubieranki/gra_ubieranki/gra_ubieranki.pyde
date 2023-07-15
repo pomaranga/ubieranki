@@ -184,12 +184,14 @@ def draw():
 
     fill(255,255,255)
 
-  
-    text("hat", width//2-500, height//2-200, 40)   
-    text("dress", width//2-500, height//2-150, 80)
-    text("hair", width//2-500, height//2-150, 80)  #Vitalii Pshenychniak
-    text("Hair_2", width//2-500, height//2-50, 80)  #Wladiskowacz
-    text("Shoes", width//2-500, height//2-0, 80)  #Wladiskowacz
+    text("Light Switch", width//2-570, height//2--50, 40)    
+    text("On-1", width//2-500, height//2--100, 40)
+    text("Off-2", width//2-500, height//2--150, 40)
+    text("Hat", width//2-500, height//2-200, 40) 
+    text("Dress", width//2-500, height//2-100, 40)     
+    text("Hair", width//2-500, height//2-50, 80)  #Vitalii Pshenychniak
+    text("Hair_2", width//2-500, height//2-150, 80)  #Wladiskowacz
+    text("Shoes", width//2-500, height//2-250, 80)  #Wladiskowacz
     image(wyjscieImg, 10, 10, 120, 60)  #Wladiskowacz
     image(resetImg, 135, 5, 130, 70)  #Wladiskowacz
     image(characterImg, 600, 200, 150, 430)  #Wladiskowacz
