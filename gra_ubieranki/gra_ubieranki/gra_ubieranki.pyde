@@ -1,3 +1,8 @@
+current_image = None
+image_WYBOR = ["tło1.jpg", "tło2.jpg"]
+current_image_index = 0
+
+
 #Anhelina Hlushanok
 class Item: #klasa dla rzeczy w szafie
     def __init__(self, name, category):
@@ -63,10 +68,10 @@ class RzeciRuszanie:
 
 
 def menu_start():
-    global start, quit, starthover, quithover
+    global start, quit, starthover, quithover, current_image
     image(start,100,300) #B.Rząd
     image(quit,650,300) #B.Rząd
-
+    current_image = loadImage(image_WYBOR[current_image_index])
 
 
 
@@ -195,6 +200,7 @@ def draw():
     image(wyjscieImg, 10, 10, 120, 60)  #Wladiskowacz
     image(resetImg, 135, 5, 130, 70)  #Wladiskowacz
     image(characterImg, 600, 200, 150, 430)  #Wladiskowacz
+
 
     dress.display()
     hair.display()
